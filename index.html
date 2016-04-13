@@ -186,25 +186,9 @@
 	
 
 $(document).ready(function(){
-
-	$('.zoomOnHover').on('mouseenter', function(){
-		$(this).animate({width: "+=20", height: "+=20" });
-	})
-	.on('mouseleave', function(){
-    $(this).animate({ width: "-=20", height: "-=20"});
-	}) ;
-
-	$('ul.nav li.dropdown').hover(function() {
-		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-	}, function() {
-	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-	});
-
-});
-
-
-// no js
-/* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
+	
+	//np js
+	/* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
  * @license MIT */
 
 ;(function(root, factory) {
@@ -694,7 +678,22 @@ $(document).ready(function(){
   }
 
   return NProgress;
-  
+});
+
+	$('.zoomOnHover').on('mouseenter', function(){
+		$(this).animate({width: "+=20", height: "+=20" });
+	})
+	.on('mouseleave', function(){
+    $(this).animate({ width: "-=20", height: "-=20"});
+	}) ;
+
+	$('ul.nav li.dropdown').hover(function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+	}, function() {
+	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+	});
+
+});
   
   /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
