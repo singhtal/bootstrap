@@ -15906,57 +15906,6 @@ border-color:#4d4d4d !important;
 	<script>
 	
 
-$(document).ready(function(){
-
-$('.filtr-container').filterizr();
-
-	$('.zoomOnHover').on('mouseenter', function(){
-		$(this).animate({width: "+=20", height: "+=20" });
-	})
-	.on('mouseleave', function(){
-    $(this).animate({ width: "-=20", height: "-=20"});
-	}) ;
-	
-	
-		$('.ofHidden').on('mouseenter', function(){
-	
-		$(this).children('img').css('opacity','0.7');
-	})
-	.on('mouseleave', function(){
-
-	$(this).children('img').css('opacity','1');
-	}) ;
-	
-
-	$('ul.nav li.dropdown').hover(function() {
-		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-	}, function() {
-	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-	});
-	
-	
-	
-	
-	$('.search').click(function(){
-	  var divID = '#filtr-search' ;
-    $('html, body').animate({
-        scrollTop: $(divID).offset().top
-    }, 2000);
-	});
-	
-	
-    $('#chat').click(function () {
-        $.chat({
-            userId: 1,
-            roomId: 1,
-            typingText: ' is typing...',
-            emptyRoomText: "There's no one around here.",
-            chatJsContentPath: '/basics/chatjs/',
-            adapter: new DemoAdapter()
-        });
-    });
-
-});
 
   /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -19040,7 +18989,57 @@ $(function() {
     NProgress.done();
 	}, 2500); 
 	
+$(document).ready(function(){
 
+$('.filtr-container').filterizr();
+
+	$('.zoomOnHover').on('mouseenter', function(){
+		$(this).animate({width: "+=20", height: "+=20" });
+	})
+	.on('mouseleave', function(){
+    $(this).animate({ width: "-=20", height: "-=20"});
+	}) ;
+	
+	
+		$('.ofHidden').on('mouseenter', function(){
+	
+		$(this).children('img').css('opacity','0.7');
+	})
+	.on('mouseleave', function(){
+
+	$(this).children('img').css('opacity','1');
+	}) ;
+	
+
+	$('ul.nav li.dropdown').hover(function() {
+		$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+	}, function() {
+	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+	});
+	
+	
+	
+	
+	$('.search').click(function(){
+	  var divID = '#filtr-search' ;
+    $('html, body').animate({
+        scrollTop: $(divID).offset().top
+    }, 2000);
+	});
+	
+	
+    $('#chat').click(function () {
+        $.chat({
+            userId: 1,
+            roomId: 1,
+            typingText: ' is typing...',
+            emptyRoomText: "There's no one around here.",
+            chatJsContentPath: '/basics/chatjs/',
+            adapter: new DemoAdapter()
+        });
+    });
+
+});
 	</script>
 	
 </html>	
