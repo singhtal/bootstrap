@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>@Tal</title>
+  <title>Jquery Plus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
@@ -9,7 +9,9 @@
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   
   <style>		
-	
+form{
+display:none;
+}
 div.gallery{
 border:1px solid #3333cc;
 }	
@@ -44,12 +46,89 @@ div.gallery .absolute {
 .mobile-preview{
 margin-top:-13%;
 }
+.giveMarginTop{
+margin-top:45px;
+}
+
+
+.navbar-inverse {
+    background-color: #3d0099;
+    border-color: #E7E7E7;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: inherit;
+    background-color: inherit;
+}
+.navbar-brand{
+font-size:20px !important;
+color:white !important;
+}
+.dropdown-menu{
+background:#944dff;
+width:220px;
+}
+.meh{
+padding-left:18px;
+font-size:18px;
+font-weight:bold;
+}
+.define-max{
+max-width:80px;
+}
+
   </style>
 		
 </head>
 <body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Jquery+  Plugins</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+ 
+		
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Me <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="meh"><div class="row"><div class="col-xs-6">Just another Developer</div><div class="col-xs-6 text-center"><img src="img/anon.png" class="img img-responsive define-max pull-left"></img></div></div></li>
+          </ul>
+        </li>
+		
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="form">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_donations">
+<input type="hidden" name="business" value="iamtalvinder@gmail.com">
+<input type="hidden" name="lc" value="US">
+<input type="hidden" name="item_name" value="Jquery Plus">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		</form>
+
+		</li>
+        <li><a href="http://www.facebook.com/jqueryplus"  target="_blank">FB Connect</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 		<div class="container-fluid">
-				<div class="row">
+				<div class="row giveMarginTop">
 				
 						<div class="col-xs-12 col-sm-6 comp1 gallery">
 								<img class="img img-responsive" src="img/comp1.png"></img>
@@ -94,4 +173,22 @@ margin-top:-13%;
 				</div>
 		</div>
 </body>
+<script type="text/javascript">
+var requestUrl = "http://ip-api.com/json";
+
+$.ajax({
+  url: requestUrl,
+  type: 'GET',
+  success: function(json)
+  {
+    if(json.country !=  'India'  ){
+	$('form').show();
+	}
+  },
+  error: function(err)
+  {
+    console.log("Request failed, error= " + err);
+  }
+});
+</script>
 </html>
