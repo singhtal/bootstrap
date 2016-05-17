@@ -47,6 +47,7 @@ border:1px solid black;
 							
 							$(".btn-info:first").addClass('btn-primary activeChunk').removeClass('btn-info');
 							
+							
 chunk_1 = [1,2,3,4,5];
 chunk_2 = [6,7,8,9,10];
 chunk_3 = [11,12,13,14,15];
@@ -77,7 +78,9 @@ chunk_5 = [21,22,23,24,25];
 
 							$('.next').click(function(){
 							$('.activeChunk').next('.btn-special').click();
-							});							
+							});						
+
+							$('.btn-special').eq(0).click();
 							
 	});		
 </script>	
