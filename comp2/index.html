@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pagination Plus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
+  <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
+</head>
+<style>
+.row{
+border:1px solid black;
+}
+</style>
+<body>
+<div class="container">
+<div class="row paginateCheck">1.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">2.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">3.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">4.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">5.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">6.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">7.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">8.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">9.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">10.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">11.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">12.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">13.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">14.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck">15.Lorem Ipsum Dolar Sit</div>
+<div class="row paginateCheck  ">16.Lorem Ipsum Dolar Sit</div>
+
+<div class=""><div class="col-xs-8 appendNumButtons"></div><div class="col-xs-4 text-right"><span class="btn btn-primary prev glyphicon glyphicon-menu-left text-right"></span><span class=" btn btn-primary glyphicon glyphicon-menu-right text-right next"></span></div></div>
+</div>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+							var items = 5; // number of rows to be shown, you can change it accordingly
+							var count = $('.paginateCheck').length;
+							var buttonsNeeded = Math.ceil(count/items);
+							var chunk = [];
+							for(i=1;i<=buttonsNeeded;i++){
+							$('.appendNumButtons').append('<btn class="btn btn-special  btn-info btn-'+i+' " id=chunk_'+i+'>'+i+'</btn>');
+							}
+							
+							$(".btn-info:first").addClass('btn-primary activeChunk').removeClass('btn-info');
+							
+chunk_1 = [1,2,3,4,5];
+chunk_2 = [6,7,8,9,10];
+chunk_3 = [11,12,13,14,15];
+chunk_4 = [16,17,18,19,20];
+chunk_5 = [21,22,23,24,25];
+							
+
+							$('.btn-special').click(function(){
+														  $('.paginateCheck').hide();
+														  $('.btn-special').removeClass('activeChunk');
+														  $('.btn-special').removeClass('btn-primary activeChunk').addClass('btn-info')
+														  $(this).addClass('activeChunk').addClass('btn-primary activeChunk').removeClass('btn-info');
+														  
+														  var id = $(this).attr('id');
+														  var arr = eval(id);
+														  
+														  for(index = 0; index<=arr.length;index++){
+														  y= arr[index] - 1;
+														    $('.paginateCheck').eq(y).show();
+														  }
+														  
+							});
+							
+							$('.prev').click(function(){
+							$('.activeChunk').prev('.btn-special').click();
+							});
+
+
+							$('.next').click(function(){
+							$('.activeChunk').next('.btn-special').click();
+							});							
+							
+	});		
+</script>	
+
+</html>
