@@ -11,32 +11,34 @@
 </head>
 
 <body>
-<div class="container">
-<div class="row paginateCheck">1.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">2.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">3.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">4.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">5.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">6.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">7.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">8.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">9.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">10.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">11.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">12.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">13.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">14.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck">15.Lorem Ipsum Dolar Sit</div>
-<div class="row paginateCheck  ">16.Lorem Ipsum Dolar Sit</div>
+<div class="container top-pad">
+<div class="row paginateCheck"><img class="books" src="img/1.jpg"></img> Book 1 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/2.jpg"></img>Book 2 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/3.jpg"></img>Book 3 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/4.jpg"></img>Book 4 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/5.jpg"></img>Book 5 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/6.jpg"></img>Book 6 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/7.jpg"></img>Book 7 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/8.jpg"></img>Book 8 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/9.jpg"></img>Book 9 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/10.jpg"></img>Book 10 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/11.jpg"></img>Book 11 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/12.jpg"></img>Book 12 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/13.jpg"></img>Book 13 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/14.jpg"></img>Book 14 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/15.jpg"></img>Book 15 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/16.jpg"></img>Book 16 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/17.jpg"></img>Book 17 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/18.jpg"></img>Book 18 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/19.jpg"></img>Book 19 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
+<div class="row paginateCheck"><img class="books" src="img/20.jpg"></img>Book 20 <span class="lorem">Lorem Ipsum Dolar Sit</span></div>
 
 <div class="row">
-<!--<div class="col-xs-8 appendNumButtons"></div>
-<div class="col-xs-4 text-right">
-<span class="btn btn-primary prev glyphicon glyphicon-menu-left text-right"></span><span class=" btn btn-primary glyphicon glyphicon-menu-right text-right next"></span>
-</div>
-</div> -->
 <div class="col-xs-12">
 <span class="appendNumButtons text-left"></span>
+<span class="dropdown ">
+<span><select class="rowsDropdown"><option value="5">5</option><option value="10">10</option><option value="15">15</option></select></span>
+</span>
 
 <span class="text-right float-right">
 <span class="counter"></span>
@@ -46,88 +48,5 @@
 </div>
 
 </body>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-							var items = 5; // number of rows to be shown, you can change it accordingly
-							var count = $('.paginateCheck').length;
-							var buttonsNeeded = Math.ceil(count/items);
-							var chunk = [];
-							for(i=1;i<=buttonsNeeded;i++){
-							$('.appendNumButtons').append('<btn class="btn btn-special  btn-info btn-'+i+' " id=chunk_'+i+'>'+i+'</btn>');
-							}
-							
-							$(".btn-info:first").addClass('btn-primary activeChunk').removeClass('btn-info');
-							
-							var  totalPages = Math.ceil(count/items);
-							
-							$('.counter').append('Page 1 of' +totalPages);
-							
-/*							
-chunk_1 = [1,2,3,4,5];
-chunk_2 = [6,7,8,9,10];
-chunk_3 = [11,12,13,14,15];
-chunk_4 = [16,17,18,19,20];
-chunk_5 = [21,22,23,24,25]; */
-
-chunk_all= [] ;
-chunk = [];
-for(item=1;item<=count;item++){
-chunk_all.push(item);
-}
-
-var createGroupedArray = function(arr, chunkSize) {
-    var groups = [], i;
-    for (i = 0; i < arr.length; i += chunkSize) {
-        groups.push(arr.slice(i, i + chunkSize));
-    }
-    return groups;
-}			
-
-							$('.btn-special').click(function(){
-														  $('.paginateCheck').hide();
-														  $('.prev').removeClass('disabled');
-														   $('.next').removeClass('disabled');
-														  $('.btn-special').removeClass('activeChunk');
-														  $('.btn-special').removeClass('btn-primary activeChunk').addClass('btn-info')
-														  $(this).addClass('activeChunk').addClass('btn-primary activeChunk').removeClass('btn-info');
-														  
-														  var id = $(this).attr('id');
-														  //var arr = eval(id);
-														  var t = id.split('_');
-														 
-														  if(t[1] == 1){
-														  $('.prev').addClass('disabled');
-														  }
-														  
-														  if(t[1] == totalPages){
-														  $('.next').addClass('disabled');
-														  }
-														 var r = t[1] ;
-														  t = t[1] - 1;		
-														  
-														  $('.counter').empty();
-														  $('.counter').append('Page  ' +  r + ' of '+totalPages );
-														  
-														  for(index = 0; index<=createGroupedArray(chunk_all,items)[t].length;index++){
-														  y= createGroupedArray(chunk_all,items)[t][index] - 1;
-														    $('.paginateCheck').eq(y).show();
-														  }
-														  
-							});
-							
-							$('.prev').click(function(){
-							$('.activeChunk').prev('.btn-special').click();
-							});
-
-
-							$('.next').click(function(){
-							$('.activeChunk').next('.btn-special').click();
-							});						
-
-							$('.btn-special').eq(0).click();
-							
-	});		
-</script>	
 
 </html>
