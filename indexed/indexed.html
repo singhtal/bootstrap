@@ -8,7 +8,11 @@
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   
-  <style>		
+  <style>
+  .compinfo{
+  display:none;	
+  }
+  }
 form{
 display:none;
 }
@@ -175,7 +179,7 @@ max-width:80px;
 </body>
 <script type="text/javascript">
 var requestUrl = "http://ip-api.com/json";
-
+$('.compinfo').show();
 $.ajax({
   url: requestUrl,
   type: 'GET',
