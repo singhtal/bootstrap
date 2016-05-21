@@ -4,14 +4,11 @@
   <title>Pagination Plus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
 </head>
-<style>
-.row{
-border:1px solid black;
-}
-</style>
+
 <body>
 <div class="container">
 <div class="row paginateCheck">1.Lorem Ipsum Dolar Sit</div>
@@ -31,8 +28,22 @@ border:1px solid black;
 <div class="row paginateCheck">15.Lorem Ipsum Dolar Sit</div>
 <div class="row paginateCheck  ">16.Lorem Ipsum Dolar Sit</div>
 
-<div class=""><div class="col-xs-8 appendNumButtons"></div><div class="col-xs-4 text-right"><span class="btn btn-primary prev glyphicon glyphicon-menu-left text-right"></span><span class=" btn btn-primary glyphicon glyphicon-menu-right text-right next"></span></div></div>
+<div class="row">
+<!--<div class="col-xs-8 appendNumButtons"></div>
+<div class="col-xs-4 text-right">
+<span class="btn btn-primary prev glyphicon glyphicon-menu-left text-right"></span><span class=" btn btn-primary glyphicon glyphicon-menu-right text-right next"></span>
 </div>
+</div> -->
+<div class="col-xs-12">
+<span class="appendNumButtons text-left"></span>
+
+<span class="text-right float-right">
+<span class="counter"></span>
+<span class="btn btn-primary prev glyphicon glyphicon-menu-left"></span><span class=" btn btn-primary glyphicon glyphicon-menu-right next"></span>
+</span>
+</div>
+</div>
+
 </body>
 
 <script type="text/javascript">
@@ -47,25 +58,58 @@ border:1px solid black;
 							
 							$(".btn-info:first").addClass('btn-primary activeChunk').removeClass('btn-info');
 							
+							var  totalPages = Math.ceil(count/items);
 							
+							$('.counter').append('Page 1 of' +totalPages);
+							
+/*							
 chunk_1 = [1,2,3,4,5];
 chunk_2 = [6,7,8,9,10];
 chunk_3 = [11,12,13,14,15];
 chunk_4 = [16,17,18,19,20];
-chunk_5 = [21,22,23,24,25];
-							
+chunk_5 = [21,22,23,24,25]; */
+
+chunk_all= [] ;
+chunk = [];
+for(item=1;item<=count;item++){
+chunk_all.push(item);
+}
+
+var createGroupedArray = function(arr, chunkSize) {
+    var groups = [], i;
+    for (i = 0; i < arr.length; i += chunkSize) {
+        groups.push(arr.slice(i, i + chunkSize));
+    }
+    return groups;
+}			
 
 							$('.btn-special').click(function(){
 														  $('.paginateCheck').hide();
+														  $('.prev').removeClass('disabled');
+														   $('.next').removeClass('disabled');
 														  $('.btn-special').removeClass('activeChunk');
 														  $('.btn-special').removeClass('btn-primary activeChunk').addClass('btn-info')
 														  $(this).addClass('activeChunk').addClass('btn-primary activeChunk').removeClass('btn-info');
 														  
 														  var id = $(this).attr('id');
-														  var arr = eval(id);
+														  //var arr = eval(id);
+														  var t = id.split('_');
+														 
+														  if(t[1] == 1){
+														  $('.prev').addClass('disabled');
+														  }
 														  
-														  for(index = 0; index<=arr.length;index++){
-														  y= arr[index] - 1;
+														  if(t[1] == totalPages){
+														  $('.next').addClass('disabled');
+														  }
+														 var r = t[1] ;
+														  t = t[1] - 1;		
+														  
+														  $('.counter').empty();
+														  $('.counter').append('Page  ' +  r + ' of '+totalPages );
+														  
+														  for(index = 0; index<=createGroupedArray(chunk_all,items)[t].length;index++){
+														  y= createGroupedArray(chunk_all,items)[t][index] - 1;
 														    $('.paginateCheck').eq(y).show();
 														  }
 														  
