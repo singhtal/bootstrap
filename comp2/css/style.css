@@ -1,0 +1,10 @@
+.float-right{
+float:right !important;
+}
+.paginateCheck{
+border-bottom:1px solid blue;
+}
+.next:hover, .prev:hover{
+background:#5cb85c;
+border: 1px solid #5cb85c;
+}
