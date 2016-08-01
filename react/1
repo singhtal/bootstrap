@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <div id="greeting-div"></div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://fb.me/react-15.0.0.js"></script>
+    <script src="https://fb.me/react-dom-15.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      var Greeting = React.createClass({
+        render: function() {
+          return (<div>
+		  <nav className="navbar navbar-inverse navbar-color"><div className="container-fluid"><div className="navbar-header"><button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><span className="icon-bar"></span><span className="icon-bar"></span><span className="icon-bar"></span></button><a className="navbar-brand" href="#">Brand</a></div><div className="collapse navbar-collapse" id="myNavbar"><ul className="nav navbar-nav"><li className="active"><a href="#">Home</a></li></ul><ul className="nav navbar-nav navbar-right" id="edit" ><li className="" onClick={this.editThis.bind(this,'edit')}><a href="#"><span className="editNavBar glyphicon glyphicon-pencil">edit</span></a></li></ul></div></div>
+		  </nav>
+		  <div className="panel-group"><div className="panel panel-default"><div className="panel-heading"><h4 className="panel-title"><a data-toggle="collapse" href="#collapse1">Edit Navbar</a></h4></div>
+		  <div id="collapse1" className="panel-collapse collapse">
+		  <ul className="list-group">
+		  <li className="list-group-item" id="list-group-item">Background: <input id="nav-all-color" type="color" onChange={this.navtotalcolorchange.bind(this,'nav-all-color')}></input></li>
+		  <li className="list-group-item">Two</li>
+		  <li className="list-group-item">Three</li>
+		  </ul>
+		  <div className="panel-footer">Footer</div>
+		  </div></div></div></div>)},
+		editThis: function(){
+		$('.panel-title a').click();
+		},
+		blurThis: function(){
+		document.getElementById('myInput').disabled = true;
+		},
+		navtotalcolorchange: function(){
+		$('.navbar-color').css({'background':$('#nav-all-color').val()});
+		}  
+		
+      });
+
+      ReactDOM.render(
+        <Greeting/>,
+        document.getElementById('greeting-div')
+      );
+    </script>
+  </body>
+</html>
