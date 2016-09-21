@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+	
+	for(k=0; k<=27 ; k++){
+    $('body').append('<canvas class="mycanvas" width="200" height="200" >');
+	}
+	
+	$('.mycanvas').each(function(){
+	  var canvas = $(this).get(0);
+    var ctx = canvas.getContext('2d');
+    ctx.translate(100,100);
+    for (i=1; i<7; i++){
+       //ctx.save();
+       ctx.fillStyle = 'rgb('+(51*i)+','+(200-51*i)+',0)';
+       for (j=0; j < i*6; j++){
+          ctx.rotate(Math.PI*2/(i*6));
+          ctx.beginPath();
+          ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
+          ctx.fill();
+       }
+       ctx.restore();
+     }
+	 });
+	 
+	 $('body').show('500');
+	 
+	 
+	  var $elie = $(".mycanvas"), degree = 0, timer;
+    rotate();
+    function rotate() {
+        
+        $elie.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
+        $elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
+        timer = setTimeout(function() {
+            ++degree; rotate();
+        },5);
+    }
+    
+  rotate();
+	 
+	 
+  
+}
+</script>
+</head>
+<body onload="drawShape();" style="display:none">
+   <!--<canvas id="mycanvas" class="mycanvas " width="200" height="200" style="border:1px solid black"></canvas>-->
+</body>
+</html>
