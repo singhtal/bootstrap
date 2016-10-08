@@ -9,6 +9,9 @@
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   
   <style>
+  #facebook{
+  display:none;
+  }
   .compinfo{
   display:none;	
   }
@@ -105,7 +108,7 @@ max-width:80px;
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Me <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="meh"><div class="row"><div class="col-xs-6">Just another Developer</div><div class="col-xs-6 text-center"><img src="img/anon.png" class="img img-responsive define-max pull-left"></img></div></div></li>
+            <li class="meh"><div class="row"><div class="col-xs-6">Just another Developer</div><div class="col-xs-6 text-center"></div></div></li>
           </ul>
         </li>
 		
@@ -135,43 +138,47 @@ max-width:80px;
 				<div class="row giveMarginTop">
 				
 						<div class="col-xs-12 col-sm-6 comp1 gallery">
-								<img class="img img-responsive" src="img/comp1.png"></img>
+							<!--	<img class="img img-responsive" src="img/comp1.png"></img>
 								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Steps.js - Responsive Step Panel</div><div class="col-xs-1"></div></div>
 								<div class="row absolute hidden-xs hidden-sm">
 										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/indexed/steps.js/steps_preview.html">Live Preview</a></div></div>
 										<div class="col-xs-6 text-right"><div class="btn btn-info"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
 								</div>	
-								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>
+								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>  -->
+																<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html" width="100%" height="400px"  align="middle" onload="onLoadHandler();">
+								</iframe>
 						</div>
 						
 						<div class="col-xs-12 col-sm-6 comp2 gallery">
-								<img class="img img-responsive" src="img/2.png"></img>
+							<!--	<img class="img img-responsive" src="img/2.png"></img>
 								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Style.js - Responsive Step Panel</div><div class="col-xs-1"></div></div>
 								<div class="row absolute hidden-xs hidden-sm">
 										<div class="col-xs-6 text-left"><div class="btn btn-success">Live Preview</div></div>
 										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
 								</div>
-								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>
-					 </div>
+								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div> -->
+								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">
+								</iframe>
+					  </div>
 					 
 						<div class="col-xs-12 col-sm-6 comp3 gallery">
-								<img class="img img-responsive" src="img/comp1.png"></img>
+							<!--	<img class="img img-responsive" src="img/comp1.png"></img>
 								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Page.js - Responsive Step Panel</div><div class="col-xs-1"></div></div>
 								<div class="row absolute hidden-xs hidden-sm">
 										<div class="col-xs-6 text-left"><div class="btn btn-success">Live Preview</div></div>
 										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
 								</div>
-								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>
+								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div> -->
 						</div>
 						
 						<div class="col-xs-12 col-sm-6 comp4 gallery">
-								<img class="img img-responsive" src="img/comp1.png"></img>
+							<!--	<img class="img img-responsive" src="img/comp1.png"></img>
 								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Currency.js - Responsive Step Panel</div><div class="col-xs-1"></div></div>
 								<div class="row absolute hidden-xs hidden-sm">
 										<div class="col-xs-6 text-left"><div class="btn btn-success">Live Preview</div></div>
 										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
 								</div>
-								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>
+								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>  -->
 						</div>	
 						
 				</div>
@@ -179,6 +186,12 @@ max-width:80px;
 </body>
 <script type="text/javascript">
 $('.compinfo').show();
+
+function  onLoadHandler(){
+alert('');
+setTimeout(function(){ $('iframe').contents().find('#facebook').hide(); }, 3000);
+}
+
 var requestUrl = "http://ip-api.com/json";
 $.ajax({
   url: requestUrl,
