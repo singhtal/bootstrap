@@ -9,6 +9,131 @@
   <script src="https://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   
   <style>
+  .modal{
+  top:40%;
+  }
+  .ban-container
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  .banner
+{
+text-align:center;
+  position: relative;
+  padding: 10px 20px;
+  animation: loader 1s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
+}
+.modal-content{
+background:transparent;
+    box-shadow: none;
+    border: none;
+}
+.modal-header{
+border-bottom:0px solid white;
+}
+.modal-backdrop.in{
+opacity:0.9;
+background:black;
+}
+
+@keyframes loader
+{
+  0%
+  {
+    letter-spacing: -1px;
+  }
+  100%
+  {
+    letter-spacing: 15px;
+  }
+}
+
+.banner::before
+{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: skewX(-15deg);
+  background-color: #eee;
+}
+
+.banner-left, .banner-right
+{
+padding-top:8px;
+  width: 170px;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  bottom: -30%;
+  transform: skewX(-15deg);
+  background-color: #ccc;
+}
+
+.banner-left
+{
+  animation: sub-banner-left 1s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
+}
+
+@keyframes sub-banner-left
+{
+  0%
+  {
+    right: 82%;
+  }
+  100%
+  {
+    right: 90%;
+  }
+}
+
+.banner-right
+{
+  animation: sub-banner-right 1s cubic-bezier(0.5, 0.1, 0.15, 1) alternate infinite;
+}
+
+@keyframes sub-banner-right
+{
+  0%
+  {
+    left: 82%;
+  }
+  100%
+  {
+    left: 90%;
+  }
+}
+
+.banner-left::before, .banner-right::before
+{
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -1px;
+  border: 22px solid;
+  border-color: transparent;
+}
+
+.banner-left::before
+{
+  left: -1px;
+  border-left-color: black;
+  opacity:0.8;
+}
+
+.banner-right::before
+{
+  right: -1px;
+  border-right-color: black;
+  opacity:0.8;
+}
   #facebook{
   display:none;
   }
@@ -94,6 +219,7 @@ max-width:80px;
 </head>
 <body>
 
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -138,6 +264,30 @@ max-width:80px;
 </nav>
 
 		<div class="container-fluid">
+	
+	  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+	  <div class="ban-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+	 <div class="banner">
+    LOADING
+	<div class="banner-left">Jquery</div>
+    <div class="banner-right">Plus</div>
+	</div>
+        </div>
+      </div>
+	  </div>
+      
+    </div>
+  </div>
+	
+	
 				<div class="row giveMarginTop">
 				
 						<div class="col-xs-12 col-sm-6 comp1 gallery">
@@ -191,9 +341,13 @@ max-width:80px;
 $('.compinfo').show();
 
 function  onLoadHandler(){
-setTimeout(function(){ $("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 150 ); }, 3000);
+setTimeout(function(){ $("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 170 );  $("iframe").css('overflow','hidden')}; $('#myModal').modal('hide');, 3000);
 }
 
+ 
+        $('#myModal').modal('show');
+
+	
 var requestUrl = "http://ip-api.com/json";
 $.ajax({
   url: requestUrl,
