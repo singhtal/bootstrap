@@ -12,6 +12,9 @@
   #facebook{
   display:none;
   }
+  .fb-page{
+  display:none;
+  }
   .compinfo{
   display:none;	
   }
@@ -145,7 +148,7 @@ max-width:80px;
 										<div class="col-xs-6 text-right"><div class="btn btn-info"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
 								</div>	
 								<div class="visible-xs visible-sm row mobile-preview"><div class="col-xs-12 btn btn-warning">Live Preview</div></div>  -->
-																<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html" width="100%" height="400px"  align="middle" onload="onLoadHandler();">
+																<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();">
 								</iframe>
 						</div>
 						
@@ -188,9 +191,9 @@ max-width:80px;
 $('.compinfo').show();
 
 function  onLoadHandler(){
-alert('');
-setTimeout(function(){ $('iframe').contents().find('#facebook').hide(); }, 3000);
+setTimeout(function(){ $('.fb-page').hide() }, 3000);
 }
+$("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 100 );
 
 var requestUrl = "http://ip-api.com/json";
 $.ajax({
