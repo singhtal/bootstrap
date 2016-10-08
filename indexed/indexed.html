@@ -21,7 +21,7 @@
   }
 form{
 display:none;
-} 
+}
 div.gallery{
 border:1px solid #3333cc;
 }	
@@ -191,9 +191,8 @@ max-width:80px;
 $('.compinfo').show();
 
 function  onLoadHandler(){
-setTimeout(function(){ $('.fb-page').hide() }, 3000);
+setTimeout(function(){ $("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 150 ); }, 3000);
 }
-$("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 100 );
 
 var requestUrl = "http://ip-api.com/json";
 $.ajax({
