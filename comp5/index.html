@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Office Work</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+  <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp5/css/style.css">
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container myContainer">
+
+			<!-- 3 selectable tabs -->
+            <ul class="nav nav-tabs" id="myTab">
+			  <li class="active" id="med"><a data-target="#Medical" data-toggle="tab" id="meda"><center>Tab A</center></a></li>
+			  <li id="den"><a data-target="#Dental" data-toggle="tab" id="dena"><center>Tab B</center></a></li>
+			  <li id="pre"><a data-target="#Prescription" data-toggle="tab" id="prea" ><center>Tab C</center></a></li>
+			</ul>
+			<!-- selectable tabs ends -->
+
+			<!-- complete container -->
+			<div class="tab-content container-tab">
+			
+			<!-- complete medical structure -->
+			  <div class="tab-pane active" id="Medical">
+							<div class="row no-marg">
+									
+											<div class=" col-xs-4 col-md-4 text-left">
+											<div class="row">
+											<div class="col-xs-12"> Dropdown A </div>
+											<select class="dropdown col-xs-12" id="medical_1">
+													<option value="" selected>Option 1</option>
+											</select>
+											</div>
+											</div>
+
+											<div class="col-xs-4 col-md-4 text-left medical_2_margin">
+											<div class="row">
+											<div class="col-xs-6">Dropdown B</div>
+											<select class="dropdown col-xs-12" id="medical_2">
+													<option value="" selected>Option B</option>
+											</select>
+											</div>
+											</div>
+
+							</div>
+							<!-- will be done dynamically by api call  and data table will be appended dynamically-->
+							<div class="internal_tab">
+									          <ul class="nav nav-tabs container-tab_2" id="myTab_2">
+													<li class="active" id="Inn"><a data-target="#InNetwork" data-toggle="tab"><center>Tab D</center></a></li>
+													<li id="Out"><a data-target="#OutNetwork" data-toggle="tab"><center>Tab E</center></a></li>
+													<li class="pull-right right-msg">Your Message</li>
+												</ul>		
+											
+											<!-- internal (in and outnetwork tabs content for medical) -->
+												<div class="tab-content container-tab">
+												<!-- innetwork for medical -->
+												<div class="tab-pane active" id="InNetwork">
+												<p>The Hint Message</p>
+												
+												<div class="table1_container">
+												<table class="table">
+													<thead>
+													<span class="bold "><span class="append_med_dd2"></span>   Table 1</span>
+													<tr >
+													<th >Plan A </th>
+													<th>Plan B</th>
+													<th>Plan C</th>
+													<th>Plan D</th>
+													<th></th>
+													</tr>	
+													</thead>
+													<tbody>
+													<tr class="">
+													<td>Office</td>
+													<td>Direct Access</td>
+													<td>Family</td>
+													<td>No</td>
+													<td><span class="glyphicon glyphicon-list-alt" data-toggle="popover"  data-content="Note1" data-placement="top"></span></td>
+													</tr>
+													<tr class="">
+													<td>Office</td>
+													<td>Direct Access</td>
+													<td>Family</td>
+													<td>No</td>
+													<td><span class="glyphicon glyphicon-list-alt" data-toggle="popover"  data-content="Note" data-placement="top"></span></td>
+													</tr>	
+													<tr class="">
+													<td>Office</td>
+													<td>Direct Access</td>
+													<td>Family</td>
+													<td>No</td>
+													<td><span class="glyphicon glyphicon-list-alt" data-toggle="popover"  data-content="Note2" data-placement="top"></span></td>
+													</tr>	
+													<tr class="">
+													<td>Office</td>
+													<td>Direct Access</td>
+													<td>Family</td>
+													<td>No</td>
+													<td><span class="glyphicon glyphicon-list-alt" data-toggle="popover"  data-content="Note1" data-placement="top" data-original-title><a href="#" title="xxx"></span></td>
+													</tr>														
+													</tbody>
+												</table>
+												</div>
+																						
+												
+												</div>
+												<!-- innetwork for medical ends -->
+												
+												<!-- outnetwork for medical-->
+												<div class="tab-pane" id="OutNetwork">Other Tab</div>
+												<!-- outnetwork for medical ends-->
+												
+												</div>
+												<!-- internal (in and outnetwork tabs for medical) -->
+																							
+							</div>	
+							<!-- will be done dynamically by api call -->
+
+			  </div>
+			  <!-- medical structure ends -->
+			  
+			  <!-- complete dental structure -->
+			  <div class="tab-pane" id="Dental">
+			  							<div class="row">
+									<div class="col-xs-12">Select Category</div>
+									<div class="col-xs-12">
+											<select class="dropdown" id="dental_1">
+													<option value="" selected>Option @123</option>
+											</select>
+									</div>
+							</div>
+			  
+			  </div>
+			  <!-- dental structure ends -->
+			  
+			  <!-- prescription tab -->
+			  <div class="tab-pane" id="Prescription">						
+						Third Tab
+			  </div>
+			  <!-- prescription ends -->
+			  
+			</div>
+			<!-- main tab container ends -->
+			
+</div>
+<!-- main container ends -->
+
+</body>
+<script type="text/javascript">
+$(function () {
+// hard coded obj
+var data = {
+    'Category': "MDP",
+    'A_Therapy': ["A1","A2","A3"], 
+    'B_Therapy': ["B1","B2","B3"], 
+    'C Therapy': ["C1","C2","C3"]
+}; 
+
+//hard coded data
+var dental = [
+'A_Tooth',
+'B_Tooth',
+'C_Tooth'
+];
+
+var count = "3";
+
+$('#med').hide();
+
+var medicalIndicator = 'Y';
+var dentalIndicator = 'Y';
+var prescriptionIndicator = 'Y';
+
+if(medicalIndicator == 'Y'){
+$('#med').addClass('tab_available');
+}
+if(dentalIndicator == 'Y'){
+$('#den').addClass('tab_available');
+}
+if(prescriptionIndicator == 'Y'){
+$('#pre').addClass('tab_available');
+}
+
+if(count ==  "3"){
+$('.tab_available:lt(3)').show();
+}
+if(count ==  "2"){
+$('.tab_available:lt(2)').show();
+}
+if(count ==  "1"){
+$('.tab_available:lt(1)').show();
+}
+	
+	var defaultTab = "M";
+	
+	if(defaultTab.indexOf('M') > -1){
+	$('#meda').click();
+	}
+		if(defaultTab.indexOf('D') > -1){
+	$('#dena').click();
+	}
+		if(defaultTab.indexOf('P') > -1){
+	$('#prea').click();
+	}
+	
+	
+	
+	
+	//getting main keys for first dropdown
+	var array_of_keys = Object.keys(data);
+	
+	//removing category from dropdown
+	array_of_keys.splice(0,1);
+	
+	//populate 1st medical dropdown from array
+var option = '';
+for (var i=0;i<array_of_keys.length;i++){
+   option += '<option value="'+ array_of_keys[i] + '">' + array_of_keys[i] + '</option>';
+}
+$('#medical_1').append(option);
+
+$(document).on('change','#medical_1',function(){
+//$('#medical_2').val($('#medical_2 option:first').val());
+//$('.internal_tab').hide();
+var myv = $(this).val();
+myv = myv.replace(/\s/g, "");
+$('.'+myv).hide();
+$('#medical_1 option').hide();
+if($(this).val() != '') {	
+$('.medical_2_margin').addClass('medical_2_display');
+
+	//populate 2nd medical dropdown from array
+var option = '';
+var fetch = $('#medical_1').val();
+
+// fetch data for 2nd dropdown dynamically
+var array_medical_2 = data[fetch];
+
+//remove all option from 2nd dd except 1st
+$('#medical_2').find('option').not(':first').remove();
+
+for (var i=0;i<array_medical_2.length;i++){
+   option += '<option value="'+ array_medical_2[i] + '">' + array_medical_2[i] + '</option>';
+}
+$('#medical_2').append(option);
+
+}
+else  {	$('.medical_2_margin').removeClass('medical_2_display'); }
+});
+
+
+$(document).on('change','#medical_2',function(){
+$('.append_med_dd2').text($(this).val());
+sessionStorage.setItem('category','medical');
+var med1_selected = $('#medical_1').find(":selected").index();
+var med2_selected = $('#medical_2').find(":selected").index();
+sessionStorage.setItem('med1_selected',med1_selected);
+sessionStorage.setItem('med2_selected',med2_selected);
+//window.location.reload();
+
+if(! $(this).val() == ''){
+//$('.internal_tab').show();
+}
+else { //$('.internal_tab').hide();  
+}
+
+});
+    	
+		
+	//populate 1st dental dropdown from array
+var option = '';
+for (var i=0;i<dental.length;i++){
+   option += '<option value="'+ dental[i] + '">' + dental[i] + '</option>';
+}
+$('#dental_1').append(option);
+		
+		
+		
+		
+$('#dental_1').on('change',function(){
+sessionStorage.setItem('category','dental');
+var den_selected = $('#dental_1').find(":selected").index();
+sessionStorage.setItem('den_selected',den_selected);
+//window.location.reload();
+if(! $(this).val() == ''){
+//$('.internal_tab').show();
+}
+else { //$('.internal_tab').hide();  
+}
+
+});	
+
+$('#Prescription').on('change',function(){
+sessionStorage.setItem('category','prescription');
+});
+	
+/*	
+if(sessionStorage.getItem('category') == 'dental' ){
+    $('#dena').click();
+	den_selected = sessionStorage.getItem('den_selected');
+	$('#dental_1').prop('selectedIndex', den_selected);
+	}
+else if(sessionStorage.getItem('category') == 'prescription' )	{
+    $('#prea').click();
+}
+else { 
+	$('#meda').click();
+	med1_selected = sessionStorage.getItem('med1_selected');
+	med2_selected = sessionStorage.getItem('med2_selected');
+	$('#medical_1').prop('selectedIndex', med1_selected).trigger('change');
+	//$('#medical_2').addClass('medical_2_display');
+	$('#medical_2').prop('selectedIndex', med2_selected);
+} */
+	
+	$('[data-toggle="popover"]').popover();   
+		
+});
+</script>
+</html>
