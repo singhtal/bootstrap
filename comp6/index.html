@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ClockPicker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
+  <style>
+  #main_clock{
+ // display:none;
+  position:absolute;
+  height:240px;
+  width:250px;
+  border:1px solid #e1e1e1;
+  border-radius:100px 100px 100px 100px;
+  box-shadow:0px 10px 5px 1px lightgray;
+  padding:20px;
+  }
+  #d1, #d3{
+  text-align:center;
+  }
+  .inline{
+  display:inline-block;
+  padding:5px;
+  }
+  .sec{
+  font-size:12px;
+  color:#666666;
+  border-radius: 20px;  
+  }
+  .sec:hover{
+    background: lightgray;
+	cursor:pointer;
+  }
+  .min{
+  font-size:14px;
+  color:#000000;
+  padding: 3px;
+  cursor:pointer;
+  border-radius: 13px;
+  }
+  .min:hover{
+    background: lightgray;
+  }
+  .d2_left{
+  float:left;
+  }
+  .d2_right{
+  float:right;
+  }
+  #d2{
+  overflow:auto;
+  padding-top:5px;
+  padding-bottom:5px;
+  }
+  .d2_middle{
+  padding-top:35px;
+  height:100px;
+  width:75px;
+  position:absolute;
+  top:30%;
+  left:37%;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<label for="pickTime">Select Time</label>
+<input type="text" id="pickTime" class="pickTime"><span id="hr"></span><span id="min"></span></input>
+<!--
+<div id="main_clock">
+	<div id="d1">
+		<div class="d1_col1 inline">
+			<div class="sec" id="sec_55">55</div>
+			<div class="min" id="min_11">11</div>
+		</div>
+		<div class="d1_col2 inline">
+			<div class="sec" id="sec_00">00</div>
+			<div class="min" id="min_12">12</div>
+		</div>	
+		<div class="d1_col3 inline">
+			<div class="sec" id="sec_05">05</div>
+			<div class="min" id="min_1">01</div>
+		</div>			
+	</div>
+	
+	<div id="d2">	
+	<div class="d2_left">
+		<div class="d2_col1 ">
+			<div class="sec inline" id="sec_55">50</div>
+			<div class="min inline" id="min_10">10</div>
+		</div>
+		<div class="d2_col2 ">
+			<div class="sec inline" id="sec_45">45</div>
+			<div class="min inline" id="min_9">09</div>
+		</div>
+		<div class="d2_col2 ">
+			<div class="sec inline" id="sec_40">40</div>
+			<div class="min inline" id="min_8">08</div>
+		</div>	
+	</div>
+	
+	<div class="d2_middle">
+	.
+	</div>
+	
+	<div class="d2_right">
+		<div class="d2_col1 ">
+			<div class="min inline" id="min_02">02</div>
+			<div class="sec inline" id="sec_10">10</div>
+		</div>
+		<div class="d2_col2 ">
+			<div class="min inline" id="min_03">03</div>
+			<div class="sec inline" id="sec_15">15</div>
+		</div>
+		<div class="d2_col2 ">
+			<div class="min inline" id="min_04">04</div>
+			<div class="sec inline" id="sec_20">20</div>
+		</div>	
+	</div>		
+	</div>
+
+	<div id="d3">
+		<div class="d1_col1 inline">
+			<div class="min" id="min_07">07</div>
+			<div class="sec" id="sec_35">35</div>
+		</div>
+		<div class="d1_col2 inline">
+			<div class="min" id="min_06">06</div>
+			<div class="sec" id="sec_30">30</div>
+		</div>	
+		<div class="d1_col3 inline">
+			<div class="min" id="min_05">05</div>
+			<div class="sec" id="sec_25">25</div>
+		</div>			
+	</div>	
+	
+</div>
+-->
+
+
+</div>
+</body>
+<script>
+$(document).ready(function(){
+$('.pickTime').after('<div id="main_clock"><div id="d1"><div class="d1_col1 inline"><div class="sec" id="sec_55">55</div><div class="min" id="min_11">11</div></div><div class="d1_col2 inline"><div class="sec" id="sec_00">00</div><div class="min" id="min_12">12</div></div>	<div class="d1_col3 inline"><div class="sec" id="sec_05">05</div><div class="min" id="min_1">01</div></div>			</div><div id="d2">	<div class="d2_left"><div class="d2_col1 "><div class="sec inline" id="sec_55">50</div><div class="min inline" id="min_10">10</div></div><div class="d2_col2 "><div class="sec inline" id="sec_45">45</div><div class="min inline" id="min_9">09</div></div><div class="d2_col2 "><div class="sec inline" id="sec_40">40</div><div class="min inline" id="min_8">08</div></div>	</div><div class="d2_middle" id="d2_middle"><div class="btn btn-sm btn-info"   style="display:inline"><span class="btn-am">A.M</span><span class="btn-pm" style="display:none">P.M</span> </div>  <span class="am-pm btn btn-link glyphicon glyphicon-refresh" style="display:inline"></span></div><div class="d2_right"><div class="d2_col1 "><div class="min inline" id="min_02">02</div><div class="sec inline" id="sec_10">10</div></div><div class="d2_col2 "><div class="min inline" id="min_03">03</div><div class="sec inline" id="sec_15">15</div></div><div class="d2_col2 "><div class="min inline" id="min_04">04</div><div class="sec inline" id="sec_20">20</div></div>	</div>		</div><div id="d3"><div class="d1_col1 inline"><div class="min" id="min_07">07</div><div class="sec" id="sec_35">35</div></div><div class="d1_col2 inline"><div class="min" id="min_06">06</div><div class="sec" id="sec_30">30</div></div>	<div class="d1_col3 inline"><div class="min" id="min_05">05</div><div class="sec" id="sec_25">25</div></div></div>	</div>');
+
+$('.pickTime').click(function(){
+$('#main_clock').toggle();
+});
+
+$('.am-pm').click(function(){
+$('.btn-am').toggle();
+$('.btn-pm').toggle();
+var am_pm = $('#pickTime').val().split(':');
+var t = am_pm[2];
+if(t == ' A.M'){
+$('#pickTime').val(am_pm[0]+':'+am_pm[1]+': P.M');
+}
+else{
+$('#pickTime').val(am_pm[0]+':'+am_pm[1]+': A.M');
+}
+});
+$('#pickTime').val('09:30: A.M');
+
+
+$('.sec').click(function(){
+$('.sec').css('background','white');
+$('.sec').css('color','#666666');
+
+$(this).css('background','#31b0d5');
+$(this).css('color','white')
+
+var id=$(this).attr('id');
+var m = id.split('_');
+id=m[1];
+var oldVal = $('#pickTime').val();
+var oldSplit = oldVal.split(':');
+var oldHr = oldSplit[0];
+var oldMin = oldSplit[1];
+var newMin = id ;
+$('#pickTime').val(oldHr+':'+newMin+': A.M');
+
+});
+
+$('.min').click(function(){
+$('.min').css('background','white');
+$('.min').css('color','#000000');
+
+$(this).css('background','#337ab7');
+$(this).css('color','white')
+var id=$(this).attr('id');
+var m = id.split('_');
+id=m[1];
+var oldVal = $('#pickTime').val();
+var oldSplit = oldVal.split(':');
+var oldHr = oldSplit[0];
+var oldMin = oldSplit[1];
+
+var newHr = id ;
+$('#pickTime').val(newHr+':'+oldMin+': A.M');
+});
+
+
+$('#min_9').trigger('click');
+$('#sec_30').click();
+
+
+
+
+
+});
+
+
+</script>
+</html>
