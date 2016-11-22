@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Material Design for Bootstrap</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
+
+  <!-- Mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Material Design fonts 
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+-->
+  <!-- Bootstrap Material Design -->
+  <link href="dist/css/bootstrap-material-design.css" rel="stylesheet">
+  <link href="dist/css/ripples.min.css" rel="stylesheet">
+  <link href="animate.css" rel="stylesheet">
+
+<style>
+.rightTick{
+position:absolute;
+right:10px;
+}
+.tab, .bread, .loading{
+visibility:hidden;
+}
+.progress{
+display:none;
+height:25px;
+}
+</style>
+</head>
+<body>
+
+<div class="">
+<div class="btn-group-vertical btn-block pag">
+				<center><h2>Pagination</h2></center>
+            <a href="javascript:void(0)" class="btn btn-raised btn-primary">Table and List View difference<div class="ripple-container"></div></a>
+            <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Slimtable Usage<div class="ripple-container"></div></a>
+            <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Slimtable Buttons and Left Right Buttons<div class="ripple-container"></div></a>
+			   <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Logic for Button Click<div class="ripple-container"></div></a>
+			   
+            <a href="javascript:void(0)" class="btn btn-raised  btn-primary">List View for Mobile<div class="ripple-container"></div></a>
+			    <a href="javascript:void(0)" class="btn btn-raised  btn-primary">New Plugin for Mobile Pagination<div class="ripple-container"></div></a>
+				 <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Complete Version on Github<div class="ripple-container"></div></a>
+				 <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Chunks Concept<div class="ripple-container"></div></a>
+				<a href="javascript:void(0)" class="btn btn-raised  btn-primary">Left-Right Buttons Click<div class="ripple-container"></div></a>
+				
+			    <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Disabled and Hover State<div class="ripple-container"></div></a>
+				<a href="javascript:void(0)" class="btn btn-raised  btn-primary rolloutPag">Types of Color Input anf their use<div class="ripple-container"></div></a>
+</div>
+
+<div class="btn-group-vertical btn-block tab">
+				<center><h2>Tab</h2></center>
+            <a href="" class="btn btn-raised btn-success">Standard Bootstrap Feature<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-success">Custom CSS changes<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-success">li Vs a, concept of active tab<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-success">Border-top & Tab-Content <div class="ripple-container"></div></a>
+ 			  <a href="javascript:void(0)" class="btn btn-raised btn-success rolloutTab">When to Use overflow auto<div class="ripple-container"></div></a>
+</div>
+
+<div class="btn-group-vertical btn-block bread">
+				<center><h2>Mobile BreadCrumb</h2></center>
+            <a href="" class="btn btn-raised btn-info">Need<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-info">Breakpoint<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-info">Div Structure<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-info">Hide-Show Logic <div class="ripple-container"></div></a>
+ 			  <a href="javascript:void(0)" class="btn btn-raised btn-info rollOutBread">Click functionality<div class="ripple-container"></div></a>
+</div>
+
+<div class="btn-group-vertical btn-block loading">
+				<center><h2>Loading Modal</h2></center>
+            <a href="" class="btn btn-raised btn-warning">Its a Modal<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-warning">Only used on Few pages<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-warning">Background-color and opacity<div class="ripple-container"></div></a>
+			  <a href="javascript:void(0)" class="btn btn-raised btn-warning">Hiding modal backdrop color coming from base.css  <div class="ripple-container"></div></a>
+ 			  <a href="javascript:void(0)" class="btn btn-raised btn-warning rollOutLoading">Workaround<div class="ripple-container"></div></a>
+</div>
+
+
+<div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 100%">Complete</div>
+</div>
+
+</div>
+
+</body>
+<script type="text/javascript">
+$('.pag>.btn').click(function(){
+//$(this).find('.rightTick').remove();
+$(this).addClass('pulse animated disabled');
+$(this).append('<span class="rightTick">&#10004;</span>');
+});
+
+$('.rolloutPag').click(function(e){
+    /*$('html, body').animate({
+        scrollTop: $(".tab").offset().top
+    }, 2000); */
+$('.tab').addClass('flip animated ');
+$('.pag').hide();
+$('.tab').css('visibility','visible');
+e.preventDefault();
+});
+
+$('.tab>.btn').click(function(e){
+$(this).addClass('pulse animated disabled');
+$(this).append('<span class="rightTick">&#10004;</span>');
+e.preventDefault();
+});
+
+$('.rolloutTab').click(function(e){
+$('.tab').addClass('fadeOut animated ');
+    $('html, body').animate({
+        scrollTop: $(".tab").offset().top
+    }, 2000); 
+$('.bread').addClass('flip animated ');
+$('.tab').hide();
+$('.bread').css('visibility','visible');
+e.preventDefault();
+});
+
+$('.bread>.btn').click(function(e){
+$(this).addClass('pulse animated disabled');
+$(this).append('<span class="rightTick">&#10004;</span>');
+e.preventDefault();
+});
+
+$('.rollOutBread').click(function(e){
+$('.bread').addClass('fadeOut animated ');
+    $('html, body').animate({
+        scrollTop: $(".tab").offset().top
+    }, 2000); 
+$('.loading').addClass('flip animated ');
+$('.bread').hide();
+$('.loading').css('visibility','visible');
+e.preventDefault();
+});
+
+$('.loading>.btn').click(function(e){
+$(this).addClass('pulse animated disabled');
+$(this).append('<span class="rightTick">&#10004;</span>');
+e.preventDefault();
+});
+
+$('.rollOutLoading').click(function(){
+$('.progress').show();
+});
+
+</script>
+</html>
+
