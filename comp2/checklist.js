@@ -15,8 +15,8 @@ $('#'+ddId+'>option').each(function() {
 makeDD(ddId);
 }
 
-
-function makeDD(ddId){
+ 
+function makeDD(ddId){ 
 dd = $('#'+ddId+'>option').length;
 for(i=1; i<=dd;i++){
 var tx = optionTextArray[i-1];
