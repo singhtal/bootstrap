@@ -1,4 +1,4 @@
-
+<script type="text/javascript">
 $(document).ready(function(){  
 
 function checkList(ddId){
@@ -49,4 +49,4 @@ $('input[name="selectedVal"]:checked').each(function() {
 });
 
 });
-
+</script>
