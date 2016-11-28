@@ -5,8 +5,8 @@ var optionValueArray = [];
 function checkList(ddId){
 $('#'+ddId).after('<div class="dropdown" style=" margin-top:30px"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select<span class="caret"></span></button><ul class="dropdown-menu" style="width:350px"></ul></div>');
 
-var optionTextArray = [];
-var optionValueArray = [];
+optionTextArray = [];
+optionValueArray = [];
 
 var appendDD = $('#'+ddId+'>option').length;
 
