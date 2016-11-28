@@ -2,7 +2,7 @@
 var optionTextArray = [];
 var optionValueArray = [];
 
-function checkList(ddId){
+function checkList(ddId){ 
 $('#'+ddId).after('<div class="dropdown" style=""><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select &nbsp <span class="caret"></span></button><ul class="dropdown-menu" style="width:350px"></ul></div>');
 
 optionTextArray = [];
