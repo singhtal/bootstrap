@@ -1,5 +1,3 @@
-<script type="text/javascript">
-$(document).ready(function(){  
 
 function checkList(ddId){
 $('#'+ddId).after('<div class="dropdown" style=" margin-top:30px"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select<span class="caret"></span></button><ul class="dropdown-menu" style="width:350px"></ul></div>');
@@ -36,7 +34,7 @@ var arrayofDropdown = [] ;
 $('input[name="selectedVal"]:checked').each(function() {
    arrayofDropdown.push(this.value);
 });
-
+console.log(arrayofDropdown);
 e.stopPropagation();
 });
 
@@ -45,8 +43,7 @@ arrayofDropdown = [];
 $('input[name="selectedVal"]:checked').each(function() {
    arrayofDropdown.push(this.value);
 });
-
+console.log(arrayofDropdown);
 });
 
-});
-</script>
+
