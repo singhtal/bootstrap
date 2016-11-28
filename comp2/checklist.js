@@ -28,7 +28,8 @@ var url = optionValueArray[i-1];
 
 $('.dropdown-menu').append('<li class="ddli"><div style="display:table-cell"><input type="checkbox" name="selectedVal" class="selectedVal" value='+url+'></input></div><div style="width:100%; display:table-cell" class="ddli2span"><span>'+tx+'</span></li></div>');
 }
-
+$('#'+ddId).eq(0).remove();
+$('.dropdown-menu').append('<input type="text" id='+ddId+'></input>')
 }
 
 
