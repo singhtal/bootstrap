@@ -44,6 +44,6 @@ $('input[name="selectedVal"]:checked').each(function() {
    arrayofDropdown.push(this.value);
 });
 console.log(arrayofDropdown);
-});
+}); 
 
 
