@@ -48,6 +48,6 @@ $('input[name="selectedVal"]:checked').each(function() {
 
 });
 
-});
+}); 
 
 
