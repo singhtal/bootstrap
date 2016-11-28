@@ -14,7 +14,7 @@ $('#'+ddId+'>option').each(function() {
    optionTextArray.push(this.text);
    optionValueArray.push(this.value);
 });
-
+sessionStorage.setItem('ddId',ddId);
 makeDD(ddId);
 }  
 
@@ -38,6 +38,8 @@ var arrayofDropdown = [] ;
 $('input[name="selectedVal"]:checked').each(function() {
    arrayofDropdown.push(this.value);
 });
+var id = sessionStorage.getItem('ddId');
+$('#'+id).val(arrayofDropdown);
 
 e.stopPropagation();
 });
@@ -47,7 +49,8 @@ arrayofDropdown = [];
 $('input[name="selectedVal"]:checked').each(function() {
    arrayofDropdown.push(this.value);
 });
-
+var id = sessionStorage.getItem('ddId');
+$('#'+id).val(arrayofDropdown);
 });
 
 
