@@ -3,7 +3,7 @@ var optionTextArray = [];
 var optionValueArray = [];
 
 function checkList(ddId){
-$('#'+ddId).after('<div class="dropdown" style=" margin-top:30px"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select<span class="caret"></span></button><ul class="dropdown-menu" style="width:350px"></ul></div>');
+$('#'+ddId).after('<div class="dropdown" style=""><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select &nbsp <span class="caret"></span></button><ul class="dropdown-menu" style="width:350px"></ul></div>');
 
 optionTextArray = [];
 optionValueArray = [];
@@ -36,7 +36,9 @@ $('.dropdown-menu').append('<input type="hidden" id='+ddId+'></input>')
 $(document).on('click',".ddli2span",function(e) {
 $(this).parent().find('div').eq(0).find('.selectedVal').click();
 var arrayofDropdown = [] ;
+$('.ddli').css('background-color','white');
 $('input[name="selectedVal"]:checked').each(function() {
+	$(this).parent().css('background-color','#4285F4');
    arrayofDropdown.push(this.value);
 });
 var id = sessionStorage.getItem('ddId');
@@ -47,7 +49,9 @@ e.stopPropagation();
 
 $(document).on('click','.selectedVal',function(){
 arrayofDropdown = [];
+$('.ddli').css('background-color','white');
 $('input[name="selectedVal"]:checked').each(function() {
+	$(this).parent().css('background-color','#4285F4');
    arrayofDropdown.push(this.value);
 });
 var id = sessionStorage.getItem('ddId');
