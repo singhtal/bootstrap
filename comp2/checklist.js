@@ -12,11 +12,11 @@ $('#'+ddId+'>option').each(function() {
    optionValueArray.push(this.value);
 });
 
-makeDD();
+makeDD(ddId);
 }
 
 
-function makeDD(){
+function makeDD(ddId){
 dd = $('#'+ddId+'>option').length;
 for(i=1; i<=dd;i++){
 var tx = optionTextArray[i-1];
