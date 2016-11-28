@@ -38,7 +38,7 @@ $(this).parent().find('div').eq(0).find('.selectedVal').click();
 var arrayofDropdown = [] ;
 $('.ddli').css('background-color','white');
 $('input[name="selectedVal"]:checked').each(function() {
-	$(this).parent().css('background-color','#4285F4');
+	$(this).parent().parent().css('background-color','#4285F4');
    arrayofDropdown.push(this.value);
 });
 var id = sessionStorage.getItem('ddId');
@@ -51,7 +51,7 @@ $(document).on('click','.selectedVal',function(){
 arrayofDropdown = [];
 $('.ddli').css('background-color','white');
 $('input[name="selectedVal"]:checked').each(function() {
-	$(this).parent().css('background-color','#4285F4');
+	$(this).parent().parent().css('background-color','#4285F4');
    arrayofDropdown.push(this.value);
 });
 var id = sessionStorage.getItem('ddId');
@@ -61,4 +61,3 @@ $('#'+id).val(arrayofDropdown);
 
 
 
- 
