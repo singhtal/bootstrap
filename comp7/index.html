@@ -1,157 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>KT Session</title>
+  <title>CheckList</title>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
   <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
-
-  <!-- Mobile support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Material Design fonts 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
--->
-  <!-- Bootstrap Material Design -->
-  <link href="https://raw.githack.com/tal1992/bootstrap/master/comp2/design.css" rel="stylesheet">
-  <link href="https://raw.githack.com/tal1992/bootstrap/master/comp2/ripples.css" rel="stylesheet">
-  <link href="https://raw.githack.com/tal1992/bootstrap/master/comp2/animate.css" rel="stylesheet">
-
-<style>
-.rightTick{
-position:absolute;
-right:10px;
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/checklist.js"></script>
+  <style>
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+background:#f2f2f2;
 }
-.tab, .bread, .loading{
-visibility:hidden;
-}
-.progress{
-display:none;
-height:25px;
-}
-</style>
+  .dropdown-menu>li>a{
+  display:inline;
+  }
+  .dropdown-menu>li:hover{
+  background:#f2f2f2;
+  }
+  .dropdown-menu{
+  width:350px;
+  max-height:200px;
+  overflow:scroll;
+  }
+  .ddli2span>a{
+  color:#666666;
+  text-docoration:none;
+  }
+  .ddli{
+  cursor:pointer !important;
+  padding-top:3px;
+  padding-bottom:3px;
+  padding-left:5px;
+  }
+  .ddli:hover{
+   box-shadow:0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+  }
+  .ddli2span{
+  padding-left:15px;
+  }
+  </style>
 </head>
+
 <body>
 
-<div class="">
-<div class="btn-group-vertical btn-block pag">
-				<center><h2>Pagination</h2></center>
-            <a href="javascript:void(0)" class="btn btn-raised btn-primary">Table and List View difference<div class="ripple-container"></div></a>
-            <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Slimtable Usage<div class="ripple-container"></div></a>
-            <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Slimtable Buttons and Left Right Buttons<div class="ripple-container"></div></a>
-			   <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Logic for Button Click<div class="ripple-container"></div></a>
-			   
-            <a href="javascript:void(0)" class="btn btn-raised  btn-primary">List View for Mobile<div class="ripple-container"></div></a>
-			    <a href="javascript:void(0)" class="btn btn-raised  btn-primary">New Plugin for Mobile Pagination<div class="ripple-container"></div></a>
-				 <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Complete Version on Github<div class="ripple-container"></div></a>
-				 <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Chunks Concept<div class="ripple-container"></div></a>
-				<a href="javascript:void(0)" class="btn btn-raised  btn-primary">Left-Right Buttons Click<div class="ripple-container"></div></a>
-				
-			    <a href="javascript:void(0)" class="btn btn-raised  btn-primary">Disabled and Hover State<div class="ripple-container"></div></a>
-				<a href="javascript:void(0)" class="btn btn-raised  btn-primary rolloutPag">Types of Color Input anf their use<div class="ripple-container"></div></a>
-</div>
-
-<div class="btn-group-vertical btn-block tab">
-				<center><h2>Tab</h2></center>
-            <a href="" class="btn btn-raised btn-success">Standard Bootstrap Feature<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-success">Custom CSS changes<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-success">li Vs a, concept of active tab<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-success">Border-top & Tab-Content <div class="ripple-container"></div></a>
- 			  <a href="javascript:void(0)" class="btn btn-raised btn-success rolloutTab">When to Use overflow auto<div class="ripple-container"></div></a>
-</div>
-
-<div class="btn-group-vertical btn-block bread">
-				<center><h2>Mobile BreadCrumb</h2></center>
-            <a href="" class="btn btn-raised btn-info">Need<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-info">Breakpoint<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-info">Div Structure<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-info">Hide-Show Logic <div class="ripple-container"></div></a>
- 			  <a href="javascript:void(0)" class="btn btn-raised btn-info rollOutBread">Click functionality<div class="ripple-container"></div></a>
-</div>
-
-<div class="btn-group-vertical btn-block loading">
-				<center><h2>Loading Modal</h2></center>
-            <a href="" class="btn btn-raised btn-warning">Its a Modal<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-warning">Only used on Few pages<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-warning">Background-color and opacity<div class="ripple-container"></div></a>
-			  <a href="javascript:void(0)" class="btn btn-raised btn-warning">Hiding modal backdrop color coming from base.css  <div class="ripple-container"></div></a>
- 			  <a href="javascript:void(0)" class="btn btn-raised btn-warning rollOutLoading">Workaround<div class="ripple-container"></div></a>
-</div>
+ 
+<select id="makeItCheckList">
+<option value="val1">Text1</option> 
+<option value="val2">Text2</option>
+<option value="val3">Text3</option>
+<option value="val4">Text4</option>
+<option value="val5">Text5</option>
+<option value="val6">Text6</option>
+<option value="val7">Text7</option>
+<option value="val8">Text8</option>
+</select>
 
 
-<div class="progress">
-  <div class="progress-bar progress-bar-success progress-bar-striped" style="width: 100%">Complete</div>
-</div>
-
-</div>
 
 </body>
 <script type="text/javascript">
-$('.pag>.btn').click(function(){
-//$(this).find('.rightTick').remove();
-$(this).addClass('pulse animated disabled');
-$(this).append('<span class="rightTick">&#10004;</span>');
+$(document).ready(function(){
+checkList('makeItCheckList');
 });
-
-$('.rolloutPag').click(function(e){
-    /*$('html, body').animate({
-        scrollTop: $(".tab").offset().top
-    }, 2000); */
-$('.tab').addClass('flip animated ');
-$('.pag').hide();
-$('.tab').css('visibility','visible');
-e.preventDefault();
-});
-
-$('.tab>.btn').click(function(e){
-$(this).addClass('pulse animated disabled');
-$(this).append('<span class="rightTick">&#10004;</span>');
-e.preventDefault();
-});
-
-$('.rolloutTab').click(function(e){
-$('.tab').addClass('fadeOut animated ');
-    $('html, body').animate({
-        scrollTop: $(".tab").offset().top
-    }, 2000); 
-$('.bread').addClass('flip animated ');
-$('.tab').hide();
-$('.bread').css('visibility','visible');
-e.preventDefault();
-});
-
-$('.bread>.btn').click(function(e){
-$(this).addClass('pulse animated disabled');
-$(this).append('<span class="rightTick">&#10004;</span>');
-e.preventDefault();
-});
-
-$('.rollOutBread').click(function(e){
-$('.bread').addClass('fadeOut animated ');
-    $('html, body').animate({
-        scrollTop: $(".tab").offset().top
-    }, 2000); 
-$('.loading').addClass('flip animated ');
-$('.bread').hide();
-$('.loading').css('visibility','visible');
-e.preventDefault();
-});
-
-$('.loading>.btn').click(function(e){
-$(this).addClass('pulse animated disabled');
-$(this).append('<span class="rightTick">&#10004;</span>');
-e.preventDefault();
-});
-
-$('.rollOutLoading').click(function(){
-$('.progress').show();
-});
-
 </script>
 </html>
 
