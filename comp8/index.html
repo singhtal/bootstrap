@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CheckList</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp8/table.json"></script>
+  <style>
+  #myTable{
+  width:100%;
+  border:1px solid #e1e1e1;
+  }
+  #json_table_div{
+  margin-top:63px;
+    border:1px solid #e1e1e1;
+  }
+  #myTable>caption{
+  color:#000000;
+  font-size:16px;
+  padding-left:15px;
+  font-weight:bold;
+  }
+  .searchTable{
+  color:#666666;
+  font-size:14px;
+  padding-left:15px;
+  font-weight:normal;
+  }
+  #myTable tr{
+  border:1px solid #e1e1e1;
+  }
+  #myTable tr>td, #myTable tr>th{
+  border-right:1px solid #e1e1e1;
+  //text-align:center;
+  padding-left:15px;
+  }
+  #myTable>tbody>tr:hover{
+  background:gray
+  }
+
+  </style>
+  </head>
+  <body>
+  <div class="container">
+		<div id="showJSON" class="col-xs-6">
+		<h2>JSON</h2>
+		<textarea id="editJSON" style="height:300px; width:95%; line-height:30px"></textarea>
+		<div class="btn btn-large btn-primary run">Run <span class="glyphicon glyphicon-share-alt"></span></div>
+		</div>
+		<div id="json_table_div" class="col-xs-6"></div>
+  </div>
+  </body>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+  
+    $('.run').click(function(){
+	var tab = JSON.parse($('#editJSON').val())
+	makeTable(tab,'json_table_div');
+  });
+  
+  $('#editJSON').val(JSON.stringify(table));
+    $('.run').click();
+  
+  
+ function makeTable(table,append_table){
+ $('#myTable').remove();
+  var t = JSON.stringify(table);
+	$('#editJSON').val(t);
+	arr1 = table;
+	$('#'+append_table).append('<table id="myTable"><caption></caption><thead><tr></tr></thead><tbody></tdody></table>');
+
+for (var key1 in arr1){
+	$('#myTable>caption').text(key1);
+	$('#myTable>caption').append('<input class="searchTable" type="search" placeholder="Search Table"></input>');
+	for (var i = 0; i < arr1[key1].length; i++){
+	arr = arr1[key1];
+	$('#myTable>tbody').append('<tr id=id'+i+'></tr>');
+    var obj = arr[i];
+    for (var key in obj){
+        var attrName = key;
+        var attrValue = obj[key];
+	if(i==0){
+		$('#myTable>thead>tr').append('<th>'+attrName+'</th></tr>');
+	}
+	
+		$('#id'+i).append('<td>'+attrValue+'</td>');
+    }
+	
+
+}
+}
+
+$('.searchTable').on('input',function(){
+$('#myTable>tbody>tr').hide();
+var val = $('.searchTable').val().toLowerCase();
+
+	  $('#myTable>tbody>tr>td').each(function (i, row) { 	
+		var n = $(row).text().toLowerCase().startsWith(val);
+		if(n == true){
+		$(this).parent().show();
+		 }	 
+	  }); 
+});
+}
+
+  });
+  </script>
+</html>
+  
+  
