@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <style>
+	body{
+	background:#f7f7f7;
+	max-wudth:1200px;
+	}
+	.tiles{
+	display:none;
+	padding-left:15px;
+	padding-right:15px;
+	margin-top:15px;
+	margin-bottom:15px;
+	display:table;
+	}
+	.tiles>center{
+	cursor:pointer;
+	border:1px solid #f2f2f2;
+	height:200px;
+	margin:15px;
+	display:table-cell;
+	vertical-align:middle;
+	border-radius:10px;
+	background:white;
+	position:relative;
+	}
+
+	.tiles>center:hover{
+   // opacity:0.5;
+	z-index: 50;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 7px 17px 0 rgba(23,84,116,0.18);
+    border: solid 0.9px #f3f3f3;
+	color:#3498db;
+	}
+    .tiles>center>p>span{
+	font-size:50px;
+	}
+	
+	.glyphicon-file{
+	color:#339966;
+	}
+	.tile-text{
+	POSITION: ABSOLUTE;
+    BOTTOM: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+	padding-top:10px;
+	height:20%;
+	color:#00529b;
+	font-size:16px;
+	}
+	.glyphicon-hdd{
+	color:orange;
+	}
+	.glyphicon-piggy-bank{
+	color:green;
+	}
+	.glyphicon-credit-card{
+	color:#00529b;
+	}
+	.glyphicon-apple{
+	color:#ff6666;
+	}
+	.glyphicon-briefcase{
+	color:#9900cc;
+	}
+	.hover-effect{
+	display:none;
+	cursor:pointer;
+	position:absolute;
+	height:80%;
+	background:rgba(242, 242, 242,0.5);
+	z-index:100; 
+	margin-right:15px;
+	width:calc(100% - 30px);
+	}
+.hover-effect-mobile{
+	display:none;
+	cursor:pointer;
+	position:absolute;
+	height:80%;
+	background:rgba(242, 242, 242,0.5);
+	z-index:100; 
+	margin-right:15px;
+	width:calc(100% - 30px);
+}	
+	.mobile-btn-expand{
+	position:absolute;
+	z-index:150;
+	right:15px;
+	}
+	.mobile-btn-close:focus{
+	outline:0 !important;
+	}
+	.mobile-btn-close{
+	position:absolute;
+	right:0;
+	}
+	.for-mobile{
+	padding-left:10px;
+	padding-top:15px;
+	}
+	.nav-main{
+	height:50px;
+	background:#00529b;
+	border-radius:8px;
+	}
+	.navbar-brand>img{
+	max-width:110px;
+	}
+	.width-search{
+	width:240px;
+	}
+	.for-desktop{
+	padding-top:10px;
+	}
+	#autosearch{
+	visibility:hidden;
+	width:100%;
+	height:34px;
+	-webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+   transition: all 1s ease;
+	}
+	#searchLabel {
+    display: block;
+    width: 30px;
+    height: 60px;
+    background: url('http://callmenick.com/_development/expanding-search-bar/img/search.png') 0 0;
+    font-size: 0;
+    color: rgba(0, 0, 0, 0);
+    text-indent: -9999px;
+    cursor: pointer;
+}
+	.ui-menu-item{
+	background:#f8f8f8 !important;
+	z-index:500 !important;
+	}
+	.ui-autocomplete{
+		z-index:500 !important;
+	}
+	.menu-text{
+	font-size:16px;
+	padding-top:20px;
+	padding-bottom:10px;
+	}
+    .menu-box{
+	box-shadow:0px 1px 5px 2px;
+	font-size:16px;
+	display:none;
+	//height:200px;
+	border:1px solid #e1e1e1;
+	width:240px;
+	padding:20px;
+	position:absolute;
+	right:0;
+	z-index:10000;
+	background:white;
+	border-radius:30px 0px 30px 0px;
+	margin-top:15px;
+	padding-left:20px;
+	padding-right:10px;
+	}
+	.trg{
+	width: 35px;
+    height: 17px;
+	margin-top: -33px;
+    z-index: 999999;
+    margin-right: -10px;
+	opacity:0.2;
+	background:white;
+	}
+	#simg{
+	}
+	.go-right{
+	width:70px;
+	float:right;
+	cursor:pointer;
+	}
+	.navigation{
+	position: relative;
+    margin-top: 20px;
+	}
+	.flyDivs{
+	color:#666666;
+	padding-top:15px;
+	padding-right:10px;
+	display:block;
+	text-decoration:none !important;
+	}
+	.btn-link {
+	outline: none !important;
+	text-decoration:none !important;
+	}
+	.flyout-main-text{
+	padding-left:10px;
+	}
+	.hidden-before{
+	display:none;
+	}
+	.hidden-before>li>a{
+	//max-width:185px;
+	text-decoration:underline !important;
+	}
+	.flyout-plus{
+	float:right;
+	margin-top:-5px;
+	}
+	@media(max-width:991px){
+	.tile-text{
+		background:#f2f2f2;
+	}
+	.width-search{
+	width:100%;
+	}
+	}
+  </style>
+  </head>
+  <body>
+  <div class="container">
+  
+ <div class="top-header text-right" style="position:relative;">
+         <div class="menu-text">
+		 <div class="go-right">
+		 Menu <span class="glyphicon glyphicon-menu-hamburger"></span>
+		 </div>
+		 </div>    
+		 <div class="menu-box">
+		 <div class="" style="position:relative; text-align:left">
+			 <a href="#" class="home flyDivs"><span class="glyphicon glyphicon-home"></span>  <span class="flyout-main-text">HOME</span>
+			 </a>
+			 <a href="#" class="claims flyDivs"><span class="glyphicon glyphicon-file"></span> <span class="flyout-main-text">Claims </span>
+			 <button class="btn btn-link flyout-plus" data-open="claims-sub">&#x25BC; </button> 
+			 </a>
+			 <ul class="claims-sub hidden-before">
+					<li><a href="#">Claims Activity</a></li>
+					<li><a href="#">Claim Details</a></li>	
+					<li><a href="#">Claims SOP</a></li>								
+					<li><a href="#">Quarterly Summary</a></li>													
+			 </ul>
+			 <a href="#" class="myCoverage flyDivs"><span class="glyphicon glyphicon-hdd"></span><span class="flyout-main-text">My Coverage</span>
+			 <button class="btn btn-link flyout-plus" data-open="coverage-sub">&#x25BC; </button> 
+			 </a>
+			 <ul class="coverage-sub hidden-before">
+					<li><a href="#">Plan Summary</a></li>
+					<li><a href="#">Plan Details</a></li>	
+					<li><a href="#">Whats Covered</a></li>								
+					<li><a href="#">Authorization & Referrals</a></li>
+				   <li><a href="#">Update Additional Insurance</a></li>
+					<li><a href="#">Summary of Benefits</a></li>									   
+			 </ul>
+			 <a href="#" class="myAccount flyDivs"><span class="glyphicon glyphicon-piggy-bank"></span><span class="flyout-main-text">My Account</span>
+			 <button class="btn btn-link flyout-plus" data-open="account-sub">&#x25BC; </button> 
+			 </a>
+			  <ul class="account-sub hidden-before">
+					<li><a href="#">Premium Payment</a></li>
+					<li><a href="#">Out of Pocket Expenses</a></li>	
+					<li><a href="#">Health Savings Account</a></li>								
+					<li><a href="#">My Way Balance</a></li>													
+					<li><a href="#">Tax Documents</a></li>													
+			 </ul>
+			 <a href="#"class="idCard flyDivs"><span class="glyphicon glyphicon-credit-card"></span><span class="flyout-main-text">ID Card</span>
+			 <button class="btn btn-link flyout-plus" data-open="card-sub">&#x25BC; </button> 
+			 </a>
+			 <ul class="card-sub hidden-before">
+					<li><a href="#">ID Card</a></li>										
+			 </ul>
+			 <a href="#" class="wellness flyDivs"><span class="glyphicon glyphicon-apple"></span><span class="flyout-main-text">Wellness</span>
+			 <button class="btn btn-link flyout-plus" data-open="wellness-sub">&#x25BC; </button> 
+			 </a>
+			  <ul class="wellness-sub  hidden-before">
+					<li><a href="#">Wellness</a></li>												
+			 </ul>		 
+			 <a href="#" class="getCare flyDivs"><span class="glyphicon glyphicon-briefcase"></span><span class="flyout-main-text">Get Care</span>
+			 <button class="btn btn-link flyout-plus" data-open="care-sub">&#x25BC;</button> 
+			 </a>
+			 <ul class="care-sub  hidden-before">
+					<li><a href="#">Doctor & Hospital finder</a></li>
+					<li><a href="#">Consult a Doctor</a></li>	
+					<li><a href="#">Contact a Nurse</a></li>								
+					<li><a href="#">Pharmacy Services</a></li>				
+					<li><a href="#">Physician Review</a></li>
+					<li><a href="#">Change Doctor</a></li>					
+			 </ul>			 
+		 </div>	
+		 </div>
+ </div> 
+ 
+ <div class="navigation">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img class="img-responsive" src="https://www.horizonblue.com/themes/bootstrap_business/images/logo.png"></img></a>
+    </div>
+    <ul class="nav navbar-nav" style="padding-top:7px">
+      <li class="mob-hide hidden-xs"><a href="#">FAQ</a></li>
+      <li class="mob-hide hidden-xs"><a href="#" >LIVE CHAT</a></li>
+      <li class="mob-hide hidden-xs"><a href="#">CALL MEMBER SERVICES</a></li>
+	  <li class="mob-hide hidden-xs"><a href="#">MY MESSAGES</a></li>
+    </ul>
+	<ul class="nav navbar-nav navbar-right">
+	  <li><a href="#">
+	    <div class="input-group width-search">
+		<input type="text" id="autosearch" placeholder="Search Page"></input>
+        <div class="input-group-btn">
+          <img class="" type="submit" height="34px" width="35px" id="simg" src="search.png">          
+          </img>
+        </div>
+         </div>
+	  </a></li>
+    </ul>
+
+  </div>
+</nav>
+</div>
+
+		<div class="row">
+			<div class="col-md-4 col-xs-6 tiles">
+			
+			<!-- mobile -->
+			<button class="btn btn-small btn-link visible-sm visible-xs mobile-btn-expand"><b>+</b></button>
+			<div style="" class="hover-effect-mobile hidden-lg hidden-md">
+			<ul class="for-mobile">
+			<li><a href="#">Claims Activity</a></li>
+			<li><a href="#">Claims Details</a></li>
+			<li><a href="#">Claims SOP</a></li>	
+			<li><a href="#">Quaterly Summary</a></li>	
+			</ul>
+			<!--<div class="mobile-btn-close"> <button class="btn btn-block btn-link" >&#x25B2;  </button> </div>  -->
+			</div>
+			<!-- mobile -->
+			
+			<!-- desktop -->
+			<div style="" class="hover-effect hidden-sm hidden-xs">
+			<ul class="for-desktop hidden-xs hidden-sm">
+			<li><a href="#">Claims Activity</a></li>
+			<li><a href="#">Claims Details</a></li>
+			<li><a href="#">Claims SOP</a></li>	
+			<li><a href="#">Quaterly Summary</a></li>	
+			</ul>
+			</div>
+			<!-- desktop -->
+			
+			<center>
+				<p><span class="glyphicon glyphicon-file"></span></p>		
+				<div class="tile-text">CLAIMS</DIV>
+			</center>		
+			</div>
+			
+			
+			<div class="col-md-4 col-xs-6 tiles">
+						<!-- mobile -->
+			<button class="btn btn-small btn-link  visible-sm visible-xs mobile-btn-expand"><b>+</b></button>
+			<div style="" class="hover-effect-mobile hidden-lg hidden-md">
+			<ul class="for-mobile">
+			<li><a href="#">Plan Sumary</a></li>
+			<li><a href="#">Plan Details</a></li>
+			<li><a href="#">What's Covered</a></li>	
+			<li><a href="#">Autorization & Referrals</a></li>	
+			<li><a href="#">Update Additional Insurance</a></li>	
+			<li><a href="#">Summary of Benefits</a></li>	
+			</ul>
+			<!--<div class="mobile-btn-close"> <button class="btn btn-block btn-link" >&#x25B2;  </button> </div>  -->
+			</div>
+			<!-- mobile -->
+			
+			<!-- desktop -->
+			<div style="" class="hover-effect hidden-sm hidden-xs">
+			<ul class="for-desktop hidden-xs hidden-sm">
+			<li><a href="#">Plan Sumary</a></li>
+			<li><a href="#">Plan Details</a></li>
+			<li><a href="#">What's Covered</a></li>	
+			<li><a href="#">Autorization & Referrals</a></li>	
+			<li><a href="#">Update Additional Insurance</a></li>	
+			<li><a href="#">Summary of Benefits</a></li>	
+			</ul>
+			</div>
+			<!-- desktop -->
+			<center>
+				<p><span class="glyphicon glyphicon-hdd"></span></p>		
+				<div class="tile-text">My Coverage</DIV>
+			</center>				
+			</div>
+			
+			
+			<div class="col-md-4 col-xs-6 tiles">
+						<!-- mobile -->
+			<button class="btn btn-small btn-link  visible-sm visible-xs mobile-btn-expand"><b>+</b></button>
+			<div style="" class="hover-effect-mobile hidden-lg hidden-md">
+			<ul class="for-mobile">
+			<li><a href="#">Premium Payment</a></li>
+			<li><a href="#">Out of Pocket Expenses</a></li>
+			<li><a href="#">Health Savings account</a></li>	
+			<li><a href="#">My Way Balance</a></li>	
+			<li><a href="#">Tax Documents</a></li>	
+			</ul>
+			<!--<div class="mobile-btn-close"> <button class="btn btn-block btn-link" >&#x25B2;  </button> </div>  -->
+			</div>
+			<!-- mobile -->
+			
+			<!-- desktop -->
+			<div style="" class="hover-effect hidden-sm hidden-xs">
+			<ul class="for-desktop hidden-xs hidden-sm">
+			<li><a href="#">Premium Payment</a></li>
+			<li><a href="#">Out of Pocket Expenses</a></li>
+			<li><a href="#">Health Savings account</a></li>	
+			<li><a href="#">My Way Balance</a></li>	
+			<li><a href="#">Tax Documents</a></li>	
+			</ul>
+			</div>
+			<!-- desktop -->
+			<center>
+				<p><span class="glyphicon glyphicon-piggy-bank"></span></p>		
+				<div class="tile-text">MY ACCOUNT</DIV>
+			</center>	
+			</div>
+			
+			
+			<div class="col-md-4 col-xs-6 tiles">
+						<!-- mobile -->
+			<button class="btn btn-small btn-link  visible-sm visible-xs mobile-btn-expand"><b>+</b></button>
+			<div style="" class="hover-effect-mobile hidden-lg hidden-md">
+			<ul class="for-mobile">
+			<li><a href="#">ID Card</a></li>
+			<li><a href="#">Lorem Ipsum</a></li>
+			</ul>
+			<!--<div class="mobile-btn-close"> <button class="btn btn-block btn-link" >&#x25B2;  </button> </div>  -->
+			</div>
+			<!-- mobile -->
+			
+			<!-- desktop -->
+			<div style="" class="hover-effect hidden-sm hidden-xs">
+			<ul class="for-desktop hidden-xs hidden-sm">
+			<li><a href="#">ID Card</a></li>
+			<li><a href="#">Lorem Ipsum</a></li>
+			</ul>
+			</div>
+			<!-- desktop -->
+			<center>
+				<p><span class="glyphicon glyphicon-credit-card"></span></p>		
+				<div class="tile-text">ID CARD</DIV>
+			</center>	
+			</div>
+			
+			
+			<div class="col-md-4 col-xs-6 tiles">
+						<!-- mobile -->
+			<button class="btn btn-small btn-link  visible-sm visible-xs mobile-btn-expand"><b>+</b></button>
+			<div style="" class="hover-effect-mobile hidden-lg hidden-md">
+			<ul class="for-mobile">
+			<li><a href="#">Wellness</a></li>
+			<li><a href="#">Lorem Ipsum</a></li>
+			</ul>
+			<!--<div class="mobile-btn-close"> <button class="btn btn-block btn-link" >&#x25B2;  </button> </div>  -->
+			</div>
+			<!-- mobile -->
+			
+			<!-- desktop -->
+			<div style="" class="hover-effect hidden-sm hidden-xs">
+			<ul class="for-desktop hidden-xs hidden-sm">
+			<li><a href="#">Wellness</a></li>
+			<li><a href="#">Lorem Ipsum</a></li>
+			</ul>
+			</div>
+			<!-- desktop -->
+			<center>
+				<p><span class="glyphicon glyphicon-apple"></span></p>		
+				<div class="tile-text">WELLNESS</DIV>
+			</center>	
+			</div>
+			
+			
+			<div class="col-md-4 col-xs-6 tiles">
+						<!-- mobile -->
+			<button class="btn btn-small btn-link  visible-sm visible-xs mobile-btn-expand"><b>+</b></button>
+			<div style="" class="hover-effect-mobile hidden-lg hidden-md">
+			<ul class="for-mobile">
+			<li><a href="#">Claims Activity</a></li>
+			<li><a href="#">Claims Details</a></li>
+			<li><a href="#">Claims SOP</a></li>	
+			<li><a href="#">Quaterly Summary</a></li>	
+			</ul>
+			<!--<div class="mobile-btn-close"> <button class="btn btn-block btn-link" >&#x25B2;  </button> </div>  -->
+			</div>
+			<!-- mobile -->
+			
+			<!-- desktop -->
+			<div style="" class="hover-effect hidden-sm hidden-xs">
+			<ul class="for-desktop hidden-xs hidden-sm">
+			<li><a href="#">Doctor & Hospital Finder</a></li>
+			<li><a href="#">Consult a Doctor</a></li>
+			<li><a href="#">Contact a Nurse</a></li>	
+			<li><a href="#">Pharmacy Service</a></li>
+			<li><a href="#">Physician Review</a></li>	
+			<li><a href="#">Change Doctor</a></li>				
+			</ul>
+			</div>
+			<!-- desktop --> 
+			<center>
+				<p><span class="glyphicon glyphicon-briefcase"></span></p>		
+				<div class="tile-text">GET CARE</DIV>
+			</center>	
+			</div>
+
+		</div>
+  </div>
+  </body>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+  
+  pages  = ['Claims Activity', 'Claims Details', 'Claims SOP', 'Quaterly Summary','Plan Summary', 'Plan Details', 'Whats Covered', 'Authorization & Referrals' ,'Update Additional Insurance', 'Summary of Benefits','Premium Payment','Out of Pocket Expenses', 'Health Savings account','My way Balance','Tax Documents','ID card', 'Wellness','Doctor & Hospital Finder','Consult a Doctor', 'Contact a Nurse', 'Physician Review', 'Change Doctor'];
+  $('#autosearch').autocomplete({
+  source: pages
+});
+
+  
+  $('.tiles').hover(function(){
+  if($(window).width() > 991){
+  $(this).find('.tile-text').css('background-color','#f2f2f2');
+  $(this).find('.glyphicon').css('font-size','55px');
+  $(this).find('.hover-effect').slideDown();
+  $(this).find('center').css('box-shadow','0 7px 17px 0 rgba(23,84,116,0.18)'); }
+        }, function(){
+		 if($(window).width() > 991){
+  $(this).find('.tile-text').css('background-color','white');
+  $(this).find('.glyphicon').css('font-size','50px');
+  $(this).find('.hover-effect').slideUp();
+  $(this).find('center').css('box-shadow','none');
+  }
+    });
+	
+$('.mobile-btn-expand').click(function(){
+$(this).next('.hover-effect-mobile').slideToggle();
+$(this).find('.tile-text').css('background-color','#f2f2f2');
+//$('.mobile-btn-expand').hide();
+
+if($(this).text() == '+'){
+$(this).text('_');
+}
+else if($(this).text() == '_')
+$(this).text('+');
+});	
+ 
+  $('.menu-text').click(function(){
+		$('.menu-box').fadeToggle();
+  });
+  
+  $('.flyout-plus').click(function(){
+  var open = $(this).attr('data-open');
+  $('.'+open).slideToggle();
+  });
+
+	  $('#simg').click(function(){
+  $('#autosearch').css('visibility','visible').fadeIn('slow');
+  $(this).css('border',' 1px solid rgb(119, 119, 119)');
+  $(this).css('border-radius','0px 5px 5px 0px');
+  });
+  
+  });
+  </script>
+</html>
+  
+  
