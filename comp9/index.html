@@ -18,6 +18,8 @@ text-align:left;
 <body>
 
 <div class="container">
+<label for="enterArray"></label><input id="enterArray" value="100, 10, 40, 37.8, 20, 11, 79"></input>
+<button id="go">Go</button>
 <table id="showSorted" style="width:100%">
 <thead>
 <tr></tr>
@@ -55,7 +57,31 @@ function quickSortArray(unsortedArray) {
 
 var output = $(".container");
 
-var unsortedArray = [55, 64, 41.5, 41.2, 43, 32, 41];
+var unsortedArray = [100, 10, 40, 37.8, 20, 11, 79];
+
+$(document).on('click','#go',function(){
+	unsortedArray = $('#enterArray').val().split(',')
+	
+	
+	$('#showSorted>thead>tr').empty();
+	$('#showSorted>tbody>tr').empty();
+	$('#showSorted>tbody>tr').empty();
+	
+	$('#showSorted>thead>tr').append('<th>Sequence</th>');
+	$('#showSorted>tbody>tr:nth-child(1)').append('<td>Unsorted</td>');
+	$('#showSorted>tbody>tr:nth-child(2)').append('<td>Sorted</td>');
+	
+	for(i = 0; i< arrLen; i++){
+	$('#showSorted>thead>tr').append('<th>'+i+'</th>');
+	$('#showSorted>tbody>tr:nth-child(1)').append('<td>'+unsortedArray[i]+'</td>');
+	}		
+
+	var result = quickSortArray(unsortedArray);
+	for(i = 0; i< arrLen; i++){
+	$('#showSorted>tbody>tr:nth-child(2)').append('<td>'+result[i]+'</td>');
+	}						
+
+});
 
 $('#showSorted>tbody>tr:nth-child(1)').append('<td>Unsorted</td>');
 
