@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quick Sort</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+</head>
+<style>
+th, td{
+border:1px solid #e1e1e1;
+text-align:center;
+}
+tr>td:nth-child(1), tr>th:nth-child(1){
+text-align:left;
+}
+</style>
+<body>
+
+<div class="container">
+<table id="showSorted" style="width:100%">
+<thead>
+<tr></tr>
+</thead>
+<tbody>
+<tr></tr>
+<tr></tr>
+</tbody>
+</table>
+</div>
+<script>
+$(document).ready(function(){
+
+function quickSortArray(unsortedArray) {
+   
+        var left = [];
+        var right = [];
+
+        if (!$.isArray(unsortedArray)) {
+            return "input is not an array";
+        }
+
+        if (unsortedArray.length <= 1) return unsortedArray;
+
+        var pivot = unsortedArray[0];
+        unsortedArray.shift();
+        for (var i = 0; i < unsortedArray.length; i++) {
+            unsortedArray[i] <= pivot ? left.push(unsortedArray[i]) : right.push(unsortedArray[i]);
+        }
+			
+        return $.merge($.merge(quickSortArray(left), $.makeArray(pivot)), quickSortArray(right));
+    
+}
+
+
+var output = $(".container");
+
+var unsortedArray = [55, 64, 41.5, 41.2, 43, 32, 41];
+
+$('#showSorted>tbody>tr:nth-child(1)').append('<td>Unsorted</td>');
+
+var arrLen = unsortedArray.length ; 
+$('#showSorted>thead>tr').append('<th>Sequence</th>');
+for(i = 0; i< arrLen; i++){
+$('#showSorted>thead>tr').append('<th>'+i+'</th>');
+$('#showSorted>tbody>tr:nth-child(1)').append('<td>'+unsortedArray[i]+'</td>');
+}		
+
+
+var result = quickSortArray(unsortedArray);
+
+
+$('#showSorted>tbody>tr:nth-child(2)').append('<td>Sorted</td>');
+
+for(i = 0; i< arrLen; i++){
+$('#showSorted>tbody>tr:nth-child(2)').append('<td>'+result[i]+'</td>');
+}						
+
+
+
+});
+</script>
