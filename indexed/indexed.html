@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   
@@ -221,13 +222,146 @@ font-weight:bold;
 .define-max{
 max-width:80px;
 }
-
+header{
+background:#2098d1;
+height:200px;
+}
+.headNav{
+padding-left:10%;
+padding-right:10%;
+color:white;
+display:flex;
+padding-top:30px;
+}
+.name{
+	display: inline-block;
+    vertical-align: middle;
+	font-family:sans-serif;
+	font-size:20px;
+}
+.desig{
+	font-family:sans-serif;
+	font-size:16px;
+}
+.user-icon{
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-right: 20px;
+}
+.user-icon>i:hover{
+    background: white;
+    color: #2098d1;
+}
+.userInfo{
+display: inline-block;
+}
+.pageTitle{
+margin-top:30px;
+color:white;
+font-size:40px;
+text-align:center;
+}
+.titleDesc{
+font-size:16px;
+display:block;
+}
+.myNav{
+position:absolute;
+right:10%;
+    background-color: #2098d1;
+    border: 0px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #dccfcf;
+}
+.no-pad{
+padding:0px;
+}
+.navbar-inverse .navbar-nav>li>a:first, .navbar-inverse .navbar-nav>li>a:last {
+  padding:0px;
+}
+.navbar-nav>li{
+transition: border 1.2s ease-in-out, transform 1s ease-in-out;;
+}
+.navbar-nav>li{
+border-bottom:3px solid transparent;
+border-top:3px solid transparent;
+}
+.navbar-nav>li:hover{
+border-bottom:3px solid white;
+border-top:3px solid white;
+    //transform: rotateZ(360deg);
+    //-webkit-transform: rotateY(360deg);
+}
+.navbar-nav>li:focus{
+border-bottom:3px solid white;
+}
+.doTra{
+//transform:rotateY(360deg);
+}
+@media(max-width:768px){
+.myNav{
+right:5%;
+}
+#myNavbar{
+padding:0px;
+margin:0px;
+width:150px;
+}
+.navbar-nav {
+    margin: 0px;
+}
+.navbar-inverse .navbar-nav>li>a{
+padding-top:5px;
+padding-bottom:5px;
+}
+}
   </style>
 		
 </head>
 <body>
 
+<header>
+	<div class="headNav">
+	<div class="user-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+	<div class="userInfo">
+		<div class="name">Talvinder Singh</div>
+		<div class="desig">Senior Systems Engineer</div>
+	</div>	
+	
+	<nav class="navbar navbar-inverse myNav">
+  <div class="container-fluid no-pad">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">ABOUT</a></li>
+		<li class=""><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">ARTICLES</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+	</div>
+	
+	<div class="pageTitle">
+	Jquery Plus Blog
+	<span class="titleDesc">Plugin Repository</span>
+	</div>
+</header>
+<!--
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -269,11 +403,11 @@ max-width:80px;
       </ul>
     </div>
   </div>
-</nav>
+</nav>  -->
 
 		<div class="container-fluid">
 	
-	<div class="modal fade" id="myModal" role="dialog">
+	<!-- <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
      
@@ -294,7 +428,7 @@ max-width:80px;
 	  </div>
       
     </div>
-    </div>
+    </div>  -->
 	
 	
 				<div class="row giveMarginTop">
@@ -414,7 +548,15 @@ max-width:80px;
 		</div>
 </body>
 <script type="text/javascript">
-$('.compinfo').show();
+
+$(document).ready(function(){
+$('.navbar-nav>li').mouseover(function(){
+$(this).addClass('doTra');
+});
+
+});
+
+$('.compinfo').show()
 
 function  onLoadHandler(){
 setTimeout(function(){ $("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 200 );  $("iframe").css('overflow','hidden'); $('#myModal').modal('hide');}, 3000);
