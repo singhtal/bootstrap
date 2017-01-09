@@ -257,9 +257,10 @@ padding-top:30px;
 display: inline-block;
 }
 .pageTitle{
-margin-top:30px;
+padding-top:10%;
+padding-bottom:10%;
 color:white;
-font-size:40px;
+font-size:2.5em;
 text-align:center;
 }
 .titleDesc{
@@ -300,6 +301,40 @@ border-bottom:3px solid white;
 .doTra{
 //transform:rotateY(360deg);
 }
+.intro_list{
+padding-top:10px;
+padding-bottom:20px;
+}
+.intro_list>li{
+display:inline;
+font-size:1.25em;
+}
+.intro_list>li:before { 
+content:''; 
+padding-right:10px;
+padding-left:10px;
+}
+#portfolio-button{
+color:white;
+font-size:1em;
+font-weight:bold;
+text-decoration:none;
+position: relative;
+    display: inline-block;
+    zoom: 1;
+	transition-duration: 0.5s;
+    -webkit-transition-property: color;
+    -moz-transition-property: color;
+    -ms-transition-property: color;
+    -o-transition-property: color;
+    transition-property: color;
+}
+#portfolio-button>i{
+display:block;
+}
+#portfolio-button[href]:hover{
+color: #013a55;
+}
 @media(max-width:768px){
 .myNav{
 right:5%;
@@ -315,6 +350,15 @@ width:150px;
 .navbar-inverse .navbar-nav>li>a{
 padding-top:5px;
 padding-bottom:5px;
+}
+}
+
+@media(max-width:480px){
+.intro_list{
+display:none;
+}
+#portfolio-button{
+margin-top:15px;
 }
 }
   </style>
@@ -341,8 +385,8 @@ padding-bottom:5px;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">ABOUT</a></li>
-		<li class=""><a href="#">PORTFOLIO</a></li>
+        <li class=""><a href="#">ABOUT</a></li>
+		<li class="active"><a href="#">PORTFOLIO</a></li>
         <li><a href="#">ARTICLES</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -356,8 +400,13 @@ padding-bottom:5px;
 	</div>
 	
 	<div class="pageTitle">
-	Jquery Plus Blog
-	<span class="titleDesc">Plugin Repository</span>
+	Responsive Front-end Development
+	<span class="titleDesc">
+	<ul class="intro_list">
+		<li>HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
+	</ul>
+	<a id="portfolio-button" class="button" href="#" title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
+	</span>
 	</div>
 </header>
 <!--
