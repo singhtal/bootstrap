@@ -10,6 +10,10 @@
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
   <style>
+
+.extra, .pageTitle>div, .intro_list , #portfolio-button, .user-icon, .userInfo{
+visibility:hidden;
+}
 	  .gallery:hover{
 	  opacity:0.4;
 	  }
@@ -349,7 +353,12 @@ padding-bottom:5px;
 .padOnHover:hover{
 padding:20px;
 }
+.padOnHover>img{
+width:100%;
+height:100%;
+}
 .padOnHover{
+//height:350px;
 visibility:hidden;
 position:relative;
 transition: 0.5s all ease;
@@ -385,6 +394,9 @@ padding-right: 20%;
 padding-top: 5px;
 margin:auto;
 }
+.flexabove768{
+margin:30px;
+}
 @media(min-width:768px){
 .flexabove768{
 display:flex;
@@ -403,11 +415,12 @@ margin-top:15px;
 		
 </head>
 <body>
-
+<div class="bg"></div>
+<div class="bg hidden"></div>
 <header>
 	<div class="headNav">
-	<div class="user-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
-	<div class="userInfo">
+	<div class="user-icon zoomIn animated"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+	<div class="userInfo zoomIn animated">
 		<div class="name">Talvinder Singh</div>
 		<div class="desig">Senior Systems Engineer</div>
 	</div>	
@@ -422,10 +435,10 @@ margin-top:15px;
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class=""><a href="#">ABOUT</a></li>
-		<li class="active"><a href="#">PORTFOLIO</a></li>
-        <li><a href="#">ARTICLES</a></li>
+      <ul class="nav navbar-nav extra">
+        <li class=" "><a href="#">ABOUT</a></li>
+		<li class="active  "><a href="#">PORTFOLIO</a></li>
+        <li class=" "><a href="#">ARTICLES</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -438,10 +451,10 @@ margin-top:15px;
 	</div>
 	
 	<div class="pageTitle">
-	Responsive Front-end Development
+	<div class="">Responsive Front-end Development</div>
 	<span class="titleDesc">
-	<ul class="intro_list">
-		<li>HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
+	<ul class="intro_list ">
+		<li class="">HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
 	</ul>
 	<a id="portfolio-button" class="button" href="#" title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
 	</span>
@@ -473,13 +486,13 @@ margin-top:15px;
 						
 						<div class="col-xs-12 col-sm-4 comp1 gallery">						
 						<div  style="background-color:#291444" class="padOnHover">
-							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							<img src="http://www.clipartbest.com/cliparts/9iR/aGe/9iRaGexie.png" class="img img-responsive"/>
 							
 						<div class="showDivEase" >
-						Steps.js - Responsive Step Panel
+						Pagination Plus
 						
 							<div class="row absolute hidden-xs hidden-sm">
-										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html">Live Preview</a></div></div>
 										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
 							</div>	
 							
@@ -489,13 +502,13 @@ margin-top:15px;
 					 
 						<div class="col-xs-12 col-sm-4 comp1 gallery">						
 						<div  style="background-color:#291444" class="padOnHover">
-							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							<img src="http://www.bigcheesebadges.com/images/shimmering_circle_optical_illusion.png" class="img img-responsive"/>
 							
 						<div class="showDivEase" >
-						Steps.js - Responsive Step Panel
+						Rotating Illusion
 						
 							<div class="row absolute hidden-xs hidden-sm">
-										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html">Live Preview</a></div></div>
 										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
 							</div>	
 							
@@ -640,13 +653,14 @@ margin-top:15px;
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-89678967-1', 'auto');
-  ga('send', 'pageview');
+  });
 
 
 $(document).ready(function(){
+setTimeout(function(){ $('.extra').addClass('rubberBand animated'); }, 1000);
+setTimeout(function(){ $('.pageTitle>div').addClass('slideInDown animated'); }, 2500);
+setTimeout(function(){ $('.intro_list').addClass('zoomIn animated'); }, 3800);
+setTimeout(function(){ $('#portfolio-button').addClass('flipInX animated'); }, 5000);
 
 //utility plugin
 (function(e){function m(){var b=window.innerHeight;if(b)return b;var f=document.compatMode;if(f||!e.support.boxModel)b="CSS1Compat"===f?document.documentElement.clientHeight:document.body.clientHeight;return b}var n=function(b,f){function e(){null!==a?c=!0:(c=!1,b(),a=setTimeout(function(){a=null;c&&e()},f))}var c=!1,a=null;return e}(function(){var b=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,f=b+m(),g=[];e.each(e.cache,function(){this.events&&this.events.inview&&
@@ -664,7 +678,7 @@ $('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
 	  $(this).find('.showDivEase').removeClass('pulse animated');
     } else {
       // whole part of element is visible
-	  $(this).addClass('bounceInDown animated');
+	  $(this).addClass('flipInY animated');
 	  $(this).find('.showDivEase').addClass('blackTrans').addClass('pulse animated');
     }
   } else {
