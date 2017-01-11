@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
-  
+  <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
   <style>
 	  .gallery:hover{
 	  opacity:0.4;
@@ -350,10 +350,22 @@ padding-bottom:5px;
 padding:20px;
 }
 .padOnHover{
+visibility:hidden;
 position:relative;
 transition: 0.5s all ease;
+border-radius: 1000px;
+border: 10px solid gray;
+padding: 30px;
+overflow: hidden;
+margin-left: 40px;
+margin-right: 40px;
 }
-
+.animated { visibility: visible !important; }
+.absolute>div{
+padding-left:0px;
+padding-right:0px;
+display:inline-block;
+}
 .showDivEase{
 font-size:18px;
 color:white;
@@ -363,14 +375,15 @@ height:100px; width:100%; background:black;position:absolute; bottom:0; left:0; 
 color:white;
 }
 .blackTrans{
-transition: 0.8s all ease;
+transition:overflow 0s, display 0.8s ease;
 visibility:visible;
 opacity:1;
 }
 .row.absolute{
 padding-left: 20%;
 padding-right: 20%;
-padding-top: 15px;
+padding-top: 5px;
+margin:auto;
 }
 @media(min-width:768px){
 .flexabove768{
@@ -434,80 +447,15 @@ margin-top:15px;
 	</span>
 	</div>
 </header>
-<!--
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Jquery+  Plugins</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
- 
-		
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Me <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="meh"><div class="row"><div class="col-xs-6">Just another Developer</div><div class="col-xs-6 text-center"></div></div></li>
-          </ul>
-        </li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="form">
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations">
-<input type="hidden" name="business" value="iamtalvinder@gmail.com">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="Jquery Plus">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-		</form>
-
-		</li>
-        <li><a href="http://www.facebook.com/jqueryplus"  target="_blank">FB Connect</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>  -->
 
 		<div class="container-fluid">
 	
-	<!-- <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-     
 
-	  <div class="ban-container">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-	 <div class="banner">
-    LOADING
-	<div class="banner-left">Jquery</div>
-    <div class="banner-right">Plus</div>
-	</div>
-        </div>
-      </div>
-	  </div>
-      
-    </div>
-    </div>  -->
 	
 	
 				<div class="row giveMarginTop">
 					<div class="row flexabove768">
-						<div class="col-xs-12 col-sm-4 comp1 gallery">
-							
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
 						<div  style="background-color:#291444" class="padOnHover">
 							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
 							
@@ -515,45 +463,96 @@ margin-top:15px;
 						Steps.js - Responsive Step Panel
 						
 							<div class="row absolute hidden-xs hidden-sm">
-										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
 							</div>	
 							
+						</div>						
+						</div>							
 						</div>
 						
-						</div>
-							<!--	<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Steps.js - Responsive Step Panel</div><div class="col-xs-1"></div>  
-								</div>  -->
-
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
 							
-							<!--	<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-									</iframe>  
-							-->
-						</div>
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
 						
-						<div class="col-xs-12 col-sm-4 comp2 gallery">
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
 							
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Pagination Plus - Responsive Plugin</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-							
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>
-					  </div>
+						</div>						
+						</div>							
+						</div>
 					 
-						<div class="col-xs-12 col-sm-4 comp3 gallery">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
 							
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Rotating Illusion </div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						</div> 
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+					</div>					
+					<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+					 
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
 					</div>	
 						
 						<div class="col-xs-12 col-sm-4 comp4 gallery">
@@ -636,11 +635,7 @@ margin-top:15px;
 </body>
 <script type="text/javascript">
 
-$(".padOnHover").hover(function(){
-    $(this).find('.showDivEase').addClass('blackTrans');
-    }, function(){
-    $(this).find('.showDivEase').removeClass('blackTrans');
-});
+
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -652,6 +647,34 @@ $(".padOnHover").hover(function(){
 
 
 $(document).ready(function(){
+
+//utility plugin
+(function(e){function m(){var b=window.innerHeight;if(b)return b;var f=document.compatMode;if(f||!e.support.boxModel)b="CSS1Compat"===f?document.documentElement.clientHeight:document.body.clientHeight;return b}var n=function(b,f){function e(){null!==a?c=!0:(c=!1,b(),a=setTimeout(function(){a=null;c&&e()},f))}var c=!1,a=null;return e}(function(){var b=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,f=b+m(),g=[];e.each(e.cache,function(){this.events&&this.events.inview&&
+g.push(this.handle.elem)});e(g).each(function(){var c=e(this),a;a=0;for(var d=this;d;d=d.offsetParent)a+=d.offsetTop;var d=c.height(),k=a+d,d=c.data("inview")||!1,h=c.data("offset")||0,g=a>b&&k<f,l=k+h>b&&a<b,h=a-h<f&&k>f;g||l||h||a<b&&k>f?(a=h?"top":l?"bottom":"both",d&&d===a||(c.data("inview",a),c.trigger("inview",[!0,a]))):!g&&d&&(c.data("inview",!1),c.trigger("inview",[!1]))})},100);e(window).on("checkInView.inview click.inview ready.inview scroll.inview resize.inview",n)})(jQuery);
+
+
+$('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+	
+    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $(this).find('.showDivEase').removeClass('pulse animated');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+	  $(this).find('.showDivEase').removeClass('pulse animated');
+    } else {
+      // whole part of element is visible
+	  $(this).addClass('bounceInDown animated');
+	  $(this).find('.showDivEase').addClass('blackTrans').addClass('pulse animated');
+    }
+  } else {
+    //$(this).removeClass('bounceInDown animated')
+	$(this).find('.showDivEase').removeClass('blackTrans').removeClass('pulse animated');
+  }
+});
+
+
+
 $('.navbar-nav>li').mouseover(function(){
 $(this).addClass('doTra');
 });
