@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
   <title>Jquery Plus</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
-  
+  <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
+  <script src="sketch.js"></script>
   <style>
+
+
+
+.extra, .pageTitle>div, .intro_list , #portfolio-button, .user-icon, .userInfo{
+visibility:hidden;
+}
 	  .gallery:hover{
 	  opacity:0.4;
 	  }
@@ -155,8 +163,7 @@ form{
 display:none;
 }
 div.gallery{
-	opacity:0.8;
-border:1px solid #3333cc;
+padding:0px;
 }	
 div.gallery:hover {	
 	opacity:1;
@@ -180,18 +187,13 @@ div.gallery:hover .absolute
 	border-radius:35px 0px 25px 0px;
   }
 
-div.gallery .absolute {
-    position:absolute;
-	top: 77%;
-	left:35%;
-   // display:none;
-}				
+			
 
 .mobile-preview{
 margin-top:-13%;
 } 
 .giveMarginTop{
-margin-top:45px;
+//margin-top:45px;
 }
 
 
@@ -270,7 +272,7 @@ display:block;
 .myNav{
 position:absolute;
 right:10%;
-    background-color: #2098d1;
+    background-color: transparent;
     border: 0px;
 }
 .navbar-inverse .navbar-nav>li>a {
@@ -283,7 +285,7 @@ padding:0px;
   padding:0px;
 }
 .navbar-nav>li{
-transition: border 1.2s ease-in-out, transform 1s ease-in-out;;
+transition: border 0.7s ease-in-out;
 }
 .navbar-nav>li{
 border-bottom:3px solid transparent;
@@ -315,6 +317,7 @@ padding-right:10px;
 padding-left:10px;
 }
 #portfolio-button{
+cursor:pointer;
 color:white;
 font-size:1em;
 font-weight:bold;
@@ -352,6 +355,81 @@ padding-top:5px;
 padding-bottom:5px;
 }
 }
+.padOnHover:hover{
+padding:20px;
+border-color:black;
+opacity:1;
+//box-shadow:1px 1px 2px 5px grey;
+}
+.padOnHover:hover>.showDivEase{
+    visibility: visible;
+    opacity: 1;
+	transition: 1s all ease;
+}
+.padOnHover>img{
+width:100%;
+height:100%;
+}
+.padOnHover{
+    opacity: 0.7; /* Real browsers */
+//height:350px;
+visibility:hidden;
+position:relative;
+transition: 0.5s all ease;
+border-radius: 1000px;
+border: 10px solid #999;
+padding: 30px;
+overflow: hidden;
+margin-left: 40px;
+margin-right: 40px;
+}
+.animated { visibility: visible !important; }
+.absolute>div{
+padding-left:0px;
+padding-right:0px;
+display:inline-block;
+}
+.showDivEase{
+font-size:18px;
+color:white;
+text-align:center;
+padding-top:15px;
+height:100px; width:100%; background:black;position:absolute; bottom:0; left:0; visibility:hidden; opacity:0;
+color:white;
+}
+.blackTrans{
+transition:overflow 0s, display 0.8s ease;
+visibility:visible;
+opacity:1;
+}
+.row.absolute{
+padding-left: 20%;
+padding-right: 20%;
+padding-top: 5px;
+margin:auto;
+}
+.flexabove768{
+margin:30px;
+}
+#bigDown{
+font-size:40px;
+color:white;
+display:block;
+visibility:hidden;
+}
+header{
+background:linear-gradient(90deg,#00537E 10%,#3AA17E 90%);
+//background:linear-gradient(90deg, #01a99c 10%, #0698b1 90%);;
+}
+body{
+background:#f2f2f2 url(https://i.stack.imgur.com/PEnJm.png)
+}
+.hidden { opacity: 0; }
+@media(min-width:768px){
+.flexabove768{
+display:flex;
+}
+}
 
 @media(max-width:480px){
 .intro_list{
@@ -365,17 +443,18 @@ margin-top:15px;
 		
 </head>
 <body>
-
+<div class=""></div>
+<div class=" hidden"></div>
 <header>
 	<div class="headNav">
-	<div class="user-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
-	<div class="userInfo">
+	<div class="user-icon zoomIn animated"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+	<div class="userInfo zoomIn animated">
 		<div class="name">Talvinder Singh</div>
 		<div class="desig">Senior Systems Engineer</div>
 	</div>	
 	
 	<nav class="navbar navbar-inverse myNav">
-  <div class="container-fluid no-pad">
+  <div class="container-fluid no-pad bg">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -384,10 +463,10 @@ margin-top:15px;
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class=""><a href="#">ABOUT</a></li>
-		<li class="active"><a href="#">PORTFOLIO</a></li>
-        <li><a href="#">ARTICLES</a></li>
+      <ul class="nav navbar-nav extra">
+        <li class=" "><a href="#">ABOUT</a></li>
+		<li class="active  "><a href="#">PORTFOLIO</a></li>
+        <li class=" "><a href="#">ARTICLES</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -400,213 +479,333 @@ margin-top:15px;
 	</div>
 	
 	<div class="pageTitle">
-	Responsive Front-end Development
+	<div class="">Responsive Front-end Development</div>
 	<span class="titleDesc">
-	<ul class="intro_list">
-		<li>HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
+	<ul class="intro_list ">
+		<li class="">HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
 	</ul>
-	<a id="portfolio-button" class="button" href="#" title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
+	<a id="portfolio-button" class="button"  title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
+	<a id="bigDown"><i class="fa fa-angle-double-down"></i></div></a>
 	</span>
 	</div>
 </header>
-<!--
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Jquery+  Plugins</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
- 
+
+		<div class="container-fluid " id="gradient2">
 		
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Me <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="meh"><div class="row"><div class="col-xs-6">Just another Developer</div><div class="col-xs-6 text-center"></div></div></li>
-          </ul>
-        </li>
-		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="form">
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations">
-<input type="hidden" name="business" value="iamtalvinder@gmail.com">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="Jquery Plus">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-		</form>
-
-		</li>
-        <li><a href="http://www.facebook.com/jqueryplus"  target="_blank">FB Connect</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>  -->
-
-		<div class="container-fluid">
-	
-	<!-- <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-     
-
-	  <div class="ban-container">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-	 <div class="banner">
-    LOADING
-	<div class="banner-left">Jquery</div>
-    <div class="banner-right">Plus</div>
-	</div>
-        </div>
-      </div>
-	  </div>
-      
-    </div>
-    </div>  -->
-	
-	
 				<div class="row giveMarginTop">
-				
-						<div class="col-xs-12 col-sm-6 comp1 gallery">
+					<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://pngimages.net/sites/default/files/dashboard-png-image-29885.png" class="img img-responsive"/>
 							
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Steps.js - Responsive Step Panel</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
-								</div>	
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
 							
-																<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>
+						</div>						
+						</div>							
 						</div>
 						
-						<div class="col-xs-12 col-sm-6 comp2 gallery">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9iR/aGe/9iRaGexie.png" class="img img-responsive"/>
 							
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Pagination Plus - Responsive Plugin</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
+						<div class="showDivEase" >
+						Pagination Plus
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
 							
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>
-					  </div>
+						</div>						
+						</div>							
+						</div>
 					 
-						<div class="col-xs-12 col-sm-6 comp3 gallery">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.bigcheesebadges.com/images/shimmering_circle_optical_illusion.png" class="img img-responsive"/>
 							
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Rotating Illusion </div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-										<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						</div> 
+						<div class="showDivEase" >
+						Rotating Illusion
 						
-						<div class="col-xs-12 col-sm-6 comp4 gallery">
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
 						
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">3D Illusion</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-									<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp4/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp4/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						</div>	
-					
-							<div class="col-xs-12 col-sm-6 comp5 gallery">
+					</div>					
+					<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://pre06.deviantart.net/2d1f/th/pre/f/2011/234/1/1/captain_america_shield_by_jdrincs-d47gy9f.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Plugin 4
 						
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Interactive Tabs</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-									<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp5/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp5/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						        </div>		
-					
-							<div class="col-xs-12 col-sm-6 comp6 gallery">
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp4/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
 						
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Clock Picker</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-									<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp6/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp6/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						        </div>	
-					
-							<div class="col-xs-12 col-sm-6 comp7 gallery">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Plugin 5
 						
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Live JSON to Table</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-									<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp8/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp8/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						        </div>	
-					
-					
-							<div class="col-xs-12 col-sm-6 comp7 gallery">
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp5/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+					 
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.pngall.com/wp-content/uploads/2016/04/Clock-Free-PNG-Image.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Plugin 6
 						
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Dropdown to CheckList</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-									<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp7/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp7/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						        </div>		
-					
-		
-							<div class="col-xs-12 col-sm-6 comp9 gallery">
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp6/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
 						
-								<div class="row text-center"><div class="col-xs-10 compinfo col-xs-offset-1">Quicksort Algorithm implementation with JS</div><div class="col-xs-1"></div></div>
-								<div class="row absolute hidden-xs hidden-sm">
-									<div class="col-xs-6 text-left"><div class="btn btn-success"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp9/index.html">Live Preview</a></div></div>
-										<div class="col-xs-6 text-right"><div class="btn btn-info">Download</div></div>
-								</div>
-								
-								<iframe src="http://rawgit.com/tal1992/bootstrap/master/comp9/index.html" width="100%" height="300px" align="bottom" onload="onLoadHandler();" scrolling="no">
-								</iframe>								
-						        </div>	 					
+					</div>	
 					
+					<!-- row 2 ends -->
+					
+					<!-- row 3 starts -->
+					
+										<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="https://www.connectinternetsolutions.com/wp-content/uploads/2016/08/icon_checklist2-01.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Plugin 7
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp7/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://noorisys.com/images/technologies/600x600/HTML.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Plugin 8
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp8/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+					 
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Plugin 9
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp9/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+					</div>	
+					
+					<!-- row 3 ends -->
 						
 				</div>
+					
 		</div>
+		<div class="footer">
+			<div class="geekImage">
+				<!--<img class="img img-responsive" src="https://s3.amazonaws.com/user-media.venngage.com/197094-2c3a415721dbb22bd87b092a339e8cc6.png"></img>-->
+			</div>
+			
+			<div class="leftSection col-xs-6 col-md-4">
+			
+				<div class="left1">
+				<div class="map-icon icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+				<a target="_blank" title="click to view map" href="https://www.google.co.in/maps/place/Adarsh+Nagar+Metro+Station/@28.717407,77.1679613,17z/data=!3m1!4b1!4m5!3m4!1s0x390d018c94a26bdf:0xba67ec716653709a!8m2!3d28.717407!4d77.17015" class="address">Adarsh Nagar,  New Delhi, India</a>
+				</div>
+				
+				<div class="left2">
+				<div class="map-icon icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+				<div class="address phone">+91 - 7838020998</div>				
+				</div>
+				
+				<div class="left3">
+				<div class="map-icon icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+				<a class=" mail" href="mailto:talvindersingh1992@gmail.com?Subject=Hello Developer" target="_top" title="click to send email">talvindersingh1992@gmail.com</a>						
+				</div>
+				
+			</div>
+			
+			<div class="middleSection col-xs-6 col-md-4">
+			<img width ="50px" style="float:left; margin-right:10px" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAf6AAAAJGVlMTFkZDVmLWVlMjMtNGEwNy04NDhmLTIyMTQ5MGZiNzlhYQ.jpg" />
+				Front-end Developer, author of Jquery Plus, and Engineer in Infosys. Talvinder combines his education with 3 years commercial experience in front-end development to produce high-quality websites and exceptional user experience.
+			</div>
+			
+			<div class="rightSection col-md-4 hidden-xs hidden-sm" >
+				<div class="footerAbout">
+				<div class="rightCategory">
+					<div class="aboutTitle">ABOUT</div>
+					<div>Learn about Talvinder’s skills and workflow</div>
+				</div>
+				<div class="rightCategory">
+					<div class="aboutTitle">PORTFOLIO</div>
+					<div>View Talvinder's front-end development work</div>
+				</div>
+				<div class="rightCategory">
+					<div class="aboutTitle">ARTICLES</div>
+					<div>Read web related articles, opinions & tutorials</div>
+				</div>				
+				</div>
+			</div>
+		</div>	
+		<div class=" hidden"></div>
+		
 </body>
+<style>
+.rightCategory{
+margin-bottom:20px;
+}
+.aboutTitle{
+font-weight:bold;
+cursor:pointer;
+transition:1s all ease;
+}
+.aboutTitle:hover{
+color:#31708f;
+}
+.footer{
+padding:30px;
+overflow:auto;
+background:#333;
+}
+.geekImage>img{
+width:150px;
+}
+.map-icon{
+  display: inline-block;
+  margin-right:20px;
+  vertical-align:bottom;
+}
+.address, .phone, .mail{
+	color: white;
+    display: inline-block;
+    vertical-align:super;
+	//font-weight:bold;
+}
+.mail{
+font-weight:bold;
+}
+.icon>.fa{
+color:white;
+  font-size:30px;
+  display: inline-block;
+}
+.leftSection>div{
+margin-bottom:30px;
+}
+.leftSection, .middleSection{
+//border-right:1px solid #9d9d9d;
+color:white;
+}
+.middleSection{
+text-align:justify;
+}
+.rightSection{
+color:white;
+}
+</style>
 <script type="text/javascript">
+
+$('#portfolio-button').click(function(){
+$(window).scrollTop($('.comp1').eq(0).offset().top - 50);
+});
+	
+
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-89678967-1', 'auto');
-  ga('send', 'pageview');
+  });
 
 
 $(document).ready(function(){
+setTimeout(function(){ $('.extra').addClass('fadeInLeftBig animated'); }, 1000);
+setTimeout(function(){ $('.extra').removeClass('fadeInLeftBig animated').addClass('pulse animated'); }, 2000);
+setTimeout(function(){ $('.pageTitle>div').addClass('slideInDown animated'); }, 3500);
+setTimeout(function(){ $('.intro_list').addClass('zoomIn animated'); }, 5500);
+setTimeout(function(){ $('#portfolio-button').addClass('flipInX animated'); }, 7000);
+setTimeout(function(){ $('#bigDown').addClass('fadeOutDown animated'); }, 8500);
+
+//utility plugin
+(function(e){function m(){var b=window.innerHeight;if(b)return b;var f=document.compatMode;if(f||!e.support.boxModel)b="CSS1Compat"===f?document.documentElement.clientHeight:document.body.clientHeight;return b}var n=function(b,f){function e(){null!==a?c=!0:(c=!1,b(),a=setTimeout(function(){a=null;c&&e()},f))}var c=!1,a=null;return e}(function(){var b=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,f=b+m(),g=[];e.each(e.cache,function(){this.events&&this.events.inview&&
+g.push(this.handle.elem)});e(g).each(function(){var c=e(this),a;a=0;for(var d=this;d;d=d.offsetParent)a+=d.offsetTop;var d=c.height(),k=a+d,d=c.data("inview")||!1,h=c.data("offset")||0,g=a>b&&k<f,l=k+h>b&&a<b,h=a-h<f&&k>f;g||l||h||a<b&&k>f?(a=h?"top":l?"bottom":"both",d&&d===a||(c.data("inview",a),c.trigger("inview",[!0,a]))):!g&&d&&(c.data("inview",!1),c.trigger("inview",[!1]))})},100);e(window).on("checkInView.inview click.inview ready.inview scroll.inview resize.inview",n)})(jQuery);
+
+
+$('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+	
+    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $(this).find('.showDivEase').removeClass('pulse animated');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+	  $(this).find('.showDivEase').removeClass('pulse animated');
+    } else {
+      // whole part of element is visible
+	  $(this).addClass('flipInX animated');
+	  $(this).find('.showDivEase').addClass('blackTrans').addClass('pulse animated');
+	  setTimeout(function(){ $(this).find('.showDivEase').removeClass('blackTrans').removeClass('pulse animated'); }, 2000);
+    }
+  } else {
+    //$(this).removeClass('bounceInDown animated')
+	$(this).find('.showDivEase').removeClass('blackTrans').removeClass('pulse animated');
+  }
+});
+
+
+
 $('.navbar-nav>li').mouseover(function(){
 $(this).addClass('doTra');
 });
@@ -615,9 +814,7 @@ $(this).addClass('doTra');
 
 $('.compinfo').show()
 
-function  onLoadHandler(){
-setTimeout(function(){ $("iframe").contents().scrollTop( $("iframe").contents().scrollTop() + 200 );  $("iframe").css('overflow','hidden'); $('#myModal').modal('hide');}, 3000);
-}
+
 
  
         $('#myModal').modal('show');
@@ -638,5 +835,7 @@ $.ajax({
     console.log("Request failed, error= " + err);
   }
 });
+
+
 </script>
 </html>
