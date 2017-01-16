@@ -292,8 +292,23 @@ padding:0px;
 transition: border 0.7s ease-in-out;
 }
 .navbar-nav>li{
+display:table-cell;
+text-align:center;
 border-bottom:3px solid transparent;
 border-top:3px solid transparent;
+}
+.fixedNav>nav>ul{
+width:100%;
+display:table;
+width:100%;
+}
+.fixedNav li{
+float:none !important;
+borde:0px solid transparent !important;
+}
+.activeFixed{
+color:white;
+font-weight:bold;
 }
 .navbar-nav>li:hover{
 border-bottom:3px solid white;
@@ -428,6 +443,13 @@ background:linear-gradient(90deg,#00537E 10%,#3AA17E 90%);
 body{
 background:#f2f2f2 url(https://i.stack.imgur.com/PEnJm.png)
 }
+.fixedNav{
+visibility:hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
 .hidden { opacity: 0; }
 @media(min-width:768px){
 .flexabove768{
@@ -468,9 +490,10 @@ margin-top:15px;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav extra">
-        <li class=" "><a href="#">ABOUT</a></li>
-		<li class="active  "><a href="#">PORTFOLIO</a></li>
-        <li class=" "><a href="#">ARTICLES</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Skills</a></li>
+	<li><a href="#">Plugins</a></li>
+	<li><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -493,6 +516,17 @@ margin-top:15px;
 	</span>
 	</div>
 </header>
+
+<div class="fixedNav">
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li class="activeFixed"><a href="#">Portfolio</a></li>
+    <li><a href="#">Skills</a></li>
+	 <li><a href="#">Plugins</a></li>
+	 <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+</div>
 
 <div id="jquery-script-menu">
 <div class="jquery-script-center">
@@ -889,7 +923,6 @@ g.push(this.handle.elem)});e(g).each(function(){var c=e(this),a;a=0;for(var d=th
 
 $('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
-	
     if (topOrBottomOrBoth == 'top') {
       // top part of element is visible
 	  $(this).find('.showDivEase').removeClass('pulse animated');
@@ -905,6 +938,25 @@ $('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
   } else {
     //$(this).removeClass('bounceInDown animated')
 	$(this).find('.showDivEase').removeClass('blackTrans').removeClass('pulse animated');
+  }
+});
+
+
+
+$('.pageTitle').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $('.fixedNav').removeClass('fadeOut animated');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+	  $('.fixedNav').removeClass('fadeOut animated');
+    } else {
+      // whole part of element is visible
+	  $('.fixedNav').removeClass('fadeOut animated');
+    }
+  } else {
+	$('.fixedNav').addClass('fadeIn animated');
   }
 });
 
