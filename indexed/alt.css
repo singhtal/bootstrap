@@ -3,7 +3,7 @@ visibility:hidden;
 }
 #gradient2{
 padding-top:100px;
-border-top: 5px solid gray;
+border-top: 3px dashed gray;
 }
 	  .gallery:hover{
 	  opacity:0.4;
@@ -185,8 +185,10 @@ margin-top:-13%;
 
 
 .navbar-inverse {
-    background-color: #3d0099;
+    background-color: #00537E;
     border-color: #E7E7E7;
+    border-color: transparent;
+    border-radius: 0px;
 }
 
 .navbar-inverse .navbar-nav > .active > a, 
@@ -287,11 +289,16 @@ width:100%;
 }
 .fixedNav li{
 float:none !important;
-borde:0px solid transparent !important;
+border-top:0px solid transparent !important;
+border-bottom:0px solid transparent !important;
 }
 .activeFixed{
-color:white;
-font-weight:bold;
+background:#337ab7 !important;	
+border-right:2px solid white;
+border-left:2px solid white;
+}
+.activeFixed>a{
+color:white !important;
 }
 .navbar-nav>li:hover{
 border-bottom:3px solid white;
