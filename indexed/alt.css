@@ -294,8 +294,6 @@ border-bottom:0px solid transparent !important;
 }
 .activeFixed{
 background:#337ab7 !important;	
-border-right:2px solid white;
-border-left:2px solid white;
 }
 .activeFixed>a{
 color:white !important;
@@ -426,6 +424,15 @@ color:white;
 display:block;
 visibility:hidden;
 }
+.skills{
+	padding-top:50px;
+	padding-bottom:50px;
+	border-top:3px dashed gray;
+}
+.skillImg{
+width:200px;
+height:170px;
+}
 header{
 background:linear-gradient(90deg,#00537E 10%,#3AA17E 90%);
 //background:linear-gradient(90deg, #01a99c 10%, #0698b1 90%);;
@@ -441,6 +448,23 @@ visibility:hidden;
     z-index: 9999;
 }
 .hidden { opacity: 0; }
+
+.skills{
+	position:relative;
+}
+.skillRightFloat{
+	height:100%;width:96px;position:absolute; top:0; right:0;
+	//text-align:right;
+}
+.skillRightFloat div{
+	margin-bottom:20px;
+	display:block;
+	//text-align:right;
+}
+.mauto{
+	margin:auto;
+}
+
 @media(min-width:768px){
 .flexabove768{
 display:flex;
