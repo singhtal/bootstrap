@@ -5,16 +5,16 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	
   <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
+  <script src="sketch.js"></script>
   <link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/port.css">
-  <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/alt.css">  
-  <!-- <link rel="stylesheet" href="new 4.css"> -->
+ <!-- <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/alt.css">  -->
 
-		
+  <link rel="stylesheet" href="new 4.css"> 	
 </head>
 <body>
 <div class=""></div>
@@ -63,14 +63,14 @@
 	<a id="bigDown"><i class="fa fa-angle-double-down"></i></div></a>
 	</span>
 	</div>
-</header> 
+</header>
 
 <div class="fixedNav">
 <nav class="navbar navbar-inverse">
   <ul class="nav navbar-nav">
     <li class="activeFixed"><a href="#">Portfolio</a></li>
     <li><a href="#">Skills</a></li>
-	 <li><a href="#">Plugins</a></li>
+	 <li class="hidden-xs hidden-sm"><a href="#">Plugins</a></li>
 	 <li><a href="#">Contact</a></li>
   </ul>
 </nav>
@@ -171,11 +171,54 @@
 				console.log(e);
 			}
 		});
+		
+
+		
+		
 	});
 </script>
 
 
-		<div class="container-fluid " id="gradient2">
+<div class="skills">
+	<div class="htmlImage">
+		<img class=" img img-responsive mauto" src="http://www.webgreenit.com/NEW/images/map.png" alt="html"></img>
+	</div>
+
+<div class="skillRightFloat">
+<div class="">
+	<button type="button" class="btn btn-danger">HTML 5</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-info">CSS 3</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-primary">Bootstrap</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-warning">Javascript</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-success">Jquery</button>
+</div>
+<div class=" hidden-xs">
+	<button type="button" class="btn btn-danger">Angular JS</button>
+</div>
+<div class=" hidden-xs">
+	<button type="button" class="btn btn-info">PHP</button>
+</div>
+<div class="hidden-sm hidden-xs">
+	<button type="button" class="btn btn-primary">AJAX</button>
+</div>
+<div class="hidden-sm hidden-xs">
+	<button type="button" class="btn btn-warning">React JS</button>
+</div>
+<div class="hidden-sm hidden-xs">
+	<button type="button" class="btn btn-success">Kendo UI</button>
+</div>
+
+</div>
+
+		<div class="container-fluid hidden-xs hidden-sm" id="gradient2">
 		
 				<div class="row giveMarginTop">
 					<div class="row flexabove768">
@@ -358,7 +401,7 @@
 				
 				<div class="left3">
 				<div class="map-icon icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-				<a class=" mail" href="mailto:talvindersingh1992@gmail.com?Subject=Hello Developer" target="_top" title="click to send email">talvindersingh1992@gmail.com</a>						
+				<a class=" mail" href="mailto:talvindersingh1992@gmail.com?Subject=Hello Developer" target="_top" title="click to send email">Send Email</a>						
 				</div>
 				
 			</div>
@@ -516,6 +559,14 @@ $('.cntl').bind('inview', function (event, visible, topOrBottomOrBoth) {
   }
 });
 
+$('.skills').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
+  } else {
+  }
+});
+
 $('#gradient2').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
 	$('.fixedNav li').removeClass('activeFixed');
@@ -550,4 +601,3 @@ $(this).addClass('doTra');
 
 </script>
 </html>
- 
