@@ -1,3 +1,6 @@
+body{
+	display:none;
+}
 .extra, .pageTitle>div, .intro_list , #portfolio-button, .user-icon, .userInfo{
 visibility:hidden;
 }
@@ -349,10 +352,15 @@ color: #013a55;
 .myNav{
 right:5%;
 }
+.fixedNav>nav>ul{
+	height:50px;
+}
 #myNavbar{
 padding:0px;
 margin:0px;
-width:150px;
+width:300px;
+overflow:hidden;
+border-color:transparent;
 }
 .navbar-nav {
     margin: 0px;
@@ -425,9 +433,11 @@ display:block;
 visibility:hidden;
 }
 .skills{
-	padding-top:50px;
+	//margin-top:75px;
+	//padding-top:100px;
 	padding-bottom:50px;
 	border-top:3px dashed gray;
+	margin-bottom:50px;
 }
 .skillImg{
 width:200px;
@@ -453,13 +463,44 @@ visibility:hidden;
 	position:relative;
 }
 .skillRightFloat{
-	height:100%;width:96px;position:absolute; top:0; right:0;
-	//text-align:right;
+	padding-top:10px;
+	padding-right:10px;
+	height:100%;
+	//width:96px;
+	position:absolute; 
+	top:0; 
+	right:0;
+	text-align:right;
+}
+.skillRightFloat button{
+	box-shadow:-5px 7px 10px 0px grey
 }
 .skillRightFloat div{
 	margin-bottom:20px;
 	display:block;
 	//text-align:right;
+}
+.skillLeftFloat{
+	padding-top:10px;
+	padding-left:10px;
+	height:100%;
+	//width:96px;
+	position:absolute; 
+	top:0; 
+	left:0;
+	//text-align:right;
+}
+.skillLeftFloat button{
+		box-shadow:5px 7px 10px 0px grey;
+}
+.skillLeftFloat div{
+	margin-bottom:20px;
+	display:block;
+	//text-align:right;
+}
+.skills button{
+    border-radius: 0px;
+	width:100px;
 }
 .mauto{
 	margin:auto;
