@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-  <title>Jquery Plus</title>  
+<head>
+  <title>Jquery Plus</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <body>
 <div class=""></div>
 <div class=" hidden"></div>
-<header>
+<header class="col-xs-12">
 	<div class="headNav">
 	<div class="user-icon zoomIn animated"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
 	<div class="userInfo zoomIn animated">
@@ -38,10 +38,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav extra">
-    <li><a href="#">Portfolio</a></li>
-    <li><a href="#">Skills</a></li>
-	<li><a href="#">Plugins</a></li>
-	<li><a href="#">Contact</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#skills">Skills</a></li>
+	<li class="hidden-xs hidden-sm"><a href="#gradient2">Plugins</a></li>
+	<li><a href="#contact">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -59,7 +59,7 @@
 	<ul class="intro_list ">
 		<li class="">HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
 	</ul>
-	<a id="portfolio-button" class="button"  title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
+	<a id="portfolio-button" class="button"  href="#portfolio" title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
 	<a id="bigDown"><i class="fa fa-angle-double-down"></i></div></a>
 	</span>
 	</div>
@@ -68,10 +68,10 @@
 <div class="fixedNav">
 <nav class="navbar navbar-inverse">
   <ul class="nav navbar-nav">
-    <li class="activeFixed"><a href="#">Portfolio</a></li>
-    <li><a href="#">Skills</a></li>
-	 <li class="hidden-xs hidden-sm"><a href="#">Plugins</a></li>
-	 <li><a href="#">Contact</a></li>
+    <li class="activeFixed"><a href="#portfolio">Portfolio</a></li>
+    <li class="skillCatch"><a href="#skills"> Skills </a></li>
+	 <li class="hidden-xs hidden-sm"><a href="#gradient2">Plugins</a></li>
+	 <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 </div>
@@ -84,7 +84,7 @@
 </div>
 </div>
 
-<div class="cntl"> <span class="cntl-bar cntl-center"> <span class="cntl-bar-fill"></span> </span>
+<div class="cntl" id="portfolio"> <span class="cntl-bar cntl-center"> <span class="cntl-bar-fill"></span> </span>
   <div class="cntl-states">
     <div class="cntl-state">
       <div class="cntl-content">
@@ -164,11 +164,11 @@
 <script type="text/javascript" src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/cntl.js"></script> 
 <script type="text/javascript">
 	$(document).ready(function(e){
+	$('body').show()
 		$('.cntl').cntl({
 			revealbefore: 300,
 			anim_class: 'cntl-animate',
 			onreveal: function(e){
-				console.log(e);
 			}
 		});
 		
@@ -179,41 +179,59 @@
 </script>
 
 
-<div class="skills">
+<div class="skills" id="skills">
+<div class="nothing" style="position:relative; margin-top:40px;">	
 	<div class="htmlImage">
 		<img class=" img img-responsive mauto" src="http://www.webgreenit.com/NEW/images/map.png" alt="html"></img>
 	</div>
+	
 
 <div class="skillRightFloat">
 <div class="">
 	<button type="button" class="btn btn-danger">HTML 5</button>
 </div>
 <div class="">
-	<button type="button" class="btn btn-info">CSS 3</button>
-</div>
-<div class="">
 	<button type="button" class="btn btn-primary">Bootstrap</button>
-</div>
-<div class="">
-	<button type="button" class="btn btn-warning">Javascript</button>
 </div>
 <div class="">
 	<button type="button" class="btn btn-success">Jquery</button>
 </div>
-<div class=" hidden-xs">
-	<button type="button" class="btn btn-danger">Angular JS</button>
-</div>
-<div class=" hidden-xs">
+<div class="">
 	<button type="button" class="btn btn-info">PHP</button>
 </div>
-<div class="hidden-sm hidden-xs">
-	<button type="button" class="btn btn-primary">AJAX</button>
-</div>
-<div class="hidden-sm hidden-xs">
+<div class="">
 	<button type="button" class="btn btn-warning">React JS</button>
 </div>
-<div class="hidden-sm hidden-xs">
-	<button type="button" class="btn btn-success">Kendo UI</button>
+<div class="hidden-xs">
+	<button type="button" class="btn btn-default">Jquery UI</button>
+</div>
+
+</div>
+
+
+
+
+
+<div class="skillLeftFloat">
+<div class="">
+	<button type="button" class="btn btn-danger">CSS 3</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-primary">Javascript</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-success">Angular JS</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-info">AJAX</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-warning">Kendo UI</button>
+</div>
+<div class="hidden-xs">
+	<button type="button" class="btn btn-default">Laravel</button>
+</div>
+</div>
 </div>
 
 </div>
@@ -382,7 +400,7 @@
 				</div>
 					
 		</div>
-		<div class="footer">
+		<div class="footer" id="contact">
 			<div class="geekImage">
 				<!--<img class="img img-responsive" src="https://s3.amazonaws.com/user-media.venngage.com/197094-2c3a415721dbb22bd87b092a339e8cc6.png"></img>-->
 			</div>
@@ -408,7 +426,7 @@
 			
 			<div class="middleSection col-xs-6 col-md-4">
 			<img width ="50px" style="float:left; margin-right:10px" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAf6AAAAJGVlMTFkZDVmLWVlMjMtNGEwNy04NDhmLTIyMTQ5MGZiNzlhYQ.jpg" />
-				Front-end Developer, author of Jquery Plus, and Engineer in Infosys. Talvinder combines his education with 3 years commercial experience in front-end development to produce high-quality websites and exceptional user experience.
+				Front-end Developer, author of Jquery Plus, and Engineer in Infosys. Talvinder combines his education with 3 years commercial experience in front end development to produce high-quality websites and exceptional user experience.
 			</div>
 			
 			<div class="rightSection col-md-4 hidden-xs hidden-sm" >
@@ -487,11 +505,6 @@ color:white;
 </style>
 <script type="text/javascript">
 
-$('#portfolio-button').click(function(){
-$(window).scrollTop($('.cntl').offset().top - 50);
-});
-	
-
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -511,6 +524,15 @@ setTimeout(function(){ $('#bigDown').addClass('fadeOutDown animated'); }, 8000);
 (function(e){function m(){var b=window.innerHeight;if(b)return b;var f=document.compatMode;if(f||!e.support.boxModel)b="CSS1Compat"===f?document.documentElement.clientHeight:document.body.clientHeight;return b}var n=function(b,f){function e(){null!==a?c=!0:(c=!1,b(),a=setTimeout(function(){a=null;c&&e()},f))}var c=!1,a=null;return e}(function(){var b=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,f=b+m(),g=[];e.each(e.cache,function(){this.events&&this.events.inview&&
 g.push(this.handle.elem)});e(g).each(function(){var c=e(this),a;a=0;for(var d=this;d;d=d.offsetParent)a+=d.offsetTop;var d=c.height(),k=a+d,d=c.data("inview")||!1,h=c.data("offset")||0,g=a>b&&k<f,l=k+h>b&&a<b,h=a-h<f&&k>f;g||l||h||a<b&&k>f?(a=h?"top":l?"bottom":"both",d&&d===a||(c.data("inview",a),c.trigger("inview",[!0,a]))):!g&&d&&(c.data("inview",!1),c.trigger("inview",[!1]))})},100);e(window).on("checkInView.inview click.inview ready.inview scroll.inview resize.inview",n)})(jQuery);
 
+
+$(document).on('click','.skillCatch',function(e){
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
+	location.href="#skills";
+	  $('.skills').find('.skillLeftFloat').find('button').addClass('animated fadeInRightBig'); 
+	  $('.skills').find('.skillRightFloat').find('button').addClass('animated fadeInLeftBig');	
+	e.preventDefault();
+});
 
 $('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
@@ -553,6 +575,7 @@ $('.pageTitle').bind('inview', function (event, visible, topOrBottomOrBoth) {
 
 $('.cntl').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
+  
 	$('.fixedNav li').removeClass('activeFixed');
 	$('.fixedNav li:nth-child(1)').addClass('activeFixed');
   } else {
@@ -563,12 +586,24 @@ $('.skills').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
 	$('.fixedNav li').removeClass('activeFixed');
 	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
-  } else {
+	
+	    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $(this).find('.skillLeftFloat').find('button').addClass('animated fadeInRightBig'); 
+	  $(this).find('.skillRightFloat').find('button').addClass('animated fadeInLeftBig');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+    } else {
+  } 
+  }else {
+  $(this).find('.skillLeftFloat').find('button').removeClass('animated fadeInRightBig'); 
+  $(this).find('.skillRightFloat').find('button').removeClass('animated fadeInLeftBig');
   }
 });
 
 $('#gradient2').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
+
 	$('.fixedNav li').removeClass('activeFixed');
 	$('.fixedNav li:nth-child(3)').addClass('activeFixed');
   } else {
