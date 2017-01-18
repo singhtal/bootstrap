@@ -10,10 +10,10 @@
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
   <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
-  <script src="sketch.js"></script>
   <link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/port.css">
-<link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/alt.css"> 
+  <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/alt.css"> 
 <!-- <link rel="stylesheet" href="new 4.css"> 	-->
+ <script src="typed.js"></script>
 </head>
 <body>
 <div class=""></div>
@@ -180,6 +180,10 @@
 
 <div class="skills" id="skills">
 <div class="nothing" style="position:relative; margin-top:40px;">	
+<div class="typeHere">
+	
+</div>
+
 	<div class="htmlImage">
 		<img class=" img img-responsive mauto" src="http://www.webgreenit.com/NEW/images/map.png" alt="html"></img>
 	</div>
@@ -187,7 +191,7 @@
 
 <div class="skillRightFloat">
 <div class="">
-	<button type="button" class="btn btn-danger">HTML 5</button>
+	<button type="button" class="btn btn-danger">CSS 3</button>
 </div>
 <div class="">
 	<button type="button" class="btn btn-primary">Bootstrap</button>
@@ -201,10 +205,12 @@
 <div class="">
 	<button type="button" class="btn btn-warning">React JS</button>
 </div>
-<div class="hidden-xs">
+<div class="">
 	<button type="button" class="btn btn-default">Jquery UI</button>
 </div>
-
+<div class="hidden-xs">
+	<button type="button" class="btn btn-danger">MY SQL</button>
+</div>
 </div>
 
 
@@ -213,7 +219,7 @@
 
 <div class="skillLeftFloat">
 <div class="">
-	<button type="button" class="btn btn-danger">CSS 3</button>
+	<button type="button" class="btn btn-danger">HTML 5</button>
 </div>
 <div class="">
 	<button type="button" class="btn btn-primary">Javascript</button>
@@ -227,8 +233,11 @@
 <div class="">
 	<button type="button" class="btn btn-warning">Kendo UI</button>
 </div>
-<div class="hidden-xs">
+<div class="">
 	<button type="button" class="btn btn-default">Laravel</button>
+</div>
+<div class="hidden-xs">
+	<button type="button" class="btn btn-danger">JSON</button>
 </div>
 </div>
 </div>
@@ -585,6 +594,14 @@ $('.skills').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
 	$('.fixedNav li').removeClass('activeFixed');
 	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
+	
+/*var jq = $.noConflict();	
+	  jq(function(){
+	        jq(".typeHere").typed({
+ strings: ["First sentence.", "Second sentence."],
+        typeSpeed: 0
+      });  
+  }); */
 	
 	    if (topOrBottomOrBoth == 'top') {
       // top part of element is visible
