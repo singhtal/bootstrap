@@ -1,54 +1,194 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
-<script type="text/javascript">
-function drawShape(){
-  // get the canvas element using the DOM
-	
-	for(k=0; k<=27 ; k++){
-    $('body').append('<canvas class="mycanvas" width="200" height="200" >');
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Password Meter</title>
+	<link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+    <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+    <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
+	<style>
+	#pwd:focus{
+	border:none !important;
 	}
-	
-	$('.mycanvas').each(function(){
-	  var canvas = $(this).get(0);
-    var ctx = canvas.getContext('2d');
-    ctx.translate(100,100);
-    for (i=1; i<7; i++){
-       //ctx.save();
-       ctx.fillStyle = 'rgb('+(51*i)+','+(200-51*i)+',0)';
-       for (j=0; j < i*6; j++){
-          ctx.rotate(Math.PI*2/(i*6));
-          ctx.beginPath();
-          ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
-          ctx.fill();
-       }
-       ctx.restore();
-     }
-	 });
-	 
-	 $('body').show('500');
-	 
-	 
-	  var $elie = $(".mycanvas"), degree = 0, timer;
-    rotate();
-    function rotate() {
-        
-        $elie.css({ WebkitTransform: 'rotate(' + degree + 'deg)'});  
-        $elie.css({ '-moz-transform': 'rotate(' + degree + 'deg)'});                      
-        timer = setTimeout(function() {
-            ++degree; rotate();
-        },5);
-    }
-    
-  rotate();
-	 
-	 
-  
-}
-</script>
+	#pwd{
+	border:none !important;
+    box-shadow: 0px 0px 0px 1px gray;	
+	}
+	.red{
+	box-shadow: 0px 0px 0px 1px red !important;
+	}
+	.green{
+	box-shadow: 0px 0px 0px 1px green  !important;
+	}
+	.lightGreen{
+	box-shadow: 0px 0px 0px 1px lightgreen  !important;
+	}
+	.blue{
+	box-shadow: 0px 0px 0px 1px blue  !important;
+	}	
+	.hintParent{
+	width: 20%;
+	display: inline-block;
+    float: right;
+    border-radius: 5px;
+	}
+	.hint{
+	}
+	</style>
+  </head>
 </head>
-<body onload="drawShape();" style="display:none">
-   <!--<canvas id="mycanvas" class="mycanvas " width="200" height="200" style="border:1px solid black"></canvas>-->
-</body>
+<body>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+	  <div class="hintParent"><div class="hint"> </div></div>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+    </div>
+  </form>
+ </div> 
+
+<script >
+var strPassword;
+var charPassword;
+var minPasswordLength = 8;
+var baseScore = 0, score = 0;
+ 
+
+
+var alphaScore = 0;
+var numberScore = 0;
+var specialScore = 0;
+var lengthScore = 0;
+
+$("#pwd").on('input',function(){
+	checkVal();
+});
+function checkVal()
+{  charPassword = $('#pwd').val();
+$('.hintParent').show();
+$('.hintParent').css({'border':'1px solid lightgray', 'border-radius':'5px'});
+    if (charPassword.length >= minPasswordLength)
+    { 
+			if(charPassword.length == 0 ){
+			lengthScore = 0;
+			$('.hint').css('width','0px').text(' ');
+			}
+			else if(charPassword.length > 8 && charPassword.length < 10 ){
+			lengthScore = 30;
+			}	
+			else if(charPassword.length > 10 ){
+			lengthScore = 50 ;
+			}	
+			
+        analyzeString();    
+        calcComplexity();       
+    }
+    else
+    {	
+			if(charPassword.length == 0 ){
+			lengthScore = 0;
+			$('.hintParent').hide();
+			$('.hint').css('width','0px').text(' ');
+			}
+	
+    }
+     
+    outputResult();
+}
+
+
+function analyzeString ()
+{   
+		if (charPassword.match(/[a-z]/g)) {						
+		var count=0,len=charPassword.length;
+		for(var i=0;i<len;i++) {
+			if(/[a-z]/i.test(charPassword.charAt(i))) count++;
+		}
+		if(count == 0){
+		alphaScore = 0;
+		}
+		else if(count <4){
+		alphaScore = 10;
+		}
+		else if(count >= 4){
+		alphaScore = 15;
+		}
+		}
+		
+		var count=0,len=charPassword.length;
+		for(var i=0;i<len;i++) {
+			if(/[0-9]/.test(charPassword.charAt(i))) count++;
+		}
+		if(count == 0){
+		numberScore = 0;
+		}
+		else if(count <4){
+		numberScore = 10;
+		}
+		else if(count >= 4){
+		numberScore = 15;
+		}		
+		
+		
+        if (charPassword.match(/(.*[!,@,#,$,%,^,&,*,?,_,~])/)) {
+			var allFoundCharacters = charPassword.match(/[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g);
+			count = allFoundCharacters.length;		
+			if(count == 0){
+			specialScore = 0;
+			}
+			else if(count < 2){
+			specialScore = 15;
+			}
+			else if(count >=2){
+			specialScore = 20;
+			}		
+		} 
+    
+     
+}
+function calcComplexity()
+{
+
+    score = lengthScore + alphaScore + numberScore + specialScore ; 
+}
+function outputResult()
+{
+var scoreWidth = score+'%'
+$('#pwd').removeClass('red');
+$('#pwd').removeClass('lightGreen');
+$('#pwd').removeClass('green');
+$('#pwd').removeClass('blue');
+    if ($("#pwd").val()== "")
+    { 
+        //complexity.html("Enter a random value").addClass("default");
+		$('#pwd').addClass('red');
+    }
+    else if (charPassword.length < minPasswordLength)
+    {	$('#pwd').addClass('red');
+		$('.hint').text('Weak').css({'background-color':'red','width':scoreWidth});
+       // complexity.html("At least " + minPasswordLength+ " characters please!").addClass("weak");
+    }
+    else if (score<=65)
+    {	$('#pwd').addClass('red');
+		$('.hint').text('Weak').css({'background-color':'red','width':scoreWidth});;
+       // complexity.html("Weak!").addClass("weak");
+    }
+    else if (score>=66 && score<=80)
+    {	$('#pwd').addClass('lightGreen');
+		$('.hint').text('Average').css({'background-color':'lightGreen','width':scoreWidth});
+       // complexity.html("Average!").addClass("strong");
+    }
+    else if (score>=81 && score<=95)
+    {	$('#pwd').addClass('green');
+		$('.hint').text('Strong').css({'background-color':'green','width':scoreWidth});
+       // complexity.html("Strong!").addClass("stronger");
+    }
+    else if (score>=96)
+    {	$('#pwd').addClass('blue');
+		$('.hint').text('Strongest').css({'background-color':'blue','width':scoreWidth});
+        //complexity.html("Secure!").addClass("strongest");
+    }
+}
+    </script>
+  </body>
 </html>
