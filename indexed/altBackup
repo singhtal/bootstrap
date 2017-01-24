@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/bootstrap.js"></script>
+  <script src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/jqmin.js"></script>
+  <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/minport.css">
+  <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/minfinal.css"> 
+  <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/minloading.css">
+<style>
+@media(max-width:768px){
+.cntl-content{
+margin-left:0px !important;
+margin-right:0px !important;
+margin-left:0px !important;
+opacity:1 !important ;
+background:white !important;	
+}
+.cntl-image{
+opacity:1 !important;	
+}
+}	
+</style>	
+</head>
+<body>
+
+<div class="myLoader">
+<div class="pg-loading-screen pg-loading" style="background-color: rgb(244, 109, 59);"><div class="pg-loading-inner">
+  <div class="pg-loading-center-outer">
+    <div class="pg-loading-center-middle">
+      <h1 class="pg-loading-logo-header">
+        Loading
+      </h1>
+      <div class="pg-loading-html pg-loaded"><p class="loading-message"></p><div class="sk-spinner sk-spinner-wave"><div class="sk-rect1"></div><div class="sk-rect2"></div><div class="sk-rect3"></div><div class="sk-rect4"></div><div class="sk-rect5"></div></div></div>
+    </div>
+  </div>
+</div></div>
+</div>
+<!--  my loader ends -->
+
+<div class=""></div>
+<div class=" hidden"></div>
+<header class="col-xs-12">
+	<div class="headNav">
+	<div class="user-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+	<div class="userInfo">
+		<div class="name">Talvinder Singh</div>
+		<div class="desig">Senior Systems Engineer</div>
+	</div>	
+	
+	<nav class="navbar navbar-inverse myNav hidden-xs">
+  <div class="container-fluid no-pad bg">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav extra">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#skills">Skills</a></li>
+	<li class="hidden-xs hidden-sm"><a href="#gradient2">Plugins</a></li>
+	<li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+	</div>
+	
+	<div class="pageTitle">
+	<div class=""><span class="hidden-xs">Responsive</span> Front-end Development</div>
+	<span class="titleDesc">
+	<ul class="intro_list ">
+		<li class="">HTML</li><li>CSS</li><li>JavaScript</li><li>Jquery</li><li>Bootstrap</li>
+	</ul>
+	<a id="portfolio-button" class="button"  href="#portfolio" title="View portfolio items">View Portfolio <i class="fa fa-angle-down"></i></a>
+	<a id="bigDown"><i class="fa fa-angle-double-down"></i></div></a>
+	</span>
+	</div>
+</header>
+
+<div class="fixedNav">
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li class="activeFixed"><a href="#portfolio">Portfolio</a></li>
+    <li class="skillCatch"><a href="#skills"> Skills </a></li>
+	 <li class="hidden-xs hidden-sm"><a href="#gradient2">Plugins</a></li>
+	 <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</div>
+
+<div id="jquery-script-menu">
+<div class="jquery-script-center">
+
+
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+
+<div class="cntl" id="portfolio"> <span class="cntl-bar cntl-center"> <span class="cntl-bar-fill"></span> </span>
+  <div class="cntl-states">
+    <div class="cntl-state">
+      <div class="cntl-content">
+        <h4>Joined Infosys</h4>
+        <p>Systems Engineer</p>
+		<a href="https://www.google.co.in/maps/place/Mysuru,+Karnataka/@12.1952138,75.9613627,9z/data=!3m1!4b1!4m5!3m4!1s0x3baf7010988f73e5:0x7b92fb661b13ee09!8m2!3d12.1873152!4d76.3637285">Location: Mysore, Karnatka</a>
+      </div>
+	  <div class="cntl-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/400px-Infosys_logo.svg.png"></div>
+      <div class="cntl-icon cntl-center">June  2014</div>
+    </div>
+    <div class="cntl-state">
+      <div class="cntl-content">
+        <h4>Diageo Project</h4>
+        <a href="https://www.google.co.in/maps/place/Mangaluru,+Karnataka/@12.9231621,74.7820483,12z/data=!3m1!4b1!4m5!3m4!1s0x3ba35a4c37bf488f:0x827bbc7a74fcfe64!8m2!3d12.9141417!4d74.8559568">Location: Mangalore, Karnatka</a>
+		<br>
+          <br>
+          <p>Technology: PHP, Javascript, Jquery, Laravel, HTML, Bootstrap, CSS, AJAX and Responsive Web Design.</p>
+		  <p>Duration: Nov 2014 - Jan 2016</p>
+      </div>
+      <div class="cntl-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/DIageo_Logo.svg/659px-DIageo_Logo.svg.png"></div>
+      <div class="cntl-icon cntl-center"> &nbsp Nov &nbsp 2014</div>
+    </div>
+    <div class="cntl-state">
+      <div class="cntl-content">
+        <h4>Infosys Bravo Award</h4>
+		Location: 
+		<a href="https://www.google.co.in/maps/place/Mangaluru,+Karnataka/@12.9231621,74.7820483,12z/data=!3m1!4b1!4m5!3m4!1s0x3ba35a4c37bf488f:0x827bbc7a74fcfe64!8m2!3d12.9141417!4d74.8559568">Mangalore, Karnatka</a>
+		
+        <p><br>Received Infosys Bravo Award 2015 for Excellent performance in Diageo Project and External Front-end help in other intra-unit projects.  </p>
+		<p>When: 15 Oct 2015</p>
+      </div>
+      <div class="cntl-image" style="padding-top:0px;"><img src="http://www.trophyhuntersusa.com/_images/Trophy-Hunters-Trophy.gif"></div>
+      <div class="cntl-icon cntl-center"> &nbsp OCT  &nbsp 2015</div>
+    </div>
+    <div class="cntl-state">
+      <div class="cntl-content">
+        <h4>Horizon Blue Cross Project</h4>
+		Location: 
+        <a href="https://www.google.co.in/maps/place/Chandigarh/@30.7350626,76.6934883,12z/data=!3m1!4b1!4m5!3m4!1s0x390fed0be66ec96b:0xa5ff67f9527319fe!8m2!3d30.7333148!4d76.7794179">Chandigarh, India</a>
+		<br>
+          <br>
+          <p>Technology: JSP, Javascript, Jquery, HTML, Bootstrap, CSS, AngularJS AJAX and Responsive Web Design.</p>
+		  <p>Duration: Feb 2016 - Nov 2016</p>
+      </div>
+      <div class="cntl-image"><img src="http://benessentials.com/wp-content/uploads/2013/07/horizon-bcbs.png"></div>
+      <div class="cntl-icon cntl-center">&nbsp Feb  &nbsp 2016</div>
+    </div>
+    <div class="cntl-state">
+      <div class="cntl-content">
+        <h4>Infosys Insta Award</h4>
+		Location: 
+				<a href="https://www.google.co.in/maps/place/Chandigarh/@30.7350626,76.6934883,12z/data=!3m1!4b1!4m5!3m4!1s0x390fed0be66ec96b:0xa5ff67f9527319fe!8m2!3d30.7333148!4d76.7794179">Chandigarh, India</a>
+		
+        <p><br>Received for Team work and Extraordinary performance in Development, ensuring timely delivery of all Modules. </p>
+		<p>When: 15 August 2016</p>
+      </div>
+      <div class="cntl-image"><img src="http://wrnportfolio.weebly.com/uploads/3/2/0/6/32061701/604499_orig.png"></div>
+      <div class="cntl-icon cntl-center">&nbsp Aug  &nbsp 2016 </div>
+    </div>
+    <div class="cntl-state">
+      <div class="cntl-content">
+        <h4>AON Project</h4>
+		Location:
+        <a href="https://www.google.co.in/maps/place/Chandigarh/@30.7350626,76.6934883,12z/data=!3m1!4b1!4m5!3m4!1s0x390fed0be66ec96b:0xa5ff67f9527319fe!8m2!3d30.7333148!4d76.7794179"> Chandigarh,</a>
+		<a href="https://www.google.co.in/maps/place/Chandigarh/@30.7350626,76.6934883,12z/data=!3m1!4b1!4m5!3m4!1s0x390fed0be66ec96b:0xa5ff67f9527319fe!8m2!3d30.7333148!4d76.7794179">  Bangalore </a>
+		<br>
+          <br>
+          <p>Technology: KENDO UI, Javascript, Jquery, HTML, Bootstrap, CSS, AngularJS AJAX and Responsive Web Design.</p>
+		  <p>Duration: Nov 2016 - Present</p>
+      </div>
+      <div class="cntl-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Aon_Corporation_logo.svg/2000px-Aon_Corporation_logo.svg.png"></div>
+      <div class="cntl-icon cntl-center">&nbsp Nov  &nbsp 2016</div>
+    </div>	
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" src="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/cntl.js"></script> 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89678967-2', 'auto');
+  ga('send', 'pageview');
+
+</script>	
+<script type="text/javascript">
+	$(document).ready(function(e){
+	//$('.pg-loading').hide();
+		$('.cntl').cntl({
+			revealbefore: 300,
+			anim_class: 'cntl-animate',
+			onreveal: function(e){
+			}
+		});
+		
+	});
+	
+	$(window).load(function(){
+		$('.pg-loading').addClass('fadeOut animated');
+		$('.pg-loading').hide();
+		$('.user-icon').addClass(' zoomIn animated');
+		$('.userInfo').addClass(' zoomIn animated');
+		setTimeout(function(){ $('.extra').addClass('fadeInLeftBig animated'); }, 1000);
+		setTimeout(function(){ $('.extra').removeClass('fadeInLeftBig animated').addClass('pulse animated'); }, 2000);
+		setTimeout(function(){ $('.pageTitle>div').addClass('slideInDown animated'); }, 3500);
+		setTimeout(function(){ $('.intro_list').addClass('zoomIn animated'); }, 5000);
+		setTimeout(function(){ $('#portfolio-button').addClass('flipInX animated'); }, 6500);
+		setTimeout(function(){ $('#bigDown').addClass('fadeOutDown animated'); }, 8000);
+	});
+</script>
+
+
+<div class="skills" id="skills">
+<div class="nothing" style="position:relative; margin-top:40px;">	
+<div class="typeHere">
+	
+</div>
+
+	<div class="htmlImage">
+		<img class=" img img-responsive mauto" src="http://www.webgreenit.com/NEW/images/map.png" alt="html"></img>
+	</div>
+	
+
+<div class="skillRightFloat">
+<div class="">
+	<button type="button" class="btn btn-danger">CSS 3</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-primary">Bootstrap</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-success">Jquery</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-info">PHP</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-warning">React JS</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-default">Jquery UI</button>
+</div>
+<div class="hidden-xs">
+	<button type="button" class="btn btn-danger">MY SQL</button>
+</div>
+</div>
+
+
+<div class="skillLeftFloat">
+<div class="">
+	<button type="button" class="btn btn-danger">HTML 5</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-primary">Javascript</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-success">Angular JS</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-info">AJAX</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-warning">Kendo UI</button>
+</div>
+<div class="">
+	<button type="button" class="btn btn-default">Laravel</button>
+</div>
+<div class="hidden-xs">
+	<button type="button" class="btn btn-danger">JSON</button>
+</div>
+</div>
+</div>
+
+</div>
+
+		<div class="container-fluid hidden-xs hidden-sm" id="gradient2">
+		
+				<div class="row giveMarginTop">
+					<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://pngimages.net/sites/default/files/dashboard-png-image-29885.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Steps.js - Responsive Step Panel
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp1/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9iR/aGe/9iRaGexie.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Pagination Plus
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp2/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+					 
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.crxcarbonbank.com/img/logos/reset-password.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Password Meter
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp3/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+					</div>					
+					<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://pre06.deviantart.net/2d1f/th/pre/f/2011/234/1/1/captain_america_shield_by_jdrincs-d47gy9f.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						3D Butterfly
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp4/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Interactive Tabs
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp5/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+					 
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.pngall.com/wp-content/uploads/2016/04/Clock-Free-PNG-Image.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Clock Picker
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp6/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+					</div>	
+					
+					<!-- row 2 ends -->
+					
+					<!-- row 3 starts -->
+					
+										<div class="row flexabove768">
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="https://www.connectinternetsolutions.com/wp-content/uploads/2016/08/icon_checklist2-01.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Dropdown to Checklist
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp7/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://noorisys.com/images/technologies/600x600/HTML.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Live JSON to Table
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp8/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+					 
+						<div class="col-xs-12 col-sm-4 comp1 gallery">						
+						<div  style="background-color:#291444" class="padOnHover">
+							<img src="http://www.clipartbest.com/cliparts/9TR/aAe/9TRaAepac.png" class="img img-responsive"/>
+							
+						<div class="showDivEase" >
+						Quicksort Using Jquery
+						
+							<div class="row absolute hidden-xs hidden-sm">
+										<div class=""><div class="btn btn-success btn-sm"><a style="text-decoration:none; color:white;" target="_blank" href="http://rawgit.com/tal1992/bootstrap/master/comp9/index.html">Live Preview</a></div></div>
+										<div class=""><div class="btn btn-info btn-sm"><a target="_blank" style="text-decoration:none; color:white;"  href="https://github.com/tal1992/bootstrap/blob/master/indexed/steps.js/Step.js.zip?raw=true">Download</a></div></div>
+							</div>	
+							
+						</div>						
+						</div>							
+						</div>
+						
+					</div>	
+					
+					<!-- row 3 ends -->
+						
+				</div>
+					
+		</div>
+		<div class="footer" id="contact">
+			<div class="geekImage">
+				<!--<img class="img img-responsive" src="https://s3.amazonaws.com/user-media.venngage.com/197094-2c3a415721dbb22bd87b092a339e8cc6.png"></img>-->
+			</div>
+			
+			<div class="leftSection col-xs-6 col-md-4">
+			
+				<div class="left1">
+				<div class="map-icon icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+				<a target="_blank" title="click to view map" href="https://www.google.co.in/maps/place/Adarsh+Nagar+Metro+Station/@28.717407,77.1679613,17z/data=!3m1!4b1!4m5!3m4!1s0x390d018c94a26bdf:0xba67ec716653709a!8m2!3d28.717407!4d77.17015" class="address">Adarsh Nagar,  New Delhi, India</a>
+				</div>
+				
+				<div class="left2">
+				<div class="map-icon icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+				<div class="address phone">+91 - 7838020998</div>				
+				</div>
+				
+				<div class="left3">
+				<div class="map-icon icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+				<a class=" mail" href="mailto:talvindersingh1992@gmail.com?Subject=Hello Developer" target="_top" title="click to send email">Send Email</a>						
+				</div>
+				
+			</div>
+			
+			<div class="middleSection col-xs-6 col-md-4" style="text-align:inherit">
+			<img width ="50px" style="float:left; margin-right:10px" src="http://cdn.slidesharecdn.com/profile-photo-talvinderskahlon-96x96.jpg?cb=1474346683" />
+				Front-end Developer, author of Jquery Plus, and Engineer in Infosys. Talvinder combines his education with 3 years commercial experience in front end development to produce high-quality websites and exceptional user experience.
+			</div>
+			
+			<div class="rightSection col-md-4 hidden-xs hidden-sm" >
+				<div class="footerAbout">
+				<div class="rightCategory">
+					<div class="aboutTitle">ABOUT</div>
+					<div>Learn about Talvinder’s skills and workflow</div>
+				</div>
+				<div class="rightCategory">
+					<div class="aboutTitle">PORTFOLIO</div>
+					<div>View Talvinder's front-end development work</div>
+				</div>
+				<div class="rightCategory">
+					<div class="aboutTitle">ARTICLES</div>
+					<div>Read web related articles, opinions & tutorials</div>
+				</div>				
+				</div>
+			</div>
+		</div>	
+		<div class=" hidden"></div>
+		
+</body>
+<style>
+.rightCategory{
+margin-bottom:20px;
+}
+.aboutTitle{
+font-weight:bold;
+cursor:pointer;
+transition:1s all ease;
+}
+.aboutTitle:hover{
+color:#31708f;
+}
+.footer{
+margin-top:20px;
+padding:30px;
+overflow:auto;
+background:#333;
+}
+.geekImage>img{
+width:150px;
+}
+.map-icon{
+  display: inline-block;
+  margin-right:20px;
+  vertical-align:bottom;
+}
+.address, .phone, .mail{
+	color: white;
+    display: inline-block;
+    vertical-align:super;
+	//font-weight:bold;
+}
+.mail{
+font-weight:bold;
+}
+.icon>.fa{
+color:white;
+  font-size:30px;
+  display: inline-block;
+}
+.leftSection>div{
+margin-bottom:30px;
+}
+.leftSection, .middleSection{
+//border-right:1px solid #9d9d9d;
+color:white;
+}
+.middleSection{
+text-align:justify;
+}
+.rightSection{
+color:white;
+}
+</style>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+//utility plugin
+(function(e){function m(){var b=window.innerHeight;if(b)return b;var f=document.compatMode;if(f||!e.support.boxModel)b="CSS1Compat"===f?document.documentElement.clientHeight:document.body.clientHeight;return b}var n=function(b,f){function e(){null!==a?c=!0:(c=!1,b(),a=setTimeout(function(){a=null;c&&e()},f))}var c=!1,a=null;return e}(function(){var b=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop,f=b+m(),g=[];e.each(e.cache,function(){this.events&&this.events.inview&&
+g.push(this.handle.elem)});e(g).each(function(){var c=e(this),a;a=0;for(var d=this;d;d=d.offsetParent)a+=d.offsetTop;var d=c.height(),k=a+d,d=c.data("inview")||!1,h=c.data("offset")||0,g=a>b&&k<f,l=k+h>b&&a<b,h=a-h<f&&k>f;g||l||h||a<b&&k>f?(a=h?"top":l?"bottom":"both",d&&d===a||(c.data("inview",a),c.trigger("inview",[!0,a]))):!g&&d&&(c.data("inview",!1),c.trigger("inview",[!1]))})},100);e(window).on("checkInView.inview click.inview ready.inview scroll.inview resize.inview",n)})(jQuery);
+
+
+$(document).on('click','.skillCatch',function(e){
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
+	location.href="#skills";
+	  $('.skills').find('.skillLeftFloat').find('button').addClass('animated fadeInRightBig'); 
+	  $('.skills').find('.skillRightFloat').find('button').addClass('animated fadeInLeftBig');	
+	e.preventDefault();
+});
+
+$('.padOnHover').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $(this).find('.showDivEase').removeClass('pulse animated');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+	  $(this).find('.showDivEase').removeClass('pulse animated');
+    } else {
+      // whole part of element is visible
+	  $(this).addClass('flipInX animated');
+	  $(this).find('.showDivEase').addClass('blackTrans').addClass('pulse animated');
+	  setTimeout(function(){ $(this).find('.showDivEase').removeClass('blackTrans').removeClass('pulse animated'); }, 2000);
+    }
+  } else {
+    //$(this).removeClass('bounceInDown animated')
+	$(this).find('.showDivEase').removeClass('blackTrans').removeClass('pulse animated');
+  }
+});
+
+
+
+$('.pageTitle').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $('.fixedNav').removeClass('fadeOut animated');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+	  $('.fixedNav').removeClass('fadeOut animated');
+    } else {
+      // whole part of element is visible
+	  $('.fixedNav').removeClass('fadeOut animated');
+    }
+  } else {
+	$('.fixedNav').addClass('fadeIn animated');
+  }
+});
+
+$('.cntl').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+  
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(1)').addClass('activeFixed');
+  } else {
+  }
+});
+
+$('.skills').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
+	
+/*var jq = $.noConflict();	
+	  jq(function(){
+	        jq(".typeHere").typed({
+ strings: ["First sentence.", "Second sentence."],
+        typeSpeed: 0
+      });  
+  }); */
+	
+	    if (topOrBottomOrBoth == 'top') {
+      // top part of element is visible
+	  $(this).find('.skillLeftFloat').find('button').addClass('animated fadeInRightBig'); 
+	  $(this).find('.skillRightFloat').find('button').addClass('animated fadeInLeftBig');
+    } else if (topOrBottomOrBoth == 'bottom') {
+      // bottom part of element is visible
+    } else {
+  } 
+  }else {
+  $(this).find('.skillLeftFloat').find('button').removeClass('animated fadeInRightBig'); 
+  $(this).find('.skillRightFloat').find('button').removeClass('animated fadeInLeftBig');
+  }
+});
+
+$('#gradient2').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(3)').addClass('activeFixed');
+  } else {
+  }
+});
+
+$('.footer').bind('inview', function (event, visible, topOrBottomOrBoth) {
+  if (visible == true) {
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(4)').addClass('activeFixed');
+  } else {
+  }
+});
+
+
+$('.compinfo').show()
+
+$('.navbar-nav>li').mouseover(function(){
+$(this).addClass('doTra');
+});
+
+});
+
+
+
+
+
+
+
+
+</script>
+</html>
