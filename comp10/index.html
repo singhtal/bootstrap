@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>React</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">	  	
+	  <style>
+* {
+    padding:0;
+    margin:0;
+}
+.section{
+width:100%;
+height:100px;
+display:none;
+}
+
+html{
+    font:14px normal Arial, sans-serif;
+    color:#626771;
+    background-color:#fff;
+}
+
+body{
+    padding:60px;
+    text-align: center;
+}
+
+ul{
+    list-style:none;
+    display: table;
+	width:100%;
+	margin-bottom:0px !important;;
+	}
+
+ul li{
+    display: table-cell;
+    padding: 10px 20px;
+    cursor:pointer;
+    background-color:#5597b4;
+    color:white;
+    
+    transition:0.3s;
+}
+
+ul li:hover{
+    background-color:rgba(227, 88, 133, 0.59);
+	color:white;
+}
+
+.focused{
+    color:#fff;
+    background-color:#e35885;
+}
+[data-focus=nothing]{
+    color:#7B8585 ;
+	background-color:#eee;
+}
+
+p{
+    padding-top:15px;
+    font-size:12px;
+}	 
+[data-content=all]{
+display:none;
+border:1px solid #f2f2f2;
+height:80px;
+padding-top:30px;
+}
+
+.dontShow{
+display:none;
+} 
+.show{
+display:block;
+}
+	  </style>
+  </head>
+  
+  <body>
+    <div class="container" id="container"></div>
+
+  		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/react.js"></script>
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/reactDOM.js"></script>
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/browser.js"></script>
+		<link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>	
+		
+    <script type="text/babel">
+	
+	var Greeting =  React.createClass({
+	getInitialState: function(){
+	return {section:'section', focusTrack :'0'};
+	},
+	
+	clickHandle: function(i){
+	this.setState({focusTrack: i});
+	},
+	
+	render: function(){	
+		var thisCopy = this ;
+		return(<div>
+				<ul>
+				{this.props.tabs.map(function(m,i){
+				var variable = '';
+				if(thisCopy.state.focusTrack == i){  variable = 'focused' }
+					return (<li  key= {i}  className={variable} data-tab={i}  onClick={thisCopy.clickHandle.bind(self,i)}>{m}</li>)
+				})}
+				</ul>
+
+				{this.props.contents.map(function(m,i){	
+				var contentShow = 'dontShow';
+				if(thisCopy.state.focusTrack == i){
+					contentShow = 'show';
+				}
+				return (<div className={contentShow} data-content="all" key={i}>{m}</div>)
+	})}				
+			   </div>);
+		}
+	});
+	
+      ReactDOM.render(
+        <Greeting tabs={['Tab1','Tab2', 'Tab3', 'Tab4']} contents={['Page 1', 'Page 2', 'Page 3', 'Page 4']}/>,
+        document.getElementById('container')
+      );
+	  
+	</script>
+	
+	</body>
+	</html>
