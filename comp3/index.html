@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Password Meter</title>
+    <title>Practice</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 	#pwd:focus{
 	border:none !important;
 	}
+
 	#pwd{
-	border:none !important;
-    box-shadow: 0px 0px 0px 1px gray;	
+    margin-top: 20px;
+    border: none !important;
+    box-shadow: 0px 0px 0px 1px grey;
+
 	}
 	.red{
 	box-shadow: 0px 0px 0px 1px red !important;
@@ -28,7 +32,7 @@
     float: right;
     border-radius: 5px;
 	position:relative;
-	top:31px;
+	top:51px;
 	right:5px;
 	}
 	.hint{
@@ -65,154 +69,48 @@
 	<link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
     <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
     <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>	
+	
     <script type="text/babel">
-var acount = 0;	
-var scount = 0;
-var as,ns,ls,ss = 0;
-var as = 0;
+	var acount = 0;	
+	var scount = 0;
+	var as,ns,ls,ss = 0;
+	var as = 0;
 
     var Greeting = React.createClass({
     getInitialState: function() {
         return { name: 'hello world', minPasswordLength:8,lengthScore:0, alphaScore:0, numberScore:0 , specialScore:0 , charPassword:'', acount:0, ncount:0, scount:0, total:'', shouldHide:true, datacolor:'white', white:'50'};
     },
-	
-	checkVal: function(e){
-	this.setState({charPassword : e.target.value});
-	
-		$('.hintParent').show();
-		$('.hintParent').css({'border':'1px solid lightgray', 'border-radius':'5px'});
-		
-    if (e.target.value.length >= this.state.minPasswordLength ){ 	
-			ls = 0;
-			if(e.target.value.length == 0 ){
-			//lengthScore = 0;
-			ls = 0;
-			
-			}
-			else if(e.target.value.length >= 8 && e.target.value.length < 10 ){
-			ls = 30;
-			}	
-			else if(e.target.value.length >= 10 ){
-			ls = 50;
-			}	
-			
-// analyze starts 
-		if (e.target.value.match(/[a-z]/g)) {						
-		//this.setState({acount:0});
-		acount = 0;
-		
-		for(var i=0;i<e.target.value.length ;i++) {
-			if(/[a-z]/i.test(e.target.value.charAt(i))){ 
-			acount = acount + 1;
-			}
-		}
-		as = 0;
-		if(acount <= 0){
-		as = 0;
-		}
-		else if(acount < 4){
-		as = 10;
-		}
-		else if(acount >= 4){
-		as = 15;
-		}
-		}
-		
-		
-		var count=0,len=e.target.value.length;
-		for(var i=0;i<len;i++) {
-			if(/[0-9]/.test(e.target.value.charAt(i))) count++;
-		}
-		if(count <= 0){
-		ns = 0;
-		}
-		else if(count <4){
-		ns = 10;
-		}
-		else if(count >= 4){
-		ns = 15 ;
-		}		
-		
-		
-
-	/*	this.setState({scount:0});
-		if(/^[a-zA-Z0-9- ]*$/.test(this.state.charPassword) == false) {
-		this.state.specialScore = 20;
-		} */
-
-			var allFoundCharacters = e.target.value.match(/[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g);
-			if(allFoundCharacters != null){
-			scount =  allFoundCharacters.length ;	
-			if(scount == 0){
-			ss = 0
-			//this.setState({specialScore : 0});
-			}
-			else if(scount == 1){
-			//this.setState({specialScore : 15});
-			ss = 15;
-			}
-			else if(scount > 1){
-			ss = 20;
-			//this.setState({specialScore : 20});
-			}	
-			} 
-			
-			
-		  
-// analyze ends   
-    }  // if min length reached ends
-    else
-    {		ls = 0;
-			as,ns,ss,ls = 0;
-			if(e.target.value.length == 0 ){
-			$('.hintParent').hide();
-			$('.hint').css('width','0%');			
-			this.setState({shouldHide : true});
-			}
-			else if(e.target.value.length < 3){
-			$('.hint').css('width','25%');	
-			}
-			else{
-			$('.hint').css('width','40%');	
-			}
-	
-    }
-	var scoreWidth = this.state.total+'%'
-		//console.log("alpha "+as+"   number "+ns+ "  special "+ss) ;		
-		this.setState({total : ls+as+ns+ss}) ;
-		if(e.target.value.length < 8){
-		this.setState({hintText: 'Weak'});
-		$('.hint').css({'background-color':'red','width':scoreWidth});
-		this.setState({datacolor:'red'});		
-		}
-		else if(this.state.total < 50){
-		this.setState({hintText: 'Weak'});
-		$('.hint').css({'background-color':'red','width':scoreWidth});
-		this.setState({datacolor:'red'});
-		}
-		else if(this.state.total >= 50 && this.state.total < 65){
-		this.setState({hintText: 'Average'});
-		$('.hint').css({'background-color':'orange','width':scoreWidth});
-		this.setState({datacolor:'orange'});
-		}
-		else if(this.state.total >= 65 && this.state.total < 90){
-		this.setState({hintText: 'Strong'});
-		$('.hint').css({'background-color':'lightgreen','width':scoreWidth});
-		this.setState({datacolor:'lightgreen'});
-		}
-		else if(this.state.total >= 90){
-		this.setState({hintText: 'Strongest'});
-		$('.hint').css({'background-color':'green','width':scoreWidth});
-		this.setState({datacolor:'green'});
-		}		
-	},
-	// checkval ends above
+// min start here	
+checkVal:function(e){this.setState({charPassword:e.target.value});$('.hintParent').show();$('.hintParent').css({'border':'1px solid lightgray','border-radius':'5px'});if(e.target.value.length>=this.state.minPasswordLength){ls=0;if(e.target.value.length==0){ls=0}
+else if(e.target.value.length>=8&&e.target.value.length<10){ls=30}
+else if(e.target.value.length>=10){ls=50}
+if(e.target.value.match(/[a-z]/g)){acount=0;for(var i=0;i<e.target.value.length;i++){if(/[a-z]/i.test(e.target.value.charAt(i))){acount=acount+1}}
+as=0;if(acount<=0){as=0}
+else if(acount<4){as=10}
+else if(acount>=4){as=15}}
+var count=0,len=e.target.value.length;for(var i=0;i<len;i++){if(/[0-9]/.test(e.target.value.charAt(i)))count++}
+if(count<=0){ns=0}
+else if(count<4){ns=10}
+else if(count>=4){ns=15}
+var allFoundCharacters=e.target.value.match(/[@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g);if(allFoundCharacters!=null){scount=allFoundCharacters.length;if(scount==0){ss=0}
+else if(scount==1){ss=15}
+else if(scount>1){ss=20}}}
+else{ls=0;as,ns,ss,ls=0;if(e.target.value.length==0){$('.hintParent').hide();$('.hint').css('width','0%');this.setState({shouldHide:!0})}
+else if(e.target.value.length<3){$('.hint').css('width','25%')}
+else{$('.hint').css('width','40%')}}
+var scoreWidth=this.state.total+'%'
+this.setState({total:ls+as+ns+ss});if(e.target.value.length<8){this.setState({hintText:'Weak'});$('.hint').css({'background-color':'red','width':scoreWidth});this.setState({datacolor:'red'})}
+else if(this.state.total<50){this.setState({hintText:'Weak'});$('.hint').css({'background-color':'red','width':scoreWidth});this.setState({datacolor:'red'})}
+else if(this.state.total>=50&&this.state.total<65){this.setState({hintText:'Average'});$('.hint').css({'background-color':'orange','width':scoreWidth});this.setState({datacolor:'orange'})}
+else if(this.state.total>=65&&this.state.total<90){this.setState({hintText:'Strong'});$('.hint').css({'background-color':'lightgreen','width':scoreWidth});this.setState({datacolor:'lightgreen'})}
+else if(this.state.total>=90){this.setState({hintText:'Strongest'});$('.hint').css({'background-color':'green','width':scoreWidth});this.setState({datacolor:'green'})}},
+	// checkval ends above , min ends here
         render: function() {
           return (   <form>
     <div className="form-group">
       <label for="pwd">Password:</label>
 	  <div className="hintParent" id={this.state.shouldHide ? 'hidden' : ''} ><div className="hint" data-color={this.state.datacolor}>{this.state.hintText} </div></div>
-      <input type="text" className="form-control" id="pwd" placeholder="Enter password"  val={this.state.charPassword} onInput={this.checkVal}/>
+      <input type="password" className="form-control" id="pwd" placeholder="Enter password"  val={this.state.charPassword} onInput={this.checkVal}/>
     </div>
   </form>
           )
