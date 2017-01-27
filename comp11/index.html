@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Book Store - React</title>
+    <title>Book Form List </title>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">	  	
 	  <style>
 		ul{
@@ -63,16 +63,7 @@
 		<link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
 		<script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
 		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>	
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-89678967-3', 'auto');
-  ga('send', 'pageview');
-
-</script>		
+		
     <script type="text/babel">
 	//tpp ncc 
 	var Greeting =  React.createClass({
@@ -98,7 +89,7 @@
 	
 	render: function(){	 
 		var thisCopy = this ;
-		var priceArray = {'reactjs':'700','angularjs':'260','vuejs':'630','nodejs':'490'};
+		var priceArray = {'reactjs':'444','angularjs':'333','vuejs':'555','nodejs':'777'};
 		
 		return(<div> 
 						<div className="title">Books</div>
@@ -113,11 +104,11 @@
 				var varib = 'f'+j;
 				
 				
-					return (<li  key= {i}    data-way={varib} data-varib="0"  data-f={varib} className={variable} data-tab={i}  onClick={thisCopy.clickHandle.bind(self,event,kkk,i)}> {m}    <div className="right">Rs. {priceArray[lowered]} </div></li>)
+					return (<li  key= {i}    data-way={varib} data-varib="0"  data-f={varib} className={variable} data-tab={i}  onClick={thisCopy.clickHandle.bind(self,event,kkk,i)}> {m}    <div className="right">$ {priceArray[lowered]} </div></li>)
 				})}
 				</ul>
 				
-				<ul  data-content="all" className="transparent" ><li  className="transparent">Total  <span className="hidden-xs" data-show={this.state.number}>(Quantity - {this.state.number}) </span><div className="right" >Rs.  {this.state.total} </div></li></ul>
+				<ul  data-content="all" className="transparent" ><li  className="transparent">Total  <span className="hidden-xs" data-show={this.state.number}>(Quantity - {this.state.number}) </span><div className="right" >$  {this.state.total} </div></li></ul>
 	
 			   </div>);
 		}
