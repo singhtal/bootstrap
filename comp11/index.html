@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>React</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">	  	
+	  <style>
+		ul{
+		list-style:none;
+		padding-left:20px;
+		padding-right:20px;
+		border-bottom:1px solid white;
+		}
+		ul>li{
+		color:white;
+		font-size:16px;
+		background:linear-gradient(#e35885, #da255e);
+		//padding-top:20px;
+		//padding-bottom:20px;
+		margin-bottom:10px;
+		cursor:pointer;
+		transition: all .3s;
+		line-height:52px;
+		padding-left:30px;
+		padding-right:30px;
+		}
+		.green{
+			background:linear-gradient(#8ec16d, #5e8f3d);
+		}
+		.red{
+		background:red;
+		}
+		.container{
+		background:#61a1bc;
+		padding-top:30px;
+		font-weight:bold;
+		}
+		.right{
+		float:right;
+		}
+		.transparent{
+		background:transparent;
+		}
+		[data-show="0"]{
+		display:none;
+		}
+		.title{
+		font-size:35px;
+		text-align:center;
+		color:white;
+		font-weight:bold;
+		font-family: monotype corsiva;
+		}
+	  </style>
+  </head>
+  
+  <body>
+    <div class="container" id="container"></div>
+
+  		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/react.js"></script>
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/reactDOM.js"></script>
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/browser.js"></script>
+		<link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+		<script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>	
+		
+    <script type="text/babel">
+	//tpp ncc 
+	var Greeting =  React.createClass({
+
+	getInitialState: function(){
+	var t = {section:'section', focusTrack :'0',total:'0',f1:0,f2:0,f3:0,f4:0, redorgreen:0,number:0} ;
+	return t;
+	},
+	
+	clickHandle: function(event,kkk,i){
+	$('li').eq(i).toggleClass('green');
+	if (document.getElementsByTagName('li')[i].classList.contains('green')) {
+	this.setState({total:parseInt(this.state.total)+parseInt(kkk)});
+	this.setState({number:this.state.number+1});
+	}
+	else{
+	this.setState({total:parseInt(this.state.total)-parseInt(kkk)});
+	this.setState({number:this.state.number-1});
+	}
+	
+},
+	
+	
+	render: function(){	 
+		var thisCopy = this ;
+		var priceArray = {'reactjs':'700','angularjs':'260','vuejs':'630','nodejs':'490'};
+		
+		return(<div> 
+						<div className="title">Books</div>
+				<ul>
+				{thisCopy.props.services.map(function(m,i){
+				var variable = '';
+				var lowered =  m.toLowerCase().replace(/ /g,'');
+				var j = i+1;
+				//var checked = this.state.f2;
+			
+				var kkk = priceArray[lowered];
+				var varib = 'f'+j;
+				
+				
+					return (<li  key= {i}    data-way={varib} data-varib="0"  data-f={varib} className={variable} data-tab={i}  onClick={thisCopy.clickHandle.bind(self,event,kkk,i)}> {m}    <div className="right">Rs. {priceArray[lowered]} </div></li>)
+				})}
+				</ul>
+				
+				<ul  data-content="all" className="transparent" ><li  className="transparent">Total  <span className="hidden-xs" data-show={this.state.number}>(Quantity - {this.state.number}) </span><div className="right" >Rs.  {this.state.total} </div></li></ul>
+	
+			   </div>);
+		}
+	});
+var fido = ['React JS', 'AngularJS', 'Vue JS', 'Node JS'];	
+      ReactDOM.render(
+        <Greeting services={fido}  f={['f1','f2','f3','f4']}/>,
+        document.getElementById('container')
+      );
+	  
+	</script>
+	
+	</body>
+	</html>
