@@ -14,6 +14,19 @@
   <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/css.css"> 
   <link rel="stylesheet" href="http://cdn.rawgit.com/tal1992/bootstrap/master/indexed/minloading.css">
 <style>
+.typeHere{
+    background: transparent;
+	text-shadow:0px 0px 10px #d9edf7;
+    font-size: 24px;
+    color: #286090;
+    text-align: center;
+    width: 100%;
+    z-index: 999999;
+	padding-left:100px;
+	padding-right:100px;
+	padding-top:100px;
+	transition:1s all ease;
+}
 @media(max-width:768px){
 .cntl-content{
 margin-left:0px !important;
@@ -113,6 +126,7 @@ opacity:1 !important;
       <div class="cntl-content">
         <h4>Joined Infosys</h4>
         <p>Systems Engineer</p>
+		<p>When: June 2014</p>
 		<a href="https://www.google.co.in/maps/place/Mysuru,+Karnataka/@12.1952138,75.9613627,9z/data=!3m1!4b1!4m5!3m4!1s0x3baf7010988f73e5:0x7b92fb661b13ee09!8m2!3d12.1873152!4d76.3637285">Location: Mysore, Karnatka</a>
       </div>
 	  <div class="cntl-image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/400px-Infosys_logo.svg.png"></div>
@@ -224,7 +238,7 @@ opacity:1 !important;
 
 <div class="skills" id="skills">
 <div class="nothing" style="position:relative; margin-top:40px;">	
-<div class="typeHere">
+<div class="typeHere hidden-xs hidden-sm">
 	
 </div>
 
@@ -620,8 +634,6 @@ $('.cntl').bind('inview', function (event, visible, topOrBottomOrBoth) {
 
 $('.skills').bind('inview', function (event, visible, topOrBottomOrBoth) {
   if (visible == true) {
-	$('.fixedNav li').removeClass('activeFixed');
-	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
 	
 /*var jq = $.noConflict();	
 	  jq(function(){
@@ -635,6 +647,28 @@ $('.skills').bind('inview', function (event, visible, topOrBottomOrBoth) {
       // top part of element is visible
 	  $(this).find('.skillLeftFloat').find('button').addClass('animated fadeInRightBig'); 
 	  $(this).find('.skillRightFloat').find('button').addClass('animated fadeInLeftBig');
+	  
+	$('.fixedNav li').removeClass('activeFixed');
+	$('.fixedNav li:nth-child(2)').addClass('activeFixed');
+	
+	if(! $('.typeHere').hasClass('added'))
+       { //define text
+	   $('.typeHere').addClass('added');
+        var text = 'HTML5 , CSS3 , Javascript, Bootstrap , Angular JS , Jquery , AJAX , PHP , kendo UI , React.JS , Laravel , Jquery UI , JSON , MY SQL , Animation , Google Analytics';
+
+        //text is split up to letters
+        $.each(text.split(''), function(i, letter){
+
+            //we add 100*i ms delay to each letter 
+            setTimeout(function(){
+
+                //we add the letter to the container
+                $('.typeHere').html($('.typeHere').html() + letter);
+            
+            }, 80*i);
+        });
+		}
+		  
     } else if (topOrBottomOrBoth == 'bottom') {
       // bottom part of element is visible
     } else {
@@ -669,6 +703,9 @@ $('.navbar-nav>li').mouseover(function(){
 $(this).addClass('doTra');
 });
 
+
+
+
 });
 
 
@@ -680,3 +717,4 @@ $(this).addClass('doTra');
 
 </script>
 </html>
+
