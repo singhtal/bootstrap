@@ -1,0 +1,154 @@
+ body{
+	 font-family:"Source Sans Pro", "Helvetica Neue", Segoe UI, trebuchet MS, Helvetica, Arial, sans-serif;
+	 	background:blue;
+ }
+ .name{	 
+	color: #62B2C7;
+    text-transform: uppercase;
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 100;
+ }
+ header{
+	padding: 30px;
+	padding-top:15px;
+ }
+main{
+} 
+.wrap {
+    margin: 0 auto;
+    width: 8.1in;
+    padding: 0.2in;
+    min-height: 400px;
+    background: white;
+    color: #644B66;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.dib{
+	display:inline-block;
+	margin-right:15px;
+	vertical-align:middle;
+}
+.desig{
+	color:#999;
+}
+.info{
+	margin-top:25px;
+	color:#999 !important;
+	display:flex;
+}
+.info>div{
+	flex-grow: 1;
+   // flex-basis: 0;
+}
+.info i{
+	font-size:16px;
+	color:#999;
+	margin-right:5px;
+}
+.mail{
+	color:#999;
+	transition:1s ease;
+}
+.mail:hover{
+	color:#62B2C7;
+}
+.pro{
+	font-size: 55px;
+    color: rgba(98, 178, 199, 0.35);
+    font-weight: normal;
+    position: relative;
+    top: 10px;
+}
+.left-border{
+	border-left:1px dashed #62B2C7;
+}
+section{
+	padding:15px;
+}
+section i{
+	font-size:20px !important;
+}
+.experienceDiv i{
+    position: relative;
+    left: -23px;
+    margin-bottom: 10px;
+    background: white;
+	color:#337ab7 !important;
+}
+.expTitle{
+	color:#337ab7;
+	font-size:18px;
+	line-height:18px;
+}
+.restExp{
+	margin-top:20px;
+	padding-left:20px;
+}
+.title{
+	color:#4B4C4D;
+}
+.subtitle{
+	color:#DE4140;
+	display:inline-block;
+}
+.date{
+	display: inline-block;
+    font-style: italic;
+    margin-left: 10px;
+}
+.description{
+	padding-left:10px;
+	padding-top:10px;
+}
+.pd{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.mt-20{
+	margin-top:20px;
+}
+.restExp>div{
+	position:relative;
+}
+.title::before{
+	content:'';
+	height:8px;
+	width:8px;
+	border:2px solid #337ab7;
+	border-radius:5px;
+	position:absolute;	
+	left:-39px;
+	background:white;
+	top:8px;
+}
+.leftTitle{
+	color:#45705D;
+	font-size:18px;
+	display:inline-block;
+}
+.personal{
+	font-size:14px;
+	opacity:0.8;
+}
+.leftContentDiv{
+	margin-top:10px;
+	margin-bottom:25px;
+	padding:1px;
+	border-left:1px dashed #45705D;
+	margin-left:8px;
+	padding-left:35px;
+	padding-bottom:10px;
+}
+.move{
+	color:#644B66;
+}
+.left  i {
+	color:#45705D!important;
+	margin-right:20px;
+}
+.expt>div{
+padding-bottom:3px;	
+}
