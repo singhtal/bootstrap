@@ -141,6 +141,18 @@ section i{
 	margin-left:8px;
 	padding-left:35px;
 	padding-bottom:10px;
+	position:relative;
+}
+.leftContentDiv>div::before{
+	content:'';
+	height:6px;
+	width:6px;
+	border:1px solid #45705D;
+	border-radius:5px;
+	position:absolute;	
+	left:-4px;
+	background:white;
+	margin-top:6px;
 }
 .move{
 	color:#644B66;
@@ -151,4 +163,4 @@ section i{
 }
 .expt>div{
 padding-bottom:3px;	
-}
+}c
