@@ -1,0 +1,311 @@
+
+
+<!doctype html>
+<head>
+	  <title> Theme 1 </title>
+	  <meta name="author" content="Talvinder">
+	<link rel="stylesheet" href="b4.css">	
+	<script src="jquery.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js" ></script>
+	<script src="b4.js"></script>
+	<link rel="stylesheet" href="fa/css/fa.css">
+	<link rel="stylesheet" href="t.css">
+	<!--<link rel="stylesheet" href="mdb.css">
+	<script src="mdb.js"></script>  -->
+</head>
+<body>
+		<header>
+			<div class="headWrapper row">
+				<div class="col-xs-12 col-sm-6">
+					<ul class="nav nav-pills ">
+					  <li class="nav-item">
+						<a class="nav-link " href="#">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Profile</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#">Tweets</a>
+					  </li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					
+					<ul class="notifications pull-right hidden-md-down">
+						<li><button type="button" class="btn tol" data-toggle="tooltip" data-placement="bottom" title="No New Notification"><i class="fa fa-bell-o" aria-hidden="true" ></i></button></li>
+						<li><!--<img class="img img-fluid" src="photo.JPG" width="20px" />--></li>				
+					</ul> 
+					<form class="form-search" role="form">
+						<div class="form-group has-success has-feedback">
+					  		<Input class="form-control searchInput" type="text" data-action="grow"  placeholder="Search..." />							 
+								<i class="fa fa-search form-control-feedback " aria-hidden="true" id="showMe"></i>	 						
+						</div>
+					</form>
+				</div>	
+				</div>	
+		</header>
+	
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <img src="" id="imagepreview" >
+      </div>
+
+    </div>
+  </div>
+</div>	
+	
+	<div class="container-fluid">
+		<div class="main row">
+			<div class="left col-md-12 col-lg-3">
+				<div class="left-content">		
+					<div class="coverPic">
+						
+					</div>
+				<div class="profileInfo">
+					<a href="#"><img class="img img-fluid img-circle" src="photo.JPG"></img></a>
+					<h6>Talvinder Singh</h6>
+					<p>Creative, Curious and Crazy. </p>
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 text-right friends following"><div>Following</div><div>254</div></div>
+						<div class="col-xs-6 col-sm-6 text-left followers"><div>Followers</div><div>326</div></div>
+					</div>
+				</div>				
+			</div>
+			
+			<div class="left-content2">
+				<div class="profileInfo2">
+					<h6>About <small><a href="#" class="edit">  &nbsp &nbsp  Edit</a></small> </h6>
+					<div class="infos"><i class="fa fa-home" aria-hidden="true"></i> <p>Lives in <a href="#">New Delhi, India</a></p></div>
+					<div class="infos"><i class="fa fa-industry" aria-hidden="true"></i> <p>Works at <a href="#">Mettl, Gurgaon</a></p></div>
+					<div class="infos"><i class="fa fa-twitter" aria-hidden="true"></i> <p>Family <a href="#">Gurdeep Singh</a></p></div>
+					<div class="infos"><i class="fa fa-flask" aria-hidden="true"></i> <p>Interest <a href="#">Robotics</a>, <a href="#">Cosmology</a></p></div>
+					<div class="infos"><i class="fa fa-line-chart" aria-hidden="true"></i> <p>Wants to be <a href="#">Full Stack Dev.</a></p></div>
+				</div>					
+			</div>	
+			
+			
+			<div class="left-content3">
+				<div class="profileInfo3">
+					<h6>Photos <small><a href="#" class="edit">  &nbsp &nbsp  Edit</a></small> </h6>
+					<div class="row imageRow">
+						<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="1.jpg"></img> </a></div>
+						<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="2.jpg"></img></a></div>
+						<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="3.jpg"></img></a></div>
+						<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="4.jpg"></img></a></div>
+					</div>	
+				</div>	
+			</div>
+			
+	</div>
+		
+			<div class="middle col-md-12 col-lg-6">
+				<div class="pad20">
+					<div class="input-group">
+					  <input type="text" class="form-control input-block" placeholder="Status">
+						 <span class="input-group-addon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+					</div>
+
+						<ul class="nav nav-pills nav-fill nav-photo">
+						  <li class="nav-item">
+							<a class="nav-link" href="#">	Photo <i class="fa fa-camera" aria-hidden="true"></i></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#">Blog <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#">Video <i class="fa fa-video-camera" aria-hidden="true"></i></a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="#">Life event <i class="fa fa-flag" aria-hidden="true"></i></a>
+						  </li>
+						</ul>
+					
+				</div>	
+				
+				<div class="post1">
+				<div class="row">
+					<div class="col-sm-2"><a href="#"><img class="img img-fluid img-circle postProfilePic" src="photo.JPG"></img></a></div>
+					<div class="col-sm-10">
+						<h6 class="inline">Talvinder Singh</h6><small class="inline pull-right postDuration">30 min</small>
+						<p class="postText">Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+							<div class="row imageRow">
+								<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="infosys1.jpg"></img> </a></div>
+								<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="infosys2.jpg"></img></a></div>
+								<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="infosys3.jpg"></img></a></div>
+								<div class="col-sm-6"><a href="#" class="pop"><img class="img img-fluid " src="infosys4.jpg"></img></a></div>
+							</div>	
+							<div class="postComments pad20">
+								<div class="commentN">
+										<div class="row no-pad">
+											<div class="col-sm-2"><a href="#"><img class="img img-fluid img-circle postProfilePic" src="anon.jpg"></img></a></div>
+										<div class="col-sm-10">
+											<h6 class="inline">Amrit Singh :</h6>
+											<p class="inline">Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.</p>
+										</div>
+										</div>	
+								</div>
+
+								<div class="commentN">
+										<div class="row no-pad">
+											<div class="col-sm-2"><a href="#"><img class="img img-fluid img-circle postProfilePic" src="yuvraj.jpg"></img></a></div>
+										<div class="col-sm-10">
+											<h6 class="inline">Gurdeep Singh :</h6>
+											<p class="inline">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+										</div>
+										</div>	
+								</div>
+
+
+							</div>				
+
+					</div>
+				</div>	
+				</div>
+				
+			</div>
+			<div class="right col-md-12 col-lg-3">
+				<div class="alert alert-info alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert"
+				aria-hidden="true">
+				&times;
+				</button>
+					<h7><a href="#">Visit your profile! <a/></h7>
+					Check your self, you aren't looking well.
+			</div> 
+				
+			<div class="sponsored">
+				<h6>Sponsored</h6>
+				<div class="sponsoredImg">
+					<a href="#" class="pop"><img class="img img-fluid " src="iceland.jpg"></img></a>
+				</div>
+				<h7>It might be time to visit Iceland.</h7>
+				<p class="postText">Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?</p>
+				<button class="btn btn-info btn-sm buy">Buy a Ticket</button>
+			</div>		
+				
+			<div class="suggestionBox">		
+				<h9 class="inline">Likes &nbsp &nbsp </h9><a href="#" class="inline"><small >View all</small></a>
+				
+				<div class="individualSuggestion">
+				<a href="#"><img class="img img-fluid img-circle postProfilePic inline" src="photo.JPG"></img></a>
+				<div class="inline">
+					<div><h7>Amanpreet Kaur &nbsp</h7><small>@aman007</small></div>
+					<button class="btn btn-info btn-sm buy">Follow <i class="fa fa-twitter"></i></button>
+				</div>	
+			</div>
+
+				<div class="individualSuggestion">
+				<a href="#"><img class="img img-fluid img-circle postProfilePic inline" src="photo.JPG"></img></a>
+				<div class="inline">
+					<div><h7>Prince Sharma &nbsp</h7><small>@prince</small></div>
+					<button class="btn btn-info btn-sm buy">Follow <i class="fa fa-twitter"></i></button>
+				</div>	
+			</div>
+				
+		
+				<div class="suggestionNotes">
+					Tal really likes these nerds, no one knows why though.
+				</div>	
+			</div>	
+
+			<div class="copyrightBox">
+				Friends
+				<div class="individualSuggestion">
+				<a href="#"><img class="img img-fluid img-circle postProfilePic inline" src="photo.JPG"></img></a>
+				<div class="inline">
+					<div><h7>Barack Obama &nbsp</h7><small>@obama</small></div>
+					<button class="btn btn-info btn-sm buy">Follow <i class="fa fa-twitter"></i></button>
+				</div>	
+				</div>
+				<div class="individualSuggestion">
+				<a href="#"><img class="img img-fluid img-circle postProfilePic inline" src="photo.JPG"></img></a>
+				<div class="inline">
+					<div><h7>Vladmir Putin &nbsp</h7><small>@putin</small></div>
+					<button class="btn btn-info btn-sm buy">Follow <i class="fa fa-twitter"></i></button>
+				</div>	
+				</div>
+				<div class="individualSuggestion">
+				<a href="#"><img class="img img-fluid img-circle postProfilePic inline" src="photo.JPG"></img></a>
+				<div class="inline">
+					<div><h7>Donald Trump &nbsp</h7><small>@trump</small></div>
+					<button class="btn btn-info btn-sm buy">Follow <i class="fa fa-twitter"></i></button>
+				</div>
+				</div>									
+			</div>
+		
+	</div>
+	</div>
+	</div>
+
+	<div class="footer">
+	<div class="fwrapper container">
+		<div class="row">
+			<div class="col-sm-4 bright">				
+				<ul class="footerUL">
+				<li><a href="#"><a href="#">About</a><li>
+				<li><a href="#">Overview</a></li>
+				<li><a href="#">Blogs</a></li>
+				<li><a href="#"><a href="#">Terms & Condition</a></li>
+				<li><a href="#">Location</a></li>
+				<li><a href="#">Phone</a></li>
+				<li><a href="#"><a href="#">Email</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-4 bright">
+				<ul class="footerUL">
+				<li><a href="#"><a href="#">Interests</a><li>
+				<li><a href="#">Blogging</a></li>
+				<li><a href="#">Cosmology</a></li>
+				<li><a href="#"><a href="#">Robotics</a></li>
+				<li><a href="#">Programming</a></li>
+				<li><a href="#">Cricket</a></li>
+				<li><a href="#"><a href="#">Open source</a></li>
+				</ul>	
+			</div>
+			<div class="col-sm-4">
+				<ul class="footerUL">
+				<li><a href="#"><a href="#">Social</a><li>
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Instagram</a></li>
+				<li><a href="#"><a href="#">Linkedin</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Resume</a></li>
+				</ul>	
+			</div>
+		</div>
+	</div>
+	<div class="copyright">Copyright © 2017 Talvinder
+	<div class="divider">
+	The website is best experienced on the following version (or higher) of Chrome 31, Firefox 26, Safari 6 and Internet Explorer 9 browsers.
+	</div>
+	</div>
+	</div>
+
+		<script>
+			$(document).ready(function(){
+				
+				$('.tol').tooltip();
+				var focusInput = true;
+				
+				$('#showMe').click(function(){
+					    if(focusInput) {
+						   $('.searchInput').focus();
+						} else {
+						   $('.searchInput').blur();
+						}
+						focusInput = !focusInput;
+				});
+				
+   $(".pop").on("click", function() {
+	   var src = $(this).find('img').attr('src');
+   $('#imagepreview').attr('src', src); // here asign the image to the modal when the user click the enlarge link
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+			});
+		</script>
+	</body>		
+</html>
