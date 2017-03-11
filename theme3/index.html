@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Travel Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fa.css">
+
+    <!-- Template styles -->
+    <style rel="stylesheet">
+        /* TEMPLATE STYLES */
+        /* Necessary for full page carousel*/
+        
+        html,
+        body {
+            height: 100%;
+        }
+        /* Navigation*/
+        .navbar.navbar-dark .breadcrumb a, .navbar.navbar-dark .navbar-nav .nav-item a{
+            text-align:center;
+        }
+        
+        .navbar {
+
+            background-color: transparent;
+        }
+        
+        .top-nav-collapse {
+            background-color: #304a74;
+        }
+        
+        footer.page-footer {
+            background-color: #304a74;
+        }
+        .nav-link{
+            border-radius:10px;
+        }
+        .navbar-brand strong{
+            text-shadow: 2px 2px 10px #f2f2f2;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                background-color: #4285F4;
+            }
+        }
+        
+        .scrolling-navbar {
+            -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+            transition: background .5s ease-in-out, padding .5s ease-in-out;
+        }
+        /* Carousel*/
+        
+        .carousel {
+            height: 50%;
+        }
+        
+        @media (max-width: 776px) {
+            .carousel {
+                height: 100%;
+            }
+        }
+        
+        .carousel-item,
+        .active {
+            height: 100%;
+        }
+        
+        .carousel-inner {
+            height: 100%;
+        }
+        .card{
+            transition:0.7s box-shadow ease-in-out;
+            border-radius:15px 15px 0px 0px;
+        }
+        .card:hover{
+            box-shadow:1px 3px 4px 1px rgb(204, 204, 204)
+        }
+        /*Caption*/
+        footer a{
+            transition:0.5s all ease;
+        }
+        footer a:hover{
+            color:#5bc0de !important;
+            text-shadow:0px 0px 10px white;
+        }
+        .flex-center {
+            color: #fff;
+        }
+        .btn-indigo {
+            background: linear-gradient(#a6c,#1a237e);
+        }
+        .goDownSmall{
+            bottom:-20px;
+        }
+        .fixed-action-btn{
+            transition:1s all ease-out;
+            position:fixed;bottom: 45px; left: 24px;
+            padding:5px;
+            z-index:999;
+            display:none;
+        }
+        .popupHeader{
+            background: skyblue;
+            padding:10px;
+            width:200px;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .popup{
+            width:200px;
+            z-index:999;
+        }
+        .popupContent{
+            background:white;
+            height:200px;
+            width:200px;
+
+        }
+        .row>div{
+            margin-top:20px;
+        }
+        .caro{
+            z-index:999;
+        }
+        @media(min-width: 992px){
+            .card img{
+              //  height:270px;
+                border-radius: 15px 15px 0px 0px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="fixed-action-btn">
+        <!--    <a class="btn-floating btn-large red waves-effect waves-light">+
+                >
+            </a>  -->
+
+            <div class="popup">
+                <div class="popupHeader">
+                Contact us
+                </div>
+                <div class="popupContent">
+                    Email - <a href="#">abc@gmail.com</a>
+                </div>
+
+            </div>
+</div>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-toggleable-md navbar-dark fixed-top scrolling-navbar">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <strong>Travel Guru</strong>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">About</a>
+                    </li>
+                </ul>
+                <form class="form-inline waves-effect waves-light searchBox">
+                    <input class="form-control" type="text" placeholder="Search">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--/.Navbar-->
+
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-3" class="carousel slide carousel-fade white-text" data-ride="carousel" data-interval="false">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-3" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-3" data-slide-to="1"></li>
+            <li data-target="#carousel-example-3" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner wow waves-effect waves-light" role="listbox">
+
+            <!-- First slide -->
+            <div class="carousel-item active view hm-black-light" style="background-image: url('car1.jpg'); background-repeat: no-repeat; background-size: cover;">
+                
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <h1 class="h1-responsive">Coorg is the place to be for all nature lovers </h1></li>
+                        <li>
+                            <p>Located amidst imposing mountains in Karnataka with a perpetually misty landscape,</p>
+                        </li>
+                        <li>
+                            <a  href="#" class="btn btn-default btn-lg">See more!</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+                
+            </div>
+            <!--/.First slide-->
+
+            <!-- Second slide -->
+            <div class="carousel-item view hm-black-light" style="background-image: url('car2.jpg'); background-repeat: no-repeat; background-size: cover;">
+                
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <h1 class="h1-responsive">Shimla is one of India's most popular hill resorts, </h1>
+                        </li>
+                        <li>
+                            <p> Majestic snow clad mountains, stunningly rich greenery and the beautiful lakes </p>
+                        </li>
+                        <li>
+                            <a  href="" class="btn btn-default btn-lg">Read more</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+                
+            </div>
+            <!--/.Second slide -->
+
+            <!-- Third slide -->
+            <div class="carousel-item view hm-black-light" style="background-image: url('car3.jpg'); background-repeat: no-repeat; background-size: cover;">
+                
+                <!-- Caption -->
+                <div class="full-bg-img flex-center white-text">
+                    <ul class="animated fadeInUp col-md-12">
+                        <li>
+                            <h1 class="h1-responsive">Goa is the place for Beach Lovers</h1></li>
+                        <li>
+                            <p>is famous for its beaches and places of worship</p>
+                        </li>
+                        <li>
+                            <a href="" class="btn btn-default btn-lg">Read more</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.Caption -->
+                
+            </div>
+            <!--/.Third slide-->
+        </div>
+        <!--/.Slides-->
+
+        <!--Controls-->
+        <a class="carousel-control-prev caro" href="#carousel-example-3" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next caro" href="#carousel-example-3" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
+
+    <br>
+
+    <!--Content-->
+    <div class="container">
+        <div class="row">
+            <!--First columnn-->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-effect waves-light">
+                        <img src="tile1.jpg" class="img-fluid" alt="">
+                        <a href="#">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">Chandigarh</h4>
+                        <!--Text-->
+                        <p class="card-text">Chandigarh is known as The City Beautiful</p>
+                        <a href="JavaScript:void(0)" class="btn btn-indigo btn-block">Read more</a>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--First columnn-->
+
+            <!--Second columnn-->
+            <div class="col-sm-6 col-md-4 col-lg-4v">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-effect waves-light">
+                        <img src="tile2.jpg" class="img-fluid" alt="">
+                        <a href="#">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">Delhi</h4>
+                        <!--Text-->
+                        <p class="card-text">Delhi is the National Capital of India</p>
+                        <a href="JavaScript:void(0)" class="btn btn-indigo btn-block">Read more</a>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Second columnn-->
+
+            <!--Third columnn-->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-effect waves-light">
+                        <img src="tile3.jpg" class="img-fluid" alt="">
+                        <a href="#">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">Amritsar</h4>
+                        <!--Text-->
+                        <p class="card-text">Amritsar is the Holy City of India.</p>
+                        <a href="JavaScript:void(0)" class="btn btn-indigo btn-block">Read more</a>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Third columnn-->
+
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-effect waves-light">
+                        <img src="tile4.jpg" class="img-fluid" alt="">
+                        <a href="#">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">Manali</h4>
+                        <!--Text-->
+                        <p class="card-text">Manali is a Popular Holiday Destination.</p>
+                        <a href="JavaScript:void(0)" class="btn btn-indigo btn-block">Read more</a>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--First columnn-->
+
+            <!--Second columnn-->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-effect waves-light">
+                        <img src="tile5.jpg" class="img-fluid" alt="">
+                        <a href="#">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">Bangalore</h4>
+                        <!--Text-->
+                        <p class="card-text">Bangalore is the Garden City of India</p>
+                        <a href="JavaScript:void(0)" class="btn btn-indigo btn-block">Read more</a>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Second columnn-->
+
+            <!--Third columnn-->
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay hm-white-slight waves-effect waves-light">
+                        <img src="tile6.jpg" class="img-fluid" alt="">
+                        <a href="#">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                    <!--/.Card image-->
+
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">Kolkata</h4>
+                        <!--Text-->
+                        <p class="card-text">Kolkata is known for its cultural heritage</p>
+                        <a href="JavaScript:void(0)" class="btn btn-indigo btn-block">Read more</a>
+                    </div>
+                    <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Third columnn-->
+        
+        </div>
+    </div>
+    <!--/.Content-->
+
+
+
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+
+                <!--First column-->
+                <div class="col-lg-4 offset-lg-1 hidden-lg-down">
+                    <h5 class="title">ABOUT Jquery Plus</h5>
+                    <p>Jquery Plus is a UI Repository developed by Talvinder. </p>
+
+                    <p>Work Speaks Louder than Resume</p>
+                </div>
+                <!--/.First column-->
+
+                <hr class="hidden-md-up">
+
+                <!--Second column-->
+                <div class="col-lg-2 offset-lg-1">
+                    <h5 class="title">UI Skills</h5>
+                    <ul>
+                        <li><a href="#!">HTML</a></li>
+                        <li><a href="#!">CSS</a></li>
+                        <li><a href="#!">Bootstrap</a></li>
+                        <li><a href="#!">Material Design</a></li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+
+                <hr class="hidden-md-up">
+
+                <!--Third column-->
+                <div class="col-lg-2">
+                    <h5 class="title">JS Skills</h5>
+                    <ul>
+                        <li><a href="#!">Javascript</a></li>
+                        <li><a href="#!">Jquery</a></li>
+                        <li><a href="#!">React.js</a></li>
+                        <li><a href="#!">Vue.js</a></li>
+                    </ul>
+                </div>
+                <!--/.Third column-->
+
+                <hr class="hidden-md-up">
+
+                <!--Fourth column-->
+                <div class="col-lg-2">
+                    <h5 class="title">Other Skills</h5>
+                    <ul>
+                        <li><a href="#!">PHP</a></li>
+                        <li><a href="#!">Laravel</a></li>
+                        <li><a href="#!">Mongo DB</a></li>
+                        <li><a href="#!">AJAX</a></li>
+                    </ul>
+                </div>
+                <!--/.Fourth column-->
+
+            </div>
+        </div>
+        <!--/.Footer Links-->
+
+        <hr>
+
+        <!--Call to action-->
+        <div class="call-to-action">
+            <h4>Jquery Plus - Themes and Plugins</h4>
+        </div>
+        <!--/.Call to action-->
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                © 2015 Copyright: <a href="http://www.MDBootstrap.com"> Talvinder </a>
+
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+//$('.searchBox').append();
+
+$('.carousel').carousel({
+  interval: 3000
+})
+
+$('.fixed-action-btn').click(function(){
+    $(this).toggleClass('goDownSmall')
+
+});
+
+});
+</script>
+</body>
+
+</html>
