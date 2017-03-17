@@ -1,0 +1,179 @@
+
+@media screen and (max-width: 768px) {
+   .newLineMobile{
+    display:block !important;
+    }
+}
+
+.jumbotron.main{
+    background: url(../../images/recruitJumbo.png) no-repeat left top !important;
+}
+
+.jumbotron.main{
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 415px;
+    background-size: cover !important;
+    margin-top: 0;
+}
+
+#notification{
+background:transparent;
+border:none !important;
+}
+
+    .clientlogo{
+        background:#f2f2f2;
+        margin-bottom:40px;
+        margin-left:0px;
+        margin-right:0px;
+    }
+
+    .clientlogo>div{
+        padding:20px 0px 20px 0px;
+    }
+
+    .clientlogo img, .clientlogo .trustedBy{
+       // width:140px;
+       // height:30px;
+    }
+
+    .navbar-transparent.affix, .navbar-transparent.affix-top{
+       // background-color:#46728B !important;
+        border-radius:0px 0px 3px 3px;
+        border-bottom:none !important;
+    }
+
+    #head.affix{
+    background:#46728B;
+    }
+
+    .navbar-right>li>a{
+        color:#fff;
+    }
+
+    .mettlLogo {
+        height: 40px;
+        width: 75px;
+    }
+
+    #head.affix .navbar-right>li>a{
+        color:#fff;
+    }
+
+    .navbar-right>li>a:hover{
+        background:transparent;
+    }
+
+    .trustedBy{
+        line-height:35px;
+        margin:auto;
+    }
+
+     h1,h2,h3,h4,h5,h6,p{
+        font-family:lato;
+    }
+
+    .homepageJumbo .btn{
+        font-family:Montserrat;
+        text-transform:uppercase;
+        font-weight:bold;
+    }
+
+    .headerNav a{
+        font-family:Montserrat;
+        font-size:12px;
+    }
+
+    .jumbotron>#notification{
+        background:transparent;
+        border-bottom:none;
+    }
+
+    .notificationNav>li{
+        padding:5px 10px 0px 10px;
+    }
+
+    .nav-inline, .nav-inline:hover{
+        display:inline !important;
+        padding-top:0px;
+        padding-bottom:0px;
+        color:#fff !important;
+        background-color:transparent !important;
+    }
+
+    .navbar-right.headerNav>li a, .navbar-right.headerNav>li:hover {
+        color:#fff;
+        font-weight:bold;
+        background-color:transparent;
+    }
+
+    #product-drop-down-list>li a, #product-drop-down-list>li a:hover {
+        color:#666666;
+        font-weight:normal;
+    }
+
+     #product-drop-down-list>li a:hover {
+         background-color:#f5f5f5 !important;
+     }
+
+    .allWhite,.allWhite:hover, .allWhite:focus{
+        border:2px solid #fff;
+        color:#fff;
+        padding:8px 25px 8px 25px;
+        background-color:transparent;
+        transition:0.3s all ease;
+
+    }
+
+    .allWhite:hover{
+        box-shadow:0px 0px 2px 0px #f2f2f2;
+    }
+
+    .langButton, .langButton:hover, .langButton:focus{
+        color:#fff;
+        text-decoration:none !important;
+        background-color:transparent !important;
+        border:none !important;
+    }
+
+    .headerNav .animBorder:hover::after {
+        width: 100%;
+    }
+
+    .headerNav a{
+        font-family:Montserrat;
+        font-size:12px;
+    }
+
+    #solutions-list>li>a{
+    color:#666666 !important;
+    }
+
+    #solutions-list>li a:hover {
+        background-color: #f5f5f5 !important;
+    }
+
+    .headerNav .animBorder::after {
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        transition: width .3s;
+        background: #fff;
+    }
+
+    .navbar-right.headerNav>li a, .navbar-right.headerNav>li:hover {
+        color:#fff;
+        font-weight:bold;
+        background-color:transparent;
+    }
+
+    @media only screen and (min-width: 992px){
+    .imgCont {
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    }

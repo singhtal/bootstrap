@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Internet Explorer 8
+Comment=PlayOnLinux
+Type=Application
+Exec=/usr/share/playonlinux/playonlinux --run "Internet Explorer 8" %F
+Icon=/home/talvindersingh/.PlayOnLinux//icones/full_size/Internet Explorer 8
+Name[fr_FR]=Internet Explorer 8
+StartupWMClass=iexplore.exe
+Categories=

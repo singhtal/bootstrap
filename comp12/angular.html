@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>Class Report Card Generator</title>
+<style>
+table{
+	margin-top:20px;
+	display:inline;
+	}
+	
+table{
+    padding: 0px;
+    border: none;
+}
+	
+th , td {
+ border: 1px solid grey;
+ border-collapse: collapse;
+ padding: 5px;
+}
+table tr:nth-child(odd) {
+ background-color: #f2f2f2;
+}
+table tr:nth-child(even) {
+ background-color: #ffffff;
+}
+.bord{
+	border:1px solid grey;
+	}
+.inline{
+	display:inline;
+	}
+	.filterInput{
+	margin:20px;
+		text-align:center;
+	}
+	.filterInput>input{
+	height:30px;
+	width:250px;
+	}
+	.userImage{
+	width:30px;
+	height:30px;
+	float:left;
+	}
+	.userName{
+		
+	}
+</style>
+</head>
+<body>
+<h2>Class Report Card Generator</h2>
+<div ng-app="mainApp" ng-controller="studentController">
+	<div class="filterInput">
+		<label>Search Student: </label><input type="text" ng-model="search" placeholder=" "></input>
+	</div>
+	
+	<div ng-repeat="stud in student | filter:search" class="inline">
+		<table border="0">
+			<thead>
+			<tr class="bord"><th colspan="2" style="text-align:center"><img class="img img-responsive userImage" src="{{stud.image}}"> <div class="userName">{{stud.firstName}}</div></th></tr>	
+			</thead>	
+		<tr><td>Roll No :</td><td>{{stud.rollno}}</td></tr>
+		<tr><td>Enter last name: </td><td>{{stud.class}}</td></tr>
+		<tr><td>Name:</td><td> {{stud.firstName}}</td></tr>
+		<tr><td>Subject:</td><td>
+		<table>
+		 <tr>
+		 <th>Name</th>
+		 <th>Marks</th>
+		 </tr>
+		 <tr ng-repeat="subject in stud.subjects |orderBy: 'marks'" ng-init="tot=0">
+		 <td>{{ subject.name }}</td>
+		 <td>{{ subject.marks }}</td>
+		 </tr>
+		<tr>
+			<td ng-init="tot=0">Total</td>
+			<td ng-model="total">{{getTotal(stud.subjects)}} </td>
+		</tr>	
+		</table>
+		</td></tr>
+		</table>
+	</div>												
+	
+</div>
+<script src="angular.min.js">
+</script>
+<script>
+var mainApp = angular.module("mainApp", []);
+	
+mainApp.controller("studentController", function($scope) {
+ $scope.student = [{
+ rollno: "666394",	 
+ class: "XII",
+ image: "talvinder.png",	 
+ firstName: "Talvinder",
+ fees:500,
+ subjects:[
+ {name:'Physics',marks:90},
+ {name:'Chemistry',marks:80},
+ {name:'Math',marks:95},
+ {name:'English',marks:85},
+ {name:'Hindi',marks:97}
+ ]
+ },
+{
+ rollno: "764399",	 
+ class: "XII",	 
+ firstName: "Aman",
+ image: "aman.png",		
+ fees:500,
+ subjects:[
+ {name:'Physics',marks:90},
+ {name:'Chemistry',marks:80},
+ {name:'Math',marks:95},
+ {name:'English',marks:85},
+ {name:'Hindi',marks:97}
+ ]
+ },
+				  {
+ rollno: "764399",	 
+ class: "XII",	 
+ firstName: "Kshitiz",
+ image: "kshitiz.png",						  
+ fees:500,
+ subjects:[
+ {name:'Physics',marks:90},
+ {name:'Chemistry',marks:88},
+ {name:'Math',marks:95},
+ {name:'English',marks:85},
+ {name:'Hindi',marks:97}
+ ]
+ },
+				  {
+ rollno: "764399",	 
+ class: "XII",	 
+ firstName: "Naina",
+ image: "naina.png",						  
+ fees:500,
+ subjects:[
+ {name:'Physics',marks:90},
+ {name:'Chemistry',marks:80},
+ {name:'Math',marks:95},
+ {name:'English',marks:75},
+ {name:'Hindi',marks:97}
+ ]
+ },
+				  {
+ rollno: "764399",	 
+ class: "XII",	 
+ firstName: "Avishkar",
+ image: "avishkaar.png",						  
+ fees:500,
+ subjects:[
+ {name:'Physics',marks:91},
+ {name:'Chemistry',marks:50},
+ {name:'Math',marks:45},
+ {name:'English',marks:85},
+ {name:'Hindi',marks:100}
+ ]
+ },
+				  {
+ rollno: "764399",	 
+ class: "XII",	 
+ firstName: "Gaurav",
+ image: "gaurav.png",	
+ fees:500,
+ subjects:[
+ {name:'Physics',marks:80},
+ {name:'Chemistry',marks:70},
+ {name:'Math',marks:35},
+ {name:'English',marks:75},
+ {name:'Hindi',marks:37}
+ ]
+ }];
+	$scope.getTotal = function(marks){
+		tot = 0;
+		grade = 'default';
+		avg = 0;
+		var length = marks.length;
+		for(i=0;i<length;i++){
+			tot = tot + marks[i].marks;
+		}
+		
+		avg = tot/5;
+		
+		if(avg>=85) grade = 'A';
+		else if(avg>=70) grade = 'B';
+		else if(avg>=60) grade = 'C';
+		else if(avg>=50) grade = 'D';
+		return  tot+' ('+avg+'%)' ;
+	}	
+	
+});
+</script>	
+</body>
+</html>
