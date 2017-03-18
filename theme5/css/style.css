@@ -1,0 +1,13 @@
+/* YOUR CUSTOM STYLES */
+.list-group-item.active {
+    background-color: #33b5e5;
+    border-color:#33b5e5
+}
+
+.list-group-item:not(.active) {
+    color:#222;
+}
+
+.list-group-item:not(.active):hover {
+    color:#666;
+}
