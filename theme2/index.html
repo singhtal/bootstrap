@@ -10,6 +10,19 @@
 	<link rel="stylesheet" href="amazon.css">
 	<!--<link rel="stylesheet" href="mdb.css">
 	<script src="mdb.js"></script>  -->
+	<style>
+	.i60{
+		height:60px;
+		width:60px;
+	}
+	.sideDiv>div{
+		margin-bottom:10px;
+		cursor:pointer;
+	}
+	.activeImage{
+		border:1px solid black;
+	}
+	</style>
 </head>
 <body>
 
@@ -69,7 +82,7 @@
 <li>Laravel</li>
 <li>Kendo UI</li>
 <li>Material Design</li>
-</ul>
+ </ul>
 </div>
 
 <div class="row infoRow">
@@ -82,8 +95,20 @@
 <div class="mainContent">
 <div class="row">
 <div class="col-sm-4">
-	<img src="photo.jpg" width="100%" height="90%"></img>
-</div>
+
+	<div class="row">
+		<div class="col-sm-4 sideDiv">
+			<div><img class="img img-responsive i60 activeImage" src="photo.jpg"></img></div>
+			<div><img class="img img-responsive i60" src="pic2.jpg"></img></div>
+			<div><img class="img img-responsive i60" src="pic3.jpg"></img></div>
+			<div><img class="img img-responsive i60" src="pic4.jpg"></img></div>
+		</div>
+		<div class="col-sm-8">
+			<img class="changeSrc" src="photo.jpg" width="100%" height="90%"></img>
+		</div>	
+	</div>
+</div>	
+
 <div class="col-sm-8 asize">
 	<h5 class="mainName">
 	Talvinder Singh, Frontend Developer
@@ -230,6 +255,13 @@ I enjoy traveling and working in multicultural environments, as I have in the pa
   ga('create', 'UA-89678967-5', 'auto');
   ga('send', 'pageview');
 
+  $('.sideDiv img').click(function(){
+  	$('.sideDiv img').removeClass('activeImage');
+  	$(this).addClass('activeImage');
+  	var scr = $(this).attr('src');
+  	$('.changeSrc').attr('src', scr);
+
+  });
 </script> 
 </body>
 </html>
