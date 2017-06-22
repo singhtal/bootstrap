@@ -1,5 +1,7 @@
-.col-md-4.mb-r:hover{
-    box-shadow: 0px 0px 15px 3px #ccc !important;
+.features-big>div{
     padding-top: 20px;
     border-radius: 5px;
 }
+.features-big>div:hover{
+    box-shadow: 0px 0px 15px 3px #ccc !important;   
+}   
