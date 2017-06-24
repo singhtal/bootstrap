@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
-<header>
+<head>
     <meta charset="utf-8">
     <title>Aura CR</title>
+    <meta name="description" content="aura is a start-up company that is focused on developing applications that will open augmented reality to the masses">
     <!-- Material Design CSS Declaration Start-->
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
@@ -17,44 +18,14 @@
 <!--     <script type="text/javascript" src="js/materialize.min.js"></script>
  -->    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
-
-    <script>
-    
-        $(document).ready(function()
-                            {
-                            $(document).on('scroll', function (e) { updateColor(); });
-                            $('.carousel').carousel();
-                            });
-    function updateColor() 
-    {
-        var o = $(document).scrollTop() / 30;
-        if (o > 1.000) 
-        { 
-            $("nav").removeClass("transparent-nav"); 
-            $("nav").addClass( "white-nav" );
-            $("#main-logo").removeClass("white-text");
-            $("#main-logo").addClass("black-text");
-
-        }
-        else 
-        {
-            $("nav").removeClass( "white-nav" );
-            $("nav").addClass( "transparent-nav" );
-            $("#main-logo").removeClass("black-text");
-            $("#main-logo").addClass("white-text");
-
-        }
-      
-    }
-    </script>
-    
-    
-</header>
+    <script type="text/javascript" src="js/home.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection">
+</head>
+<body>
 <main class="black" >
     <div class="navbar-fixed" id="top">
         <nav class="transparent-nav z-depth-0"> <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            <a class="brand-logo center" id="main-logo">Header</a>
+            <a class="brand-logo center" id="main-logo">Aura CR</a>
         </nav>
     </div>
        <!-- <div id="muteYouTubeVideoPlayer" style="pointer-events:none;"></div> -->
@@ -72,7 +43,7 @@
                   <div class="item active">
                     <!--<video muted autoplay loop src="video1.mp4" alt="Los Angeles" style="width:100%; height:100%">-->
                     <div class="video-container responsive-video">
-                        <div id="muteYouTubeVideoPlayer1" style="pointer-events:none;"></div>
+                        <div id="muteYouTubeVideoPlayer1" class="noEvent"></div>
                     </div>
                     <div class="carousel-caption">
                     <h2>This is video 1</h2>
@@ -82,7 +53,7 @@
                   <div class="item">
                     <!--<video muted autoplay loop src="video2.mp4" alt="Chicago" style="width:100%; height:100%">-->
                     <div>
-                        <div id="muteYouTubeVideoPlayer2" style="pointer-events:none;" data-interval=""></div>
+                        <div id="muteYouTubeVideoPlayer2" class="noEvent"></div>
                     </div>
                     <div class="carousel-caption">
                         <h2>This is video 2</h2>
@@ -92,7 +63,7 @@
                   <div class="item">
                     <!--<video  muted autoplay loop src="video3.mp4" alt="New York" style="width:100%; height:100%">-->
                     <div class="video-container responsive-video">
-                        <div id="muteYouTubeVideoPlayer3" style="pointer-events:none;"></div>
+                        <div id="muteYouTubeVideoPlayer3" class="noEvent"></div>
                     </div>
                     <div class="carousel-caption">
                     <h2>This is video 3</h2>
@@ -115,120 +86,34 @@
 
 
     <!-- Rest of the page starts here -->
-        <div class="row white">
-            
-            <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1" id="about-us">
-                <span class="flow-text">aura is a start-up company that is focused on developing applications that will open augmented reality to the masses and seamlessly allow communication between the physical and virtual worlds. Our team is comprised of business and research professionals as well as software and hardware developers.
-                    We believe that AR/VR has a bright future, but in order to unlock that future, technologies have to be simple to use, easy to distribute, and computationally efficient. The products that our team are building do just that.</span>
-            </div>
-        
-            <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1" id="products">
-                <span class="flow-text">At aura our goal is to make technology easy to use and seamlessly integrate the physical and virtual worlds. The technology stack that we have created is extremely versatile. Apps based on our technology have applications in many different fields:
-                    Safety and Security - best in class 3D positional data, in real time, even in locations with low cellphone coverage.
-                    Parks, Zoos, and Museums - interactive tours that can be experienced in both the real and virtual worlds.
-                    Everyone Else - let your imagination run wild with a simple web interface that makes it easy to create content and augment the world around you.
-                    If you have any questions about our technology and how it may be of benefit to your business or institution, please don't hesitate to contact us.</span>
-            </div>
-        
-        
-            <div class="col s10 m10 l10 xl10 offset-s1 offset-m1 offset-l1 offset-xl1" id="contact">
-                <span class="flow-text">aura Technologies Inc. is based in Saskatoon, Saskatchewan, Canada. If you would like to learn more about our company or products please get in touch with us using the form below.</span>
-            </div>
+        <div class="container-full">
+            <div class="container">
+                <div class="row white">
+                    
+                    <div class="col-xs-12" id="about-us">
+                        <p class="flow-text">aura is a start-up company that is focused on developing applications that will open augmented reality to the masses and seamlessly allow communication between the physical and virtual worlds. Our team is comprised of business and research professionals as well as software and hardware developers.
+                            We believe that AR/VR has a bright future, but in order to unlock that future, technologies have to be simple to use, easy to distribute, and computationally efficient. The products that our team are building do just that.</p>
+                    </div>
+                
+                    <div class="col-xs-12" id="products">
+                        <p class="flow-text">At aura our goal is to make technology easy to use and seamlessly integrate the physical and virtual worlds. The technology stack that we have created is extremely versatile. Apps based on our technology have applications in many different fields:
+                            Safety and Security - best in class 3D positional data, in real time, even in locations with low cellphone coverage.
+                            Parks, Zoos, and Museums - interactive tours that can be experienced in both the real and virtual worlds.
+                            Everyone Else - let your imagination run wild with a simple web interface that makes it easy to create content and augment the world around you.
+                            If you have any questions about our technology and how it may be of benefit to your business or institution, please don't hesitate to contact us.</p>
+                    </div>
+                
+                
+                    <div class="col-xs-12" id="contact">
+                        <p class="flow-text">aura Technologies Inc. is based in Saskatoon, Saskatchewan, Canada. If you would like to learn more about our company or products please get in touch with us using the form below.</p>
+                    </div>
+                </div>
+            </div>   
         </div>
     
         <!-- Scripts for youtube video embedding DO NOT MODIFY-->
         <script async src="https://www.youtube.com/iframe_api"></script>
-        <script>
-        function onYouTubeIframeAPIReady() 
-        {
-            var player;
-
-            player = new YT.Player('muteYouTubeVideoPlayer1', 
-            {
-                videoId: 'Q1rhoq77dcY', // YouTube Video ID
-                playerVars: {
-                autoplay: 1,        // Auto-play the video on load
-                controls: 0,        // Show pause/play buttons in player
-                showinfo: 0,        // Hide the video title
-                modestbranding: 1,  // Hide the Youtube Logo
-                loop: 1,            // Run the video in a loop
-                fs: 1,              // Hide the full screen button
-                cc_load_policy: 1, // Hide closed captions
-                iv_load_policy: 1,  // Hide the Video Annotations
-                autohide: 1         // Hide video controls when playing
-                },
-                events: 
-                {
-                onReady: function(e) 
-                        {
-                            e.target.mute();
-                            vidRescale(player);
-                        }
-                }
-            });
-
-            player2 = new YT.Player('muteYouTubeVideoPlayer2', 
-            {
-                videoId: '5gF4tyf-zVo', // YouTube Video ID
-                playerVars: {
-                autoplay: 1,        // Auto-play the video on load
-                controls: 0,        // Show pause/play buttons in player
-                showinfo: 0,        // Hide the video title
-                modestbranding: 1,  // Hide the Youtube Logo
-                loop: 1,            // Run the video in a loop
-                fs: 1,              // Hide the full screen button
-                cc_load_policy: 1, // Hide closed captions
-                iv_load_policy: 1,  // Hide the Video Annotations
-                autohide: 1         // Hide video controls when playing
-                },
-                events: 
-                {
-                onReady: function(e) 
-                        {
-                            e.target.mute();
-                            vidRescale(player2);
-                        }
-                }
-            });
-
-            player3 = new YT.Player('muteYouTubeVideoPlayer3', 
-            {
-                videoId: 'ftPOy4yUGMQ', // YouTube Video ID
-                playerVars: {
-                autoplay: 1,        // Auto-play the video on load
-                controls: 0,        // Show pause/play buttons in player
-                showinfo: 0,        // Hide the video title
-                modestbranding: 1,  // Hide the Youtube Logo
-                loop: 1,            // Run the video in a loop
-                fs: 1,              // Hide the full screen button
-                cc_load_policy: 1, // Hide closed captions
-                iv_load_policy: 1,  // Hide the Video Annotations
-                autohide: 1         // Hide video controls when playing
-                },
-                events: 
-                {
-                onReady: function(e) 
-                        {
-                            e.target.mute();
-                            vidRescale(player3);
-                        }
-                }
-            });            
-        }
-        function vidRescale(player)
-        {
-            var w = $(window).width()+200,
-            h = $(window).height()+200;
-            if (w/h > 16/9)
-            {
-                player.setSize(w, w/16*9);
-            }
-            else 
-            {
-                player.setSize(h/9*16, h);
-            }
-        }
-        </script>
 </main>
+</body>
 <footer></footer>    
 </html>
