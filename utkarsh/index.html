@@ -11,7 +11,7 @@
 html,body{height:100%;}
 .carousel,.item,.active{height:100%;}
 .carousel-inner{height:100%;}
-.fill{width:100%;height:100%;background-position:center;background-size:cover;}
+.fill{width:100%;height:100%;background-position:center;background-size:cover; padding:0px !important;} 
 
 /* faster sliding speed */
 .carousel-inner > .item {
@@ -42,9 +42,9 @@ video {
   <div class="carousel-inner">
     <div class="active item" data-interval="3000">
       <div class="fill">
-        <video autoplay id="video-background1" muted plays-inline width="100%" height="100%">
-          <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
-        </video>
+          <video id="bgvid" muted="" autoplay="" loop="" playsinline="" style="background-image: url(http://www.wondersauce.com/wp-content/uploads/2016/09/home-hero.jpg)">
+                  <source class="mp4 hd" src="https://s3.amazonaws.com/wondersauce/Homepage_0930.mp4" type="video/mp4">
+          </video>
         <div class="container">
           
         </div>
@@ -61,6 +61,96 @@ video {
       </div>
     </div>
     <div class="item" data-interval="3000">
+      <div class="fill">
+        <video autoplay id="video-background3" muted plays-inline width="100%" height="100%">
+          <source src="http://adventurethemes.com/demo/showcase/v1-4-1/video/background-video.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pull-center">
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+<script>
+  $('.carousel').carousel();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Video Carausel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.css">
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
+  <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
+  <style>
+html,body{height:100%;}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}
+.fill{width:100%;height:100%;background-position:center;background-size:cover;}
+
+/* faster sliding speed */
+.carousel-inner > .item {
+    -webkit-transition: 0.3s ease-in-out left;
+    -moz-transition: 0.3s ease-in-out left;
+    -o-transition: 0.3s ease-in-out left;
+    transition: 0.3s ease-in-out left;
+}
+video {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
+    background-size: cover;
+}
+
+/* keep full widget on smaller screens */
+@media (max-width: 767px) { 
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+  </style>
+</head>
+<body>
+<div class="container fill">
+<div id="myCarousel" class="carousel slide" >
+  <div class="carousel-inner">
+    <div class="active item" data-interval="10000">
+      <div class="fill">
+        <video autoplay id="video-background1" muted plays-inline width="100%" height="100%">
+          <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
+        </video>
+        <div class="container">
+          
+        </div>
+      </div>
+    </div>
+    <div class="item" data-interval="10000">
+      <div class="fill">
+        <video autoplay id="video-background2" muted plays-inline width="100%" height="100%">
+          <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+          
+        </div>
+      </div>
+    </div>
+    <div class="item" data-interval="10000">
       <div class="fill">
         <video autoplay id="video-background3" muted plays-inline width="100%" height="100%">
           <source src="http://adventurethemes.com/demo/showcase/v1-4-1/video/background-video.mp4" type="video/mp4">
