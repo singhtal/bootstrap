@@ -8,9 +8,18 @@
   <script src="https://raw.githack.com/tal1992/bootstrap/master/indexed/jquery.js"></script>
   <script src="https://raw.githack.com/tal1992/bootstrap/master/comp2/bootstrap.js"></script>
   <style>
-html,body{height:100%;}
+    html,body{height:100%;}
 .carousel,.item,.active{height:100%;}
 .carousel-inner, .item, video{height:100% !important;}
+.carousel-indicators{ bottom:40px; }
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+  color:#4cd964;
+  font-size:30px;
+}
+
+@media(min-width:480px){
+  .carousel-inner, .item, video{ min-height:100%;}
+ } 
   </style>
 </head>
 <body>
