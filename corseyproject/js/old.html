@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <title>Aura CR</title>
+    <meta name="description" content="aura is a start-up company that is focused on developing applications that will open augmented reality to the masses">
+    <!-- Material Design CSS Declaration Start-->
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Material Design CSS Declaration End-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.color-2.1.2.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+<!--     <script type="text/javascript" src="js/materialize.min.js"></script>
+ -->    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection">
+</head>
+<body>
+<main class="black" >
+    <div class="navbar-fixed" id="top">
+        <nav class="transparent-nav z-depth-0"> <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <a class="brand-logo center" id="main-logo">Aura CR</a>
+        </nav>
+    </div>
+       <!-- <div id="muteYouTubeVideoPlayer" style="pointer-events:none;"></div> -->
+       <!-- carausel starts -->
+              <div id="myCarousel" class="carousel" data-ride="carousel" data-interval="60000">
+                <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                  <div class="item active">
+                    <!--<video muted autoplay loop src="video1.mp4" alt="Los Angeles" style="width:100%; height:100%">-->
+                    <div class="video-container responsive-video">
+                        <div id="muteYouTubeVideoPlayer1" class="noEvent"></div>
+                    </div>
+                    <div class="carousel-caption">
+                    <h2>This is video 1</h2>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <!--<video muted autoplay loop src="video2.mp4" alt="Chicago" style="width:100%; height:100%">-->
+                    <div>
+                        <div id="muteYouTubeVideoPlayer2" class="noEvent"></div>
+                    </div>
+                    <div class="carousel-caption">
+                        <h2>This is video 2</h2>
+                    </div>
+                  </div>
+                
+                  <div class="item">
+                    <!--<video  muted autoplay loop src="video3.mp4" alt="New York" style="width:100%; height:100%">-->
+                    <div class="video-container responsive-video">
+                        <div id="muteYouTubeVideoPlayer3" class="noEvent"></div>
+                    </div>
+                    <div class="carousel-caption">
+                    <h2>This is video 3</h2>
+                    </div>
+                  </div>
+              
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+       <!-- carausel ends -->
+
+
+    <!-- Rest of the page starts here -->
+        <div class="container-full">
+            <div class="container">
+                <div class="row white">
+                    
+                    <div class="col-xs-12" id="about-us">
+                        <p class="flow-text">aura is a start-up company that is focused on developing applications that will open augmented reality to the masses and seamlessly allow communication between the physical and virtual worlds. Our team is comprised of business and research professionals as well as software and hardware developers.
+                            We believe that AR/VR has a bright future, but in order to unlock that future, technologies have to be simple to use, easy to distribute, and computationally efficient. The products that our team are building do just that.</p>
+                    </div>
+                
+                    <div class="col-xs-12" id="products">
+                        <p class="flow-text">At aura our goal is to make technology easy to use and seamlessly integrate the physical and virtual worlds. The technology stack that we have created is extremely versatile. Apps based on our technology have applications in many different fields:
+                            Safety and Security - best in class 3D positional data, in real time, even in locations with low cellphone coverage.
+                            Parks, Zoos, and Museums - interactive tours that can be experienced in both the real and virtual worlds.
+                            Everyone Else - let your imagination run wild with a simple web interface that makes it easy to create content and augment the world around you.
+                            If you have any questions about our technology and how it may be of benefit to your business or institution, please don't hesitate to contact us.</p>
+                    </div>
+                
+                
+                    <div class="col-xs-12" id="contact">
+                        <p class="flow-text">aura Technologies Inc. is based in Saskatoon, Saskatchewan, Canada. If you would like to learn more about our company or products please get in touch with us using the form below.</p>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    
+        <!-- Scripts for youtube video embedding DO NOT MODIFY-->
+        <script async src="https://www.youtube.com/iframe_api"></script>
+</main>
+</body>
+<footer></footer>    
+</html>
