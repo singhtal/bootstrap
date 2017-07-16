@@ -1,0 +1,305 @@
+html {
+    font-family: "Roboto", sans-serif; // it will apply to all elements	
+}
+nav ul a,
+nav .brand-logo {
+    color: #0394fd;
+}
+p {
+    line-height: 2rem;
+}
+.button-collapse {
+    color: #26a69a;
+}
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
+}
+.parallax-container .section {
+    width: 100%;
+}
+.navbar-fixed>nav {
+    transition: 0.5s all ease-in;
+}
+.navbar-fixed>nav>a {
+    transition: 0.5s all ease-in;
+}
+#teamCarousel {
+    height: 300px !important;
+}
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+}
+.transparent-nav {
+    background-color: transparent;
+}
+.white-nav {
+    -webkit-animation: background2 1s linear infinite;
+    animation: background2 1s linear infinite;
+}
+.wrapper {
+    width: 100%;
+    position: relative;
+}
+.videocarousel {
+    overflow: auto;
+}
+.videocarousel.initialized {
+    display: block;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    background: #000;
+}
+.videocarousel .carousel-item {
+    visibility: hidden !important;
+    margin-left: 100%;
+    transition: .2s visibility ease-in;
+}
+.videocarousel .carousel-item.active {
+    transition: .2s margin ease-out;
+    margin-left: 0%;
+    width: 100%;
+    visibility: visible !important;
+    display: block !important;
+    height: 90vh;
+    transform: none !important;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 56.25%;
+    /* 16x9 */
+}
+.fullWidth {
+    width: 100%;
+    min-height: 90vh%;
+}
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.aboutSystem {
+    margin-bottom: 40px;
+}
+.contactDiv {
+    position: relative;
+    overflow: hidden;
+}
+.fa-phone,
+.fa-envelope-o {
+    vertical-align: middle;
+    padding-left: 10px;
+}
+.dialer {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+}
+.aboutUs,
+.aboutProduct,
+.abouTeam,
+.contactDiv {
+    Margin: 20px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+.aboutUs h3,
+.aboutProduct h3,
+.abouTeam h3,
+.contactDiv h3 {
+    color: #0394fd;
+}
+.aboutUs h5,
+.aboutProduct h5,
+.abouTeam h5,
+.contactDiv h5 {
+    color: #0394fd;
+}
+.aboutSystem p {
+    line-height: 20px;
+    color: #000;
+}
+.left-arrow,
+.right-arrow {
+    display: none;
+    transition: 1s all ease-in;
+    opacity: 1;
+    margin: auto 0;
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    font-size: 50px;
+    padding: 0px 20px;
+    transition: 10s visibility ease-in;
+}
+.right-arrow {
+    right: 0;
+}
+.aboutSystem h5 {
+    margin-top: 25px;
+    text-align: left;
+    text-indent: 20px;
+    color: #000;
+}
+.teamInfo {
+    display: none;
+}
+.active .teamInfo {
+    display: block;
+}
+#teamCarousel {
+    height: 350px !important;
+    color: #fff;
+}
+#teamCarousel h5,
+#teamCarousel p {
+    color: #fff;
+    display: none;
+}
+#teamCarousel .active h5,
+#teamCarousel .active p {
+    display: block;
+}
+#teamCarousel img {
+    width: 80%;
+    border-radius: 50%;
+}
+.socialIcons>a {
+    display: inline-block;
+    padding: 0 10px;
+    color: #000;
+}
+.socialIcons i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s all ease-in;
+}
+.facebook:hover {
+    color: #29487d;
+}
+.twitter:hover {
+    color: skyblue;
+}
+.linkedin:hover {
+    color: #0084bf;
+}
+.googleplus:hover {
+    color: #db4437;
+}
+.instagram:hover {
+    color: #d81dca;
+}
+.youtube:hover {
+    color: #cc181e;
+}
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .left-arrow,
+    .right-arrow {
+        display: none;
+    }
+    h3 {
+        font-size: 25px
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    #index-banner .section {
+        top: 0;
+    }
+    .videocarousel {
+        height: auto !important;
+    }
+    .videocarousel .carousel-item.active {
+        padding-bottom: 0px;
+    }
+    #teamCarousel {
+        height: 300px !important;
+    }
+    .show-on-small {
+        display: block !important;
+    }
+    #teamCarousel img {
+        width: 60%;
+    }
+}
+@media(min-width:1200px) {
+    .videocarousel.initialized {
+        height: 100vh !important;
+    }
+}
+	.icon-block {
+		padding: 0 15px;
+	}
+	.icon-block .material-icons {
+		font-size: inherit;
+	}
+	footer.page-footer {
+		margin: 0;
+	}
+	.common-light-background {
+		background-color: #fff;
+	}
+	.animated-bg-coresy {
+		-webkit-animation: background 1s linear infinite;
+		animation: background 1s linear infinite;
+	}
+@-webkit-keyframes background {
+    0% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 28%, #002448 66%, #021631 90%);
+    }
+    25% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 30%, #002448 68%, #021631 91%);
+    }
+    50% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 32%, #002448 70%, #021631 92%);
+    }
+    75% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 34%, #002448 72%, #021631 93%);
+    }
+    100% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 36%, #002448 74%, #021631 94%);
+    }
+}
+@keyframes background {
+    0% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 28%, #002448 66%, #021631 90%);
+    }
+    25% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 30%, #002448 68%, #021631 91%);
+    }
+    50% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 32%, #002448 70%, #021631 92%);
+    }
+    75% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 34%, #002448 72%, #021631 93%);
+    }
+    100% {
+        background: radial-gradient(circle at center, #032149 0%, #042c62 36%, #002448 74%, #021631 94%);
+    }
+}
+.logo-text-color {
+    color: #0394fd;
+}
