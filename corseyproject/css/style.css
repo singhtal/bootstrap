@@ -1,5 +1,6 @@
 html {
     font-family: "Roboto", sans-serif; // it will apply to all elements	
+	overflow-x:hidden;
 }
 nav ul a,
 nav .brand-logo {
@@ -213,6 +214,12 @@ iframe {
     }
 }
 @media only screen and (max-width: 600px) {
+	#teamCarousel .carousel-item{
+		display:none !important;	
+	}	
+	#teamCarousel .active{
+		display:block !important;	
+	}	
     .left-arrow,
     .right-arrow {
         display: none;
